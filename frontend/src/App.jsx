@@ -8,7 +8,7 @@ import Footer from "./components/Footer.jsx"
 
 function App() {
   return (
-    <Box minH={"100vh"}>
+    <Box minH={"100vh"} bgColor={'#645547'}>
       <Navbar />
       <Routes>
         <Route path='/' element={<HomePage />} />
