@@ -17,7 +17,7 @@ const MenuPage = () => {
     <Box bgColor={'#645547'}>
       <Flex justifyContent={'center'} alignItems={'center'} py={10} flexDir={'column'}>
         <Image src={menuImg} alt='Menu' width={'75%'} />
-        <Text paddingTop={10} fontSize={'25px'} textAlign={'center'}>Please take your time and pick out your favorite coffee!</Text>
+        <Text className='tan_font' paddingTop={10} fontSize={'25px'} textAlign={'center'}>Please take your time and pick out your favorite coffee!</Text>
       </Flex>
       {/* <Text 
         className='sofia-regular'

@@ -1,9 +1,14 @@
 :root {
   --primary-blue-color: #011627
+  --primary-tan-color: #FEEFB0
 }
 
 .blue_font {
   color: var(--primary-blue-color);
+}
+
+.tan_font {
+  color: var(--primary-tan-color);
 }
 
 .blue_background {
