@@ -19,15 +19,6 @@ const MenuPage = () => {
         <Image src={menuImg} alt='Menu' width={'75%'} />
         <Text className='tan_font' paddingTop={10} fontSize={'25px'} textAlign={'center'}>Please take your time and pick out your favorite coffee!</Text>
       </Flex>
-      {/* <Text 
-        className='sofia-regular'
-        textAlign={'center'} 
-        paddingTop={10} 
-        color={'#FEEFB0'}
-        fontSize={30}
-      >
-        <b>Menu</b>
-      </Text> */}
       <Box className='sofia-regular blue_background'>
         <Grid templateColumns={{
           lg: "1fr 1fr", 

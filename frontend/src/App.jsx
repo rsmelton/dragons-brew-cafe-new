@@ -9,16 +9,14 @@ import './assets/utils.css'
 
 function App() {
   return (
-    <Box>
-      <Box className="blue_background" minH={"100vh"}>
-        <Navbar />
-        <Routes>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/menu' element={<MenuPage />} />
-          <Route path='/cart' element={<CartPage />} />
-        </Routes>
-        <Footer />
-      </Box>
+    <Box className="blue_background" minH={"100vh"}>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/menu' element={<MenuPage />} />
+        <Route path='/cart' element={<CartPage />} />
+      </Routes>
+      <Footer />
     </Box>
   )
 }
