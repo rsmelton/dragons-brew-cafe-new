@@ -5,17 +5,20 @@ import HomePage from "./pages/HomePage.jsx"
 import MenuPage from "./pages/MenuPage.jsx"
 import CartPage from "./pages/CartPage.jsx"
 import Footer from "./components/Footer.jsx"
+import './assets/utils.css'
 
 function App() {
   return (
-    <Box minH={"100vh"} bgColor={'#645547'}>
-      <Navbar />
-      <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/menu' element={<MenuPage />} />
-        <Route path='/cart' element={<CartPage />} />
-      </Routes>
-      <Footer />
+    <Box>
+      <Box className="blue_background" minH={"100vh"}>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/menu' element={<MenuPage />} />
+          <Route path='/cart' element={<CartPage />} />
+        </Routes>
+        <Footer />
+      </Box>
     </Box>
   )
 }

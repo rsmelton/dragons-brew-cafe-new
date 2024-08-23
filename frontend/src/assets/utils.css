@@ -1,5 +1,17 @@
+:root {
+  --primary-blue-color: #011627
+}
+
+.blue_font {
+  color: var(--primary-blue-color);
+}
+
+.blue_background {
+  background-color: var(--primary-blue-color);
+}
+
 .sofia-regular {
     font-family: "Sofia";
     font-weight: 400;
     font-style: normal;
-  }
+}

@@ -22,7 +22,7 @@ app.use("/api/cart", itemRoutes)
 // if we are in production build, go to the correct directory
 // and then send the file we want for the frontend
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, "frontend/dist")))
+    app.use(express.static(path.join(__dirname, "/frontend/dist")))
 
     app.get("*", (req, res) => {
         res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"))

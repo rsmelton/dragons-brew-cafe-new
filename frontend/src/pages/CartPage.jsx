@@ -3,6 +3,7 @@ import { Box, Flex, Text, Table, Thead, Tbody, Tr, Th, TableContainer, Button, u
 import { Link } from "react-router-dom"
 import { useItemStore } from '../store/item.store.js'
 import CartItem from '../components/CartItem.jsx'
+import '../assets/utils.css'
 
 const CartPage = () => {
 
@@ -44,7 +45,7 @@ const CartPage = () => {
   }
 
   return (
-    <Box fontSize={'20px'}>
+    <Box className='blue_background' fontSize={'20px'}>
       <Text 
         className='sofia-regular' 
         textAlign={'center'} 

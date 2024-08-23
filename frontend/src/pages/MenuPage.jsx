@@ -14,7 +14,7 @@ import '../assets/utils.css'
 
 const MenuPage = () => {
   return (
-    <>
+    <Box bgColor={'#645547'}>
       <Flex justifyContent={'center'} alignItems={'center'} py={10} flexDir={'column'}>
         <Image src={menuImg} alt='Menu' width={'75%'} />
         <Text paddingTop={10} fontSize={'25px'} textAlign={'center'}>Please take your time and pick out your favorite coffee!</Text>
@@ -28,7 +28,7 @@ const MenuPage = () => {
       >
         <b>Menu</b>
       </Text> */}
-      <Box className='sofia-regular'>
+      <Box className='sofia-regular blue_background'>
         <Grid templateColumns={{
           lg: "1fr 1fr", 
           md: "1fr 1fr",
@@ -92,7 +92,7 @@ const MenuPage = () => {
           />
         </Grid>
       </Box>
-    </>
+    </Box>
   )
 }
 
