@@ -18,7 +18,7 @@ const Navbar = () => {
             <HStack spacing={{lg: 20, md: 10, sm: 5}} alignItems={'center'} justifyContent={'center'} paddingLeft={20}>
                 {/* Empty text used to balance out the navbar */}
                 <Text></Text>
-                <Text fontSize={'25px'} _hover={{ color: '#3EA56C' }}><Link to={"/"}>Home</Link></Text>
+                <Text fontSize={'25px'} _hover={{ color: '#3EA56C' }}><Link to={"/home"}>Home</Link></Text>
                 <Image borderRadius={'full'} boxSize={'115px'} src={dragonsBrewCafeLogo} alt='Dragons Brew Cafe' />
                 <Text fontSize={'25px'} _hover={{ color: '#3EA56C' }}><Link to={"/menu"}>Menu</Link></Text>  
                 <Text fontSize={'25px'} _hover={{ color: '#3EA56C' }} paddingLeft={10}><Link to={"/cart"}>Cart</Link></Text>         
