@@ -12,7 +12,7 @@ function App() {
     <Box bgColor={'#011627'} minH={"100vh"}>
       <Navbar />
       <Routes>
-        <Route path='/' element={<HomePage />} />
+        <Route path='/home' element={<HomePage />} />
         <Route path='/menu' element={<MenuPage />} />
         <Route path='/cart' element={<CartPage />} />
       </Routes>
