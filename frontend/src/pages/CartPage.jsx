@@ -45,7 +45,7 @@ const CartPage = () => {
   }
 
   return (
-    <Box className='blue_background' fontSize={'20px'}>
+    <Box bgColor={'#011627'} fontSize={'20px'}>
       <Text 
         className='sofia-regular' 
         textAlign={'center'} 
@@ -63,15 +63,21 @@ const CartPage = () => {
             <Table variant='striped' colorScheme='teal'>
               <Thead>
                 <Tr>
-                  <Th fontSize={'15px'}>Name</Th>
-                  <Th fontSize={'15px'}>Price</Th>
+                  <Th fontSize={'15px'} color={'#FEEFB0'}>Name</Th>
+                  <Th fontSize={'15px'} color={'#FEEFB0'}>Price</Th>
                   <Th></Th>
                 </Tr>
               </Thead>
               <Tbody>
-                {items.map((item) => (
-                  <CartItem key={item._id} item={item} />
-                ))}
+                {items.map((item, index) => {
+                  // console.log(`Index: ${index}`)
+                  if (index % 2 === 0) {
+                    var color = "#011627"
+                  } else {
+                    var color = "#FEEFB0"
+                  }
+                  return <CartItem key={item._id} item={item} clr={color} />
+                })}
               </Tbody>
             </Table>
           </TableContainer>
@@ -81,7 +87,7 @@ const CartPage = () => {
             flexDir={'column'}
             gap={'1rem'}
           >
-            <Text textAlign={'center'}>Your total is ${handleFindTotalPrice(items)} click below to purchase!</Text>
+            <Text textAlign={'center'} color={'#FEEFB0'}>Your total is ${handleFindTotalPrice(items)} click below to purchase!</Text>
             <Text textAlign={'center'} paddingBottom={10}><Button bgColor={'#FEEFB0'} color={'#645547'} _hover={{ bgColor: '#3EA56C', color: 'white' }} onClick={handleDeleteAllItems}>Purchase</Button></Text>
           </Flex>
         </Box>
@@ -96,8 +102,8 @@ const CartPage = () => {
             flexDir={'column'}
             gap={'1rem'}
           >
-            <Text className='tan_font' textAlign={'center'}>Your Cart is currently empty</Text>
-            <Text className='tan_font' textAlign={'center'}>Please click the button below to navigate to the menu to start adding items to your cart!</Text>
+            <Text color={'#FEEFB0'} textAlign={'center'}>Your Cart is currently empty</Text>
+            <Text color={'#FEEFB0'} textAlign={'center'}>Please click the button below to navigate to the menu to start adding items to your cart!</Text>
             <Text textAlign={'center'}><Button bgColor={'#FEEFB0'} color={'#645547'} _hover={{ bgColor: '#3EA56C', color: 'white' }}><Link to={'/menu'}>Go to menu</Link></Button></Text>
           </Flex>
         </Box>

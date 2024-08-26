@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Image, Container, Flex, Text } from '@chakra-ui/react'
+import { Box, Image, Flex, Text } from '@chakra-ui/react'
 import welcomeScreenImg from '../images/welcomeScreen.png'
 import coffeeHouseImg from '../images/coffeeHouse.png'
 import '../assets/utils.css'
@@ -7,12 +7,12 @@ import '../assets/utils.css'
 const HomePage = () => {
   return (
     <>
-      <Box className='blue_background' width={'full'} padding={10}>
+      <Box width={'full'} padding={10}>
         <Flex justifyContent={'center'}>
           <Image width={'80%'} padding={5} src={welcomeScreenImg} alt='Welcome Screen' />
         </Flex>
       </Box>
-      <Box className='blue_font' padding={1} width={'full'} bgColor={'#FEEFB0'} >
+      <Box padding={1} width={'full'} bgColor={'#FEEFB0'} >
         <Flex
           justifyContent={'space-around'}
           alignItems={'center'}
@@ -39,7 +39,7 @@ const HomePage = () => {
           </Box>
         </Flex>
       </Box>
-      <Box padding={1} color={'#FEEFB0'} bgColor={"--primary-blue-color"}>
+      <Box padding={1} color={'#FEEFB0'}>
         <Flex
           justifyContent={'space-around'}
           alignItems={'center'}

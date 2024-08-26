@@ -3,7 +3,10 @@ import { Tr, Td, useToast, IconButton } from '@chakra-ui/react'
 import { DeleteIcon } from '@chakra-ui/icons'
 import { useItemStore } from '../store/item.store'
 
-const CartItem = ({ item }) => {
+const CartItem = ({ item, clr }) => {
+
+    // console.log(`Clr Passed: ${clr}`)
+    // console.log(`Item Index: ${item.index}`)
 
     const { deleteItem } = useItemStore() 
     const toast = useToast()
@@ -30,8 +33,8 @@ const CartItem = ({ item }) => {
 
     return (
         <Tr>
-            <Td>{item.name}</Td>
-            <Td>{item.price}</Td>
+            <Td color={clr}>{item.name}</Td>
+            <Td color={clr}>{item.price}</Td>
             <Td><IconButton icon={<DeleteIcon />} onClick={() => handleDeleteItem(item._id)} colorScheme='green'></IconButton></Td>
         </Tr>
     )

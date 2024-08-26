@@ -1,6 +1,6 @@
 :root {
-  --primary-blue-color: #011627
-  --primary-tan-color: #FEEFB0
+  --primary-blue-color: "#011627"
+  --primary-tan-color: "#FEEFB0"
 }
 
 .blue_font {
@@ -13,6 +13,10 @@
 
 .blue_background {
   background-color: var(--primary-blue-color);
+}
+
+.tan_background {
+  background-color: var(--primary-tan-color);
 }
 
 .sofia-regular {
