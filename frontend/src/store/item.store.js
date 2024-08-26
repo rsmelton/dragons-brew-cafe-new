@@ -62,7 +62,7 @@ export const useItemStore = create((set) => ({
         return { success: true, message: data.message }
     },
     deleteItems: async () => {
-        const res = await fetch("api/cart", {
+        const res = await fetch("/api/cart", {
             method: "DELETE",
             headers: {
                 "Content-Type" : "application/json"
