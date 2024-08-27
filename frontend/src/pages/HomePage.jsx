@@ -9,7 +9,7 @@ const HomePage = () => {
     <>
       <Box width={'full'} padding={10}>
         <Flex justifyContent={'center'}>
-          <Image width={'80%'} padding={5} src={welcomeScreenImg} alt='Welcome Screen' />
+          <Image width={{lg: '80%', md: '80%', sm: '90%'}} padding={5} src={welcomeScreenImg} alt='Welcome Screen' />
         </Flex>
       </Box>
       <Box padding={1} width={'full'} bgColor={'#FEEFB0'} >
@@ -20,7 +20,8 @@ const HomePage = () => {
           flexDir={{
             lg: 'row',
             md: 'column',
-            sm: 'column'
+            sm: 'column', 
+            xs: 'column'
           }}
         >
           <Box flex={3} maxWidth={'75ch'} padding={5}>
@@ -48,7 +49,8 @@ const HomePage = () => {
           flexDir={{
             lg: 'row',
             md: 'column',
-            sm: 'column'
+            sm: 'column',
+            xs: 'column'
           }}
         >
           <Box flex={1} padding={5} width={{ lg: '100%', sm: '75%'}}>
