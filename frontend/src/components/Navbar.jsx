@@ -19,7 +19,7 @@ const Navbar = () => {
                 {/* Empty text used to balance out the navbar */}
                 <Text></Text>
                 <Text fontSize={'25px'} _hover={{ color: '#3EA56C' }}><Link to={"/home"}>Home</Link></Text>
-                <Image borderRadius={'full'} boxSize={'115px'} src={dragonsBrewCafeLogo} alt='Dragons Brew Cafe' />
+                <Image borderRadius={'full'} boxSize={'105px'} src={dragonsBrewCafeLogo} alt='Dragons Brew Cafe' />
                 <Text fontSize={'25px'} _hover={{ color: '#3EA56C' }}><Link to={"/menu"}>Menu</Link></Text>  
                 <Text fontSize={'25px'} _hover={{ color: '#3EA56C' }} paddingLeft={10}><Link to={"/cart"}>Cart</Link></Text>         
             </HStack>

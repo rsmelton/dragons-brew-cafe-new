@@ -18,10 +18,10 @@ const HomePage = () => {
           alignItems={'center'}
           gap={'5rem'}
           flexDir={{
-            lg: 'row',
+            base: 'column',
+            sm: 'column',
             md: 'column',
-            sm: 'column', 
-            xs: 'column'
+            lg: 'row'
           }}
         >
           <Box flex={3} maxWidth={'75ch'} padding={5}>
@@ -47,10 +47,10 @@ const HomePage = () => {
           alignItems={'center'}
           gap={'5rem'}
           flexDir={{
-            lg: 'row',
-            md: 'column',
+            base: 'column',
             sm: 'column',
-            xs: 'column'
+            md: 'column',
+            lg: 'row'
           }}
         >
           <Box flex={1} padding={5} width={{ lg: '100%', sm: '75%'}}>
