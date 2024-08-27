@@ -19,6 +19,7 @@ const HomePage = () => {
           gap={'5rem'}
           flexDir={{
             lg: 'row',
+            md: 'column',
             sm: 'column'
           }}
         >
@@ -46,6 +47,7 @@ const HomePage = () => {
           gap={'5rem'}
           flexDir={{
             lg: 'row',
+            md: 'column',
             sm: 'column'
           }}
         >
