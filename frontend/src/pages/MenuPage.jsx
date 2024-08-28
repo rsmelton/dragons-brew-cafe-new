@@ -17,9 +17,13 @@ const MenuPage = () => {
     <Box>
       <Flex bgColor={'#FEEFB0'} justifyContent={'center'} alignItems={'center'} py={10} flexDir={'column'}>
         <Image src={menuImg} alt='Menu' width={'75%'} />
-        <Text color={'#011627'} paddingTop={10} fontSize={'25px'} textAlign={'center'}>Please take your time and pick out your favorite coffee!</Text>
+        {/* <Text className='sofia-regular bold' color={'#011627'} padding={10} fontSize={{lg: '30px', md: '25px', base: '20px'}} textAlign={'center'}>Our menu consists of multiple extravagant and luxurious beverages!</Text> */}
       </Flex>
       <Box className='sofia-regular' bgColor={'#011627'}>
+        <Flex justifyContent={'center'} alignItems={'center'} py={10} flexDir={'column'} gap={'1rem'}>
+          <Text className='sofia-regular bold' color={'white'} fontSize={{lg: '30px', md: '25px', base: '20px'}} textAlign={'center'}>Our menu consists of multiple extravagant and luxurious beverages!</Text>
+          <Text className='sofia-regular bold' color={'white'} fontSize={{lg: '30px', md: '25px', base: '20px'}} textAlign={'center'}>Please take your time and pick out your favorite coffee!</Text>
+        </Flex>
         <Grid templateColumns={{
           lg: "1fr 1fr", 
           md: "1fr 1fr",

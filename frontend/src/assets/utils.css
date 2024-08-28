@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --primary-blue-color: "#011627"
   --primary-tan-color: "#FEEFB0"
@@ -23,4 +27,8 @@
     font-family: "Sofia";
     font-weight: 400;
     font-style: normal;
+}
+
+.bold {
+  font-weight: bold;
 }
