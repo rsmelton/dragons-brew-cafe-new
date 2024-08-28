@@ -59,7 +59,7 @@ const CartPage = () => {
 
       {items.length > 0 && (
         <Box>
-          <TableContainer margin={'auto'} px={{lg: 20, md: 10, sm: 0}} paddingBottom={10}>
+          <TableContainer margin={'auto'} px={20} paddingBottom={10}>
             <Table variant='striped' colorScheme='teal'>
               <Thead>
                 <Tr>
@@ -87,7 +87,7 @@ const CartPage = () => {
             flexDir={'column'}
             gap={'1rem'}
           >
-            <Text textAlign={'center'} color={'#FEEFB0'}>Your total is ${handleFindTotalPrice(items)} click below to purchase!</Text>
+            <Text textAlign={'center'} color={'#FEEFB0'} fontSize={{base: '15px', md: '20px', lg: '20px'}}>Your total is ${handleFindTotalPrice(items)} click below to purchase!</Text>
             <Text textAlign={'center'} paddingBottom={10}><Button bgColor={'#FEEFB0'} color={'#645547'} _hover={{ bgColor: '#3EA56C', color: 'white' }} onClick={handleDeleteAllItems}>Purchase</Button></Text>
           </Flex>
         </Box>

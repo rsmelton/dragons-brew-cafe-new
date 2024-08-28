@@ -4,7 +4,7 @@ import '../assets/utils.css'
 
 const Footer = () => {
   return (
-    <Box color={'#011627'} width={'100%'} height={175} bgColor={'#FEEFB0'}>
+    <Box className='bold' color={'#011627'} width={'100%'} height={175} bgColor={'#FEEFB0'}>
         <Flex
             padding={12}
             alignItems={'center'}

@@ -17,12 +17,7 @@ const HomePage = () => {
           justifyContent={'space-around'}
           alignItems={'center'}
           gap={'5rem'}
-          flexDir={{
-            base: 'column',
-            sm: 'column',
-            md: 'column',
-            lg: 'row'
-          }}
+          flexDir={{base: 'column', sm: 'column', md: 'column', lg: 'row'}}
         >
           <Box flex={3} maxWidth={'75ch'} padding={5}>
             <Text textAlign={'center'} fontSize={30} paddingBottom={5}><b>About</b></Text>
@@ -46,14 +41,9 @@ const HomePage = () => {
           justifyContent={'space-around'}
           alignItems={'center'}
           gap={'5rem'}
-          flexDir={{
-            base: 'column',
-            sm: 'column',
-            md: 'column',
-            lg: 'row'
-          }}
+          flexDir={{base: 'column', sm: 'column', md: 'column', lg: 'row'}}
         >
-          <Box flex={1} padding={5} width={{ lg: '100%', sm: '75%'}}>
+          <Box flex={1} paddingTop={5} paddingLeft={{md: 5, lg: 10}} width={{ lg: '100%', sm: '75%'}}>
             <Image src={coffeeHouseImg} alt='Coffee House' />
           </Box>
           <Box flex={1} maxWidth={'75ch'} padding={10} paddingTop={{lg: 20, sm: -20}}>

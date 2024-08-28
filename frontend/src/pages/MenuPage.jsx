@@ -15,25 +15,20 @@ import '../assets/utils.css'
 const MenuPage = () => {
   return (
     <Box>
-      <Flex bgColor={'#FEEFB0'} justifyContent={'center'} alignItems={'center'} py={10} flexDir={'column'}>
+      <Flex bgColor={'#011627'} justifyContent={'center'} alignItems={'center'} py={10} flexDir={'column'}>
         <Image src={menuImg} alt='Menu' width={'75%'} />
-        {/* <Text className='sofia-regular bold' color={'#011627'} padding={10} fontSize={{lg: '30px', md: '25px', base: '20px'}} textAlign={'center'}>Our menu consists of multiple extravagant and luxurious beverages!</Text> */}
       </Flex>
       <Box className='sofia-regular' bgColor={'#011627'}>
-        <Flex justifyContent={'center'} alignItems={'center'} py={10} flexDir={'column'} gap={'1rem'}>
+        <Flex justifyContent={'center'} alignItems={'center'} flexDir={'column'} gap={'1rem'}>
           <Text className='sofia-regular bold' color={'white'} fontSize={{lg: '30px', md: '25px', base: '20px'}} textAlign={'center'}>Our menu consists of multiple extravagant and luxurious beverages!</Text>
           <Text className='sofia-regular bold' color={'white'} fontSize={{lg: '30px', md: '25px', base: '20px'}} textAlign={'center'}>Please take your time and pick out your favorite coffee!</Text>
         </Flex>
-        <Grid templateColumns={{
-          lg: "1fr 1fr", 
-          md: "1fr 1fr",
-          sm: "1fr"
-        }}>
+        <Grid templateColumns={{lg: "1fr 1fr", md: "1fr 1fr", sm: "1fr"}}>
           <MenuItem 
             image={dragonsFireLatteImg} 
-            name="Dragon's Fire Latte" 
+            name="Dragons Fire Latte" 
             price="7.95"
-            nameAndPrice="Dragon's Fire Latte - $7.95" 
+            nameAndPrice="Dragons Fire Latte - $7.95" 
             description="A spicy twist on a classic latte with a hint of cinnamon and cayenne pepper, topped with a good amount of whipped cream" 
           />
           <MenuItem 
@@ -80,9 +75,9 @@ const MenuPage = () => {
           />
           <MenuItem 
             image={wizardsWhiteChocolateMochaImg} 
-            name="Wizards White Chcolate Mocha" 
+            name="Wizards White Chocolate Mocha" 
             price="6.95"
-            nameAndPrice="Wizards White Chcolate Mocha - $6.95" 
+            nameAndPrice="Wizards White Chocolate Mocha - $6.95" 
             description="A creamy white chocolate mocha mixed with a hazelnut mocha topped with whipped cream and a drizzle of caramel and chocolate" 
           />
         </Grid>
