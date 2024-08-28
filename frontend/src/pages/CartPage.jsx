@@ -59,7 +59,7 @@ const CartPage = () => {
 
       {items.length > 0 && (
         <Box>
-          <TableContainer margin={'auto'} px={20} paddingBottom={10}>
+          <TableContainer margin={'auto'} px={{base: 0, md: 10, lg: 20}} paddingBottom={10}>
             <Table variant='striped' colorScheme='teal'>
               <Thead>
                 <Tr>
