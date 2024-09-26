@@ -41,7 +41,7 @@ const MenuItem = (props) => {
           <Image src={props.image} alt={props.name} borderRadius={'50%'} width={{lg: '75%', md: '50%', sm: '50%'}} margin={'auto'} />
           <Text className='tan_font' textAlign={'center'}><b>{props.nameAndPrice}</b></Text>
           <Text className='tan_font' textAlign={'center'}>{props.description}</Text>
-          <Button className='tan_background' color={'#645547'} _hover={{ bgColor: '#3EA56C', color: 'white' }} onClick={handleAddToCart}>Add to Cart</Button>
+          <Button bgColor={'white'} color={'#011627'} _hover={{ bgColor: '#3EA56C', color: 'white' }} onClick={handleAddToCart}>Add to Cart</Button>
         </Flex>
     </Box>
   )

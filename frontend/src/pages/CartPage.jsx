@@ -80,7 +80,7 @@ const CartPage = () => {
             gap={'1rem'}
           >
             <Text className='tan_font' fontSize={{base: '15px', md: '20px', lg: '20px'}}>Your total is ${handleFindTotalPrice(items)} click below to purchase!</Text>
-            <Button className='tan_background blue_font' marginBottom={10} _hover={{ bgColor: '#3EA56C', color: 'white' }} onClick={handleDeleteAllItems}>Purchase</Button>
+            <Button bgColor={'white'} color={'#011627'} marginBottom={10} _hover={{ bgColor: '#3EA56C', color: 'white' }} onClick={handleDeleteAllItems}>Purchase</Button>
           </Flex>
         </>
       )}
@@ -96,7 +96,7 @@ const CartPage = () => {
         >
           <Text className='tan_font'>Your Cart is currently empty</Text>
           <Text className='tan_font' textAlign={'center'}>Please click the button below to navigate to the menu to start adding items to your cart!</Text>
-          <Button className='tan_background blue_font' _hover={{ bgColor: '#3EA56C', color: 'white' }}><Link to={'/menu'}>Go to menu</Link></Button>
+          <Button bgColor={'white'} color={'#011627'} _hover={{ bgColor: '#3EA56C', color: 'white' }}><Link to={'/menu'}>Go to menu</Link></Button>
         </Flex>
       )}
     </Box>

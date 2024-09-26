@@ -4,7 +4,7 @@
 }
 
 .blue_font {
-  color: var(--primary-blue-color) !important;
+  color: var(--primary-blue-color);
 }
 
 .tan_font {
@@ -16,7 +16,7 @@
 }
 
 .tan_background {
-  background-color: var(--primary-tan-color) !important;
+  background-color: var(--primary-tan-color);
 }
 
 .primary_font {
