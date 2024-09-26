@@ -9,7 +9,7 @@ import './assets/utils.css'
 
 function App() {
   return (
-    <Box bgColor={'#011627'} minH={"100vh"}>
+    <Box className='blue_background' minH={"100vh"}>
       <Navbar />
       <Routes>
         <Route path='/home' element={<HomePage />} />

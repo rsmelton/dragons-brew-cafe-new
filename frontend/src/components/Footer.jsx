@@ -1,20 +1,20 @@
 import React from 'react'
-import { Box, Flex, Text } from '@chakra-ui/react'
-import '../assets/utils.css'
+import { Flex, Text } from '@chakra-ui/react'
 
 const Footer = () => {
   return (
-    <Box color={'#011627'} width={'100%'} height={175} bgColor={'#FEEFB0'}>
-        <Flex
-            padding={12}
-            alignItems={'center'}
-            flexDir={'column'}
-            gap={'1rem'}
-        >
-            <Text>&copy; 2024 Dragon's Brew Coffee</Text>
-            <Text>A fictional company created by Robert Melton</Text>
-        </Flex>
-    </Box>
+    <Flex
+        className='primary_font tan_background blue_font bold'
+        padding={12}
+        alignItems={'center'}
+        flexDir={'column'}
+        gap={'1rem'}
+        textAlign={'center'}
+        height={175}
+    >
+        <Text>&copy; 2024 Dragon's Brew Coffee</Text>
+        <Text>A fictional company created by Robert Melton</Text>
+    </Flex>
   )
 }
 
