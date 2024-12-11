@@ -10,7 +10,7 @@ import unicornColdBrewImg from '../images/unicornColdBrew.png'
 import wizardsWhiteChocolateMochaImg from '../images/wizardsWhiteChocolateMocha.png'
 import MenuItem from '../components/MenuItem'
 
-const MenuPage = () => {
+const MenuPage = () => { 
   return (
     <Grid 
       className='primary_font blue_background'
