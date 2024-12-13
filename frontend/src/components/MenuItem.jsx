@@ -12,6 +12,8 @@ const MenuItem = (props) => {
       name: props.name, price: props.price
     })
 
+    console.log('Do we make it here?')
+
     if (success === false) {
       toast({
         title: "Error",
