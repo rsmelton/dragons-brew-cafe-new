@@ -37,8 +37,17 @@ export const useItemStore = create((set) => ({
             },
         }) 
         // console.log(await res.text())
-        const data = await res.json()
-        set({ items: data.data })
+
+        // *** newly added code ***
+        if (res.status === 204) { 
+            // this means the server couldnt find any content
+            set({ items: [] })
+        } else {
+            // *** old code ***
+            const data = await res.json()
+            set({ items: data.data })
+        }
+
     },
     deleteItem: async (itemId) => {
         // requesting specific item from backend
