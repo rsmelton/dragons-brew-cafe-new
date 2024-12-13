@@ -96,7 +96,7 @@ const CartPage = () => {
         >
           <Text className='tan_font'>Your Cart is currently empty</Text>
           <Text className='tan_font' textAlign={'center'}>Please click the button below to navigate to the menu to start adding items to your cart!</Text>
-          <Button bgColor={'white'} color={'#011627'} _hover={{ bgColor: '#3EA56C', color: 'white' }}><Link to={'/menu'}>Go to menu</Link></Button>
+          <Link to={'/menu'}><Button bgColor={'white'} color={'#011627'} _hover={{ bgColor: '#3EA56C', color: 'white' }}>Go to menu</Button></Link>
         </Flex>
       )}
     </Box>
