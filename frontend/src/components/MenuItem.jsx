@@ -8,11 +8,14 @@ const MenuItem = (props) => {
   const { createItem } = useItemStore()
 
   const handleAddToCart = async () => {
+
+    console.log('Do we make it here?')
+
     const { success, message } = await createItem({
       name: props.name, price: props.price
     })
 
-    console.log('Do we make it here?')
+    // console.log('Do we make it here?')
 
     if (success === false) {
       toast({
