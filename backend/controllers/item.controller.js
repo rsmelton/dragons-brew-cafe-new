@@ -9,7 +9,7 @@ export const getItems = async (req, res) => {
         // this grabs all Item objects from the database
         const items = await Item.find({})
 
-        // *** newly added code ***
+        // **** newly added code ****
         if (items === null) res.status(204).json({ success: true, data: items})
 
         res.status(200).json({ success: true, data: items })
