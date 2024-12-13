@@ -9,13 +9,10 @@ const MenuItem = (props) => {
 
   const handleAddToCart = async () => {
 
-    console.log('Do we make it here?')
-
+    // Changed price: props.price to price: Number(props.price)
     const { success, message } = await createItem({
-      name: props.name, price: props.price
+      name: props.name, price: Number(props.price)
     })
-
-    // console.log('Do we make it here?')
 
     if (success === false) {
       toast({
