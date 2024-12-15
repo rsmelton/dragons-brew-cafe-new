@@ -24,6 +24,7 @@ export const getItems = async (req, res) => {
 export const postItem = async (req, res) => {
     // this comes from the body of the request in the frontend(store file)
     const item = req.body
+    console.log(`Item that was requested to add to DB from frontend: ${item}`)
 
     // creating the new item using the Item model.
     const newItem = new Item(item)
