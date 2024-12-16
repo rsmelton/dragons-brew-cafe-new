@@ -4,7 +4,7 @@ import { getItems, postItem, deleteItem, deleteItems } from '../controllers/item
 const router = express.Router()
 
 router.get("/", getItems)
-router.post("/api/cart", postItem)
+router.post("/", postItem)
 router.delete("/:id", deleteItem)
 router.delete("/", deleteItems)
 
