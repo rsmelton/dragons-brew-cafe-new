@@ -16,7 +16,7 @@ export const useItemStore = create((set) => ({
         })
         // wait for the response
         console.log("We made it right before the res.json() call.")
-        console.log(`Response type: ${typeof(res.data.name)}`);
+        console.log(`Response status: ${res.status}`)
         const data = await res.json()
         console.log(`Data: ${data.data}`)
 
