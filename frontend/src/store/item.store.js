@@ -14,6 +14,7 @@ export const useItemStore = create((set) => ({
             },
             body: JSON.stringify(newItem)
         })
+        console.log(`Responses name value: ${res.name}`);
         // wait for the response
         console.log("We made it right before the res.json() call.")
         const data = await res.json()
