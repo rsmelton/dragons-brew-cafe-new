@@ -36,10 +36,10 @@ export const postItem = async (req, res) => {
         // saving new item to the database
         console.log(`Inside try block`)
         await newItem.save()
-        res.status(201).json({ success: true, data: newItem })
+        return res.status(201).json({ success: true, data: newItem })
     } catch (error) {
         console.log("Error with saving item to database:", error.message)
-        res.status(500).json({ success: false, message: "Item did not get added to database."})
+        return res.status(500).json({ success: false, message: "Item did not get added to database."})
     }
     console.log(`After try catch block`)
 }
