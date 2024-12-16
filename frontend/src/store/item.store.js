@@ -10,7 +10,7 @@ export const useItemStore = create((set) => ({
         const res = await fetch("/api/cart", {
             method: "POST",
             headers: {
-                "Content-Type" : "application/json"
+                "Content-Type" : "text/plain"
             },
             body: JSON.stringify(newItem)
         })
