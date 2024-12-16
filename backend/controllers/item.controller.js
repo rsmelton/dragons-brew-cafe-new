@@ -28,6 +28,7 @@ export const postItem = async (req, res) => {
 
     // creating the new item using the Item model.
     const newItem = new Item(item)
+    console.log(`New Item that was requested to add to DB from frontend: ${newItem}`)
 
     try {
         // saving new item to the database
