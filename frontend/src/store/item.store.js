@@ -36,6 +36,7 @@ export const useItemStore = create((set) => ({
         const res = await fetch("/api/cart", {
             method: "GET",
             headers: {
+                "Accept" : "application/json",
                 'Content-Type' : 'application/json',
             },
         }) 
