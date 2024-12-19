@@ -12,6 +12,12 @@ const PORT = process.env.PORT || 5001
 
 const __dirname = path.resolve()
 
+app.use(cors({
+    origin: ["https://dragons-brew-cafe.vercel.app/"],
+    methods: ["POST", "GET", "DELETE"],
+    credentials: true
+  }));
+
 app.use(express.json())
 
 // we will need routes for CRUD Operations.
