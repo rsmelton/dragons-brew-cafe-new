@@ -39,7 +39,7 @@ export const useItemStore = create((set) => ({
                 'Content-Type' : 'application/json',
             },
         }) 
-        // console.log(await res.text())
+        console.log(await res.text())
 
         // *** newly added code ***
         if (res.status === 204) { 
