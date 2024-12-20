@@ -1,7 +1,7 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import path from 'path'
-import cors from 'cors';
+// import cors from 'cors';
 import { connectDB } from './config/db.js'
 import itemRoutes from './routes/item.route.js'
 
@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5001
 
 const __dirname = path.resolve()
 
-app.use(cors({ origin: 'https://dragons-brew-cafe.vercel.app/' }));
+// app.use(cors({ origin: 'https://dragons-brew-cafe.vercel.app/' }));
 
 app.use(express.json())
 
