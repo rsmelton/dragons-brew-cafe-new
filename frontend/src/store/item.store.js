@@ -8,7 +8,7 @@ export const useItemStore = create((set) => ({
     createItem: async (newItem) => {
         // make the request
         console.log(`New item type: ${typeof(newItem)}`)
-        const res = await fetch("/api/cart", {
+        const res = await fetch("/api", {
             method: "POST",
             headers: {
                 "Content-Type" : "application/json"
