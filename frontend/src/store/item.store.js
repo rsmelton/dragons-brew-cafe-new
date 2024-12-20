@@ -8,7 +8,7 @@ export const useItemStore = create((set) => ({
     createItem: async (newItem) => {
         // make the request
         console.log(`New item type: ${typeof(newItem)}`)
-        const res = await fetch("/api", {
+        const res = await fetch("/api/cart", {
             method: "POST",
             headers: {
                 "Content-Type" : "application/json"
@@ -33,7 +33,7 @@ export const useItemStore = create((set) => ({
         // to the backend to then talk to the DB, which will then 
         // send back a response here into items which we can then 
         // use in the frontend.
-        const res = await fetch("/api/cart", {
+        const res = await fetch("/api", {
             method: "GET",
             headers: {
                 'Content-Type' : 'application/json',
@@ -41,15 +41,18 @@ export const useItemStore = create((set) => ({
         }) 
         // console.log(await res.text())
 
-        // *** newly added code ***
-        if (res.status === 204) { 
-            // this means the server couldnt find any content
-            set({ items: [] })
-        } else {
-            // *** old code ***
-            const data = await res.json()
-            set({ items: data.data })
-        }
+        const data = await res.json()
+        set({ items: data.data })
+
+        // // *** newly added code ***
+        // if (res.status === 204) { 
+        //     // this means the server couldnt find any content
+        //     set({ items: [] })
+        // } else {
+        //     // *** old code ***
+        //     const data = await res.json()
+        //     set({ items: data.data })
+        // }
 
     },
     deleteItem: async (itemId) => {
