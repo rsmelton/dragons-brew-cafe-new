@@ -47,8 +47,7 @@ export const useItemStore = create((set) => ({
             set({ items: [] })
         } else {
             // *** old code ***
-            // const data = await res.json()
-            const data = await JSON.parse(res);
+            const data = await res.json()
             set({ items: data.data })
         }
 
