@@ -33,10 +33,10 @@ export const useItemStore = create((set) => ({
         // to the backend to then talk to the DB, which will then 
         // send back a response here into items which we can then 
         // use in the frontend.
-        const res = await fetch("https://dragons-brew-cafe.vercel.app/api/cart", {
+        const res = await fetch("/api/cart", {
             method: "GET",
             headers: {
-                'Content-Type' : 'application/json',
+                'Content-Type' : 'application/json'
             },
         }) 
         // console.log(await res.text())
