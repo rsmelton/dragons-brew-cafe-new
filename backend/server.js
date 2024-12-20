@@ -20,7 +20,7 @@ app.use(express.json())
 // we will need routes for CRUD Operations.
 // this appends the path /api/cart to the end of the PORT we are 
 // listening to
-app.use("/api/cart", itemRoutes)
+// app.use("/api/cart", itemRoutes)
 
 // if we are in production build, go to the correct directory
 // and then send the file we want for the frontend
