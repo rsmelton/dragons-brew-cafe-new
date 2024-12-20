@@ -4,7 +4,7 @@ import Item from "../models/item.model.js"
 
 const app = express();
 
-app.get("/api/cart", async (req, res) => {
+app.get("https://dragons-brew-cafe.vercel.app/api/cart", async (req, res) => {
     try {
         // this grabs all Item objects from the database
         const items = await Item.find({})
