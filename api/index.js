@@ -5,6 +5,7 @@ import Item from "../models/item.model.js"
 const app = express();
 
 app.get("/api/cart", async (req, res) => {
+    console.log("Cart GET API entered")
     try {
         // this grabs all Item objects from the database
         const items = await Item.find({})
