@@ -33,12 +33,14 @@ export const useItemStore = create((set) => ({
         // to the backend to then talk to the DB, which will then 
         // send back a response here into items which we can then 
         // use in the frontend.
+        console.log('Before fetching')
         const res = await fetch("/api/cart", {
             method: "GET",
             headers: {
                 'Content-Type' : 'application/json'
             },
         }) 
+        console.log('After fetching')
         // console.log(await res.text())
 
         const data = await res.json()
