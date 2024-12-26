@@ -1,7 +1,7 @@
 import mongoose from "mongoose"
 import Item from "../models/item.model.js"
 
-export async function getItems(req, res) {
+export const getItems = async (req, res) => {
     console.log("Cart GET API entered")
     try {
         // this grabs all Item objects from the database

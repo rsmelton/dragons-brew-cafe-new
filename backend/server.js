@@ -4,6 +4,7 @@ import path from 'path'
 // import cors from 'cors';
 import { connectDB } from './config/db.js'
 import itemRoutes from './routes/item.route.js'
+import { getItems } from '../api/cart.js'
 
 // This allows us to use process.env.{variable name} to read from the .env file
 dotenv.config()
@@ -17,12 +18,12 @@ const __dirname = path.resolve()
 
 app.use(express.json())
 
-// app.use('/api/cart', getItems)
+app.use('/api/cart', getItems)
 
 // we will need routes for CRUD Operations.
 // this appends the path /api/cart to the end of the PORT we are 
 // listening to
-app.use("/api/cart", itemRoutes)
+// app.use("/api/cart", itemRoutes)
 
 // app.get("/api/cart", async (req, res) => {
 //     console.log("Cart GET API entered")
