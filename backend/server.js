@@ -18,7 +18,7 @@ const __dirname = path.resolve()
 
 app.use(express.json())
 
-app.get('/api/cart', getItems)
+app.get("/", getItems)
 
 // we will need routes for CRUD Operations.
 // this appends the path /api/cart to the end of the PORT we are 
