@@ -8,7 +8,7 @@ const CartPage = () => {
 
   const { items, fetchItems, deleteItem, deleteItems } = useItemStore()
 
-  useEffect(() => { fetchItems() }, [fetchItems, deleteItem, deleteItems, items])
+  useEffect(() => { fetchItems() }, [deleteItem, deleteItems, items])
 
   const toast = useToast()
 

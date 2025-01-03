@@ -34,7 +34,7 @@ export const useItemStore = create((set) => ({
         // send back a response here into items which we can then 
         // use in the frontend.
         console.log('Before fetching')
-        const res = await fetch("https://dragons-brew-cafe-serverless-apis.vercel.app/api/cart", {
+        const res = await fetch("/api/cart", {
             method: "GET",
             headers: {
                 'Content-Type' : 'application/json'
@@ -89,6 +89,6 @@ export const useItemStore = create((set) => ({
         const data = await res.json()
         set({ items: data.data })
 
-        return {success: true, message: "Purchased Successfully!"}
+        return { success: true, message: "Purchased Successfully!" }
     }
 }))
