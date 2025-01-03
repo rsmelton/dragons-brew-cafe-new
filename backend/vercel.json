@@ -1,5 +1,5 @@
 {
     "routes": [
-        { "source": "/api/cart", "dest": "/server.js" }
+        { "src": "/api/cart", "dest": "/server.js" }
     ]
 }
