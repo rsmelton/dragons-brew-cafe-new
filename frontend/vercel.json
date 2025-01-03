@@ -1,6 +1,6 @@
 {
     "routes": [
-        { "src": "/api/cart", "dest": "../backend/server.js" },
-        { "src": "/(.*)", "destination": "/index.html"}
+        { "src": "/(.*)", "destination": "/index.html"},
+        { "src": "/api/cart", "dest": "../backend/server.js" }
     ]
 }
