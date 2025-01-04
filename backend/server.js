@@ -18,21 +18,21 @@ app.use(express.json())
 // we will need routes for CRUD Operations.
 // this appends the path /api/cart to the end of the PORT we are 
 // listening to
-// app.use("/api/cart", itemRoutes)
-app.get("/api/cart", async (req, res) => {
-    try {
-        // this grabs all Item objects from the database
-        const items = await Item.find({})
+app.use("/api/cart", itemRoutes)
+// app.get("/api/cart", async (req, res) => {
+//     try {
+//         // this grabs all Item objects from the database
+//         const items = await Item.find({})
 
-        // **** newly added code ****
-        if (items === null) res.status(204).json({ success: true, data: items})
+//         // **** newly added code ****
+//         if (items === null) res.status(204).json({ success: true, data: items})
 
-        res.status(200).json({ success: true, data: items })
-    } catch (error) {
-        console.log("Error in fetching cart items:", error.message)
-        res.status(500).json({ success: false, message: "Server Error" })
-    }
-})
+//         res.status(200).json({ success: true, data: items })
+//     } catch (error) {
+//         console.log("Error in fetching cart items:", error.message)
+//         res.status(500).json({ success: false, message: "Server Error" })
+//     }
+// })
 
 
 // if we are in production build, go to the correct directory
