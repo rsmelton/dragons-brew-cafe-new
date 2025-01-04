@@ -1,0 +1,6 @@
+{
+    "routes": [
+        { "src": "/(.*)", "destination": "/index.html"},
+        { "src": "https://dragons-brew-cafe.vercel.app/api/cart", "destination": "../backend/server.js" }
+    ]
+}

@@ -1,6 +1,0 @@
-{
-    "routes": [
-        { "src": "/(.*)", "destination": "/index.html"},
-        { "src": "/api/cart", "destination": "../backend/server.js" }
-    ]
-}
