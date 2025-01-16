@@ -7,7 +7,7 @@ export const useItemStore = create((set) => ({
     setItems: (items) => set({ items }),
     createItem: async (newItem) => {
         // make the request
-        console.log(`New item type: ${typeof(newItem)}`)
+        // console.log(`New item type: ${typeof(newItem)}`)
         const res = await fetch("/api/cart", {
             method: "POST",
             headers: {
@@ -16,10 +16,10 @@ export const useItemStore = create((set) => ({
             body: JSON.stringify(newItem)
         })
         // wait for the response
-        console.log("We made it right before the res.json() call.")
-        console.log(`Response status: ${res.status}`)
+        // console.log("We made it right before the res.json() call.")
+        // console.log(`Response status: ${res.status}`)
         const data = await res.json()
-        console.log(`Data: ${data.data}`)
+        // console.log(`Data: ${data.data}`)
 
         // this is how I did it in the other project
         set((state) => ({ items: [...state.items, data.data] }))
@@ -33,14 +33,14 @@ export const useItemStore = create((set) => ({
         // to the backend to then talk to the DB, which will then 
         // send back a response here into items which we can then 
         // use in the frontend.
-        console.log('Before fetching')
+        // console.log('Before fetching')
         const res = await fetch("/api/cart", {
             method: "GET",
             headers: {
                 'Content-Type' : 'application/json'
             },
         }) 
-        console.log('After fetching')
+        // console.log('After fetching')
         // console.log(await res.text())
 
         const data = await res.json()
