@@ -1,7 +1,7 @@
 import React from 'react'
 import { Flex, Text, Image, Box } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
-import dragonsBrewCafeLogo from '../images/dragonsBrewLogoImage.png'
+import dragonsBrewCafeLogo from '../images/dragonsBrewLogoImage.jpg'
 
 const Navbar = () => {
     return (
