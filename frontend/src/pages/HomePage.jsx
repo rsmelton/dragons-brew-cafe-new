@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Image, Flex, Text } from '@chakra-ui/react'
 import welcomeScreenImg from '../images/welcomeScreen.jpg'
-
+ 
 const HomePage = () => {
   return (
     <>
