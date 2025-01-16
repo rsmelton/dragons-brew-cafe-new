@@ -10,7 +10,7 @@ export const getItems = async (req, res) => {
         const items = await Item.find({})
 
         // **** newly added code ****
-        if (items === null) res.status(204).json({ success: true, data: items})
+        // if (items === null) res.status(204).json({ success: true, data: items})
 
         res.status(200).json({ success: true, data: items })
     } catch (error) {
