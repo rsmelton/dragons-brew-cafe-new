@@ -25,24 +25,24 @@ export const postItem = async (req, res) => {
     // this comes from the body of the request in the frontend(store file)
     const item = req.body
     
-    console.log(`Item that was requested to add to DB from frontend: ${item}`)
+    // console.log(`Item that was requested to add to DB from frontend: ${item}`)
 
     // creating the new item using the Item model.
     const newItem = new Item(item)
     console.log(`New Item that was requested to add to DB from frontend: ${newItem}`)
     // console.log(`New items type: ${typeof(newItem)}`);
 
-    console.log(`Before try block`)
+    // console.log(`Before try block`)
     try {
         // saving new item to the database
-        console.log(`Inside try block`)
+        // console.log(`Inside try block`)
         await newItem.save()
         res.status(201).json({ success: true, data: newItem })
     } catch (error) {
         console.log("Error with saving item to database:", error.message)
         res.status(500).json({ success: false, message: "Item did not get added to database."})
     }
-    console.log(`After try catch block`)
+    // console.log(`After try catch block`)
 }
 
 // this function runs when the frontend calls fetch using an API
