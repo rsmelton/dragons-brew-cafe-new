@@ -8,7 +8,7 @@ import Item from '../models/item.model.js'
 // This allows us to use process.env.{variable name} to read from the .env file
 dotenv.config()
 
-const app = express()
+const app = express() 
 const PORT = process.env.PORT || 5001
 
 const __dirname = path.resolve()
