@@ -1,20 +1,27 @@
 import React from 'react'
 import { Box, Image, Flex, Text } from '@chakra-ui/react'
+import '../assets/utils.css'
 import welcomeScreenImg from '../images/welcomeScreen.jpg'
  
 const HomePage = () => {
+
   return (
-    <>
+    <div>
+      <Image className='dragon_body' />
+
       {/* <Flex justifyContent={'center'} padding={10}>
         <video autoplay muted loop id="myVideo">
           <source src="/frontend/src/assets/dragons-brew-cafe-video.mp4" type="video/mp4" />
         </video>
       </Flex> */}
-      <Image objectFit={'cover'} src={welcomeScreenImg} alt='Welcome Screen Image' />
+      
+      {/* <Image objectFit={'cover'} src={welcomeScreenImg} alt='Welcome Screen Image' /> */}
+      
+      
       {/* <Flex justifyContent={'center'} padding={10}>
         <Image width={{sm: '90%', md: '80%'}} padding={5} objectFit={'cover'} src={welcomeScreenImg} alt='Welcome Screen' />
       </Flex> */}
-      <Flex
+      {/* <Flex
         className='primary_font blue_font tan_background'
         alignItems={'center'}
         justifyContent={'space-around'}
@@ -51,8 +58,8 @@ const HomePage = () => {
           <Text paddingBottom={5}>Review: ⭐️⭐️⭐️⭐️⭐️</Text>
           <Text paddingBottom={5}>Dragons Brew has quickly become my favorite coffee haunt in town. The quality of their coffee is unmatched, sourced from the best beans and expertly brewed to perfection. It's evident that they care about the craft, as each cup is consistently delicious. Beyond the coffee, the staff here truly makes the experience exceptional. They're not just baristas; they're passionate about coffee and always willing to share their knowledge. Whether you're a coffee aficionado or simply enjoy a good cup, Dragons Brew is a must-visit!</Text>
         </Box>
-      </Flex>
-    </>
+      </Flex> */}
+    </div>
   )
 }
 

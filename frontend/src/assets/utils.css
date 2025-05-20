@@ -3,6 +3,13 @@
   --primary-tan-color: #FEEFB0;
 }
 
+.dragon_body {
+  background-image: url('../images/welcomeScreen.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
 .blue_font {
   color: var(--primary-blue-color);
 }
