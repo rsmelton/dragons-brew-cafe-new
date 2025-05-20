@@ -9,15 +9,15 @@ import './assets/utils.css'
 
 function App() {
   return (
-    <Box className='blue_background' minH={"100vh"}>
+    <Box minH={"100vh"}>
       <Navbar />
-      <Routes>
+      {/* <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/home' element={<HomePage />} />
         <Route path='/menu' element={<MenuPage />} />
         <Route path='/cart' element={<CartPage />} />
       </Routes>
-      <Footer />
+      <Footer /> */}
     </Box>
   )
 }

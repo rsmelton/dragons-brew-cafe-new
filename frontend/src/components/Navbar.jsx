@@ -6,7 +6,8 @@ import dragonsBrewCafeLogo from '../images/dragonsBrewLogoImage.jpg'
 const Navbar = () => {
     return (
         <Flex 
-            bgColor={'white'}
+            bgColor={'black'}
+            color={'white'}
             height={20} 
             alignItems={'center'} 
             justifyContent={'flex-end'} 
