@@ -5,9 +5,12 @@ import welcomeScreenImg from '../images/welcomeScreen.jpg'
 const HomePage = () => {
   return (
     <>
-      <Flex justifyContent={'center'} padding={10}>
+      <video autoplay muted loop id="myVideo" className=''>
+        <source src="/frontend/src/assets/dragons-brew-cafe-video.mp4" type="video/mp4" />
+      </video>
+      {/* <Flex justifyContent={'center'} padding={10}>
         <Image width={{sm: '90%', md: '80%'}} padding={5} src={welcomeScreenImg} alt='Welcome Screen' />
-      </Flex>
+      </Flex> */}
       <Flex
         className='primary_font blue_font tan_background'
         alignItems={'center'}
