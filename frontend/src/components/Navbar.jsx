@@ -9,11 +9,11 @@ const Navbar = () => {
     return (
         <>
             <div className='navbar'>
-                <a href="/home">Home</a>
-                <a href="/menu">Menu</a>
                 <a href="/cart">Cart</a>
+                <a href="/menu">Menu</a>
+                <a href="/home">Home</a>
             </div>
-            <div className='main'>
+            {/* <div className='main'>
                 <h1>Fixed Top Menu</h1>
                 <h2>Scroll this page to see the effect</h2>
                 <h2>The navigation bar will stay at the top of the page while scrolling</h2>
@@ -37,7 +37,7 @@ const Navbar = () => {
                 <p>Some text some text some text some text..</p>
                 <p>Some text some text some text some text..</p>
                 <p>Some text some text some text some text..</p>
-            </div>
+            </div> */}
         </>
 
 
