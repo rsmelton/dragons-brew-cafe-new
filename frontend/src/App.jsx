@@ -17,7 +17,7 @@ function App() {
         <Route path='/menu' element={<MenuPage />} />
         <Route path='/cart' element={<CartPage />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </Box>
   )
 }
