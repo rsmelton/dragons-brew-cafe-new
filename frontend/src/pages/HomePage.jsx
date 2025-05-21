@@ -7,7 +7,6 @@ const HomePage = () => {
 
   return (
     <div>
-      <Image className='dragon_body' />
 
       {/* <Flex justifyContent={'center'} padding={10}>
         <video autoplay muted loop id="myVideo">
