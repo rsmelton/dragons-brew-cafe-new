@@ -19,7 +19,7 @@ const HomePage = () => {
         alignItems={'flex-start'}
         flexDirection={'column'}
         color={'white'}
-        padding={'5rem'}
+        padding={'10rem'}
         gap={'1.5rem'}
       >
         <Box>
