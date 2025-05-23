@@ -4,7 +4,7 @@ import { Flex, Text } from '@chakra-ui/react'
 const Footer = () => {
   return (
     <Flex
-        className='primary_font tan_background blue_font bold'
+        className='primary-font bold'
         padding={12}
         alignItems={'center'}
         flexDir={'column'}

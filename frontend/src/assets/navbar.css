@@ -1,22 +1,16 @@
-.navbar {
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
+.navbar { overflow: hidden;
+          position: fixed;
+          top: 0;
+          width: 100%;
+          background-color: rgba(0, 0, 0, 0.5); }
 
-.navbar a {
-    float: right;
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    color: white;
-}
+.navbar a { float: right;
+            display: block;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            color: white; }
 
-/* .main {
-    padding: 16px;
-    margin-top: 30px;
-    height: 1500px;
-} */
+.navbar a:hover { background-color: #3EA56C; 
+                  color: white; }

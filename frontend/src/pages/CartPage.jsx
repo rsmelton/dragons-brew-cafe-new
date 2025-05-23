@@ -44,12 +44,11 @@ const CartPage = () => {
   }
 
   return (
-    <Box className='blue_background primary_font bold' fontSize={'20px'}>
+    <Box className='scrollable-page primary-font bold' fontSize={'20px'}>
       <Text 
         textAlign={'center'} 
         py={10} 
-        fontSize={'25px'} 
-        bgGradient={"linear(to-r, white, #645547)"} 
+        fontSize={'1.5rem'} 
         bgClip={'text'}
       >
         Current Items in Your Cart 🛒
@@ -58,17 +57,17 @@ const CartPage = () => {
       {items.length > 0 && (
         <>
           <TableContainer margin={'auto'} px={{base: 0, md: 10, lg: 20}} paddingBottom={10}>
-            <Table variant='striped' colorScheme='teal'>
+            <Table>
               <Thead>
                 <Tr>
-                  <Th fontSize={'15px'} color={'#FEEFB0'}>Name</Th>
-                  <Th fontSize={'15px'} color={'#FEEFB0'}>Price</Th>
+                  <Th fontSize={'1rem'} color={'white'}>Name</Th>
+                  <Th fontSize={'1rem'} color={'white'}>Price</Th>
                   <Th></Th>
                 </Tr>
               </Thead>
-              <Tbody>
+              <Tbody backgroundColor={'rgba(0, 0, 0, 0.5)'}>
                 {items.map((item, index) => {
-                  return <CartItem key={item._id} item={item} clr={index % 2 === 0 ? "#011627" : "#FEEFB0"} />
+                  return <CartItem key={item._id} item={item} />
                 })}
               </Tbody>
             </Table>
@@ -79,8 +78,8 @@ const CartPage = () => {
             flexDir={'column'}
             gap={'1rem'}
           >
-            <Text className='tan_font' fontSize={{base: '15px', md: '20px', lg: '20px'}}>Your total is ${handleFindTotalPrice(items)} click below to purchase!</Text>
-            <Button bgColor={'white'} color={'#011627'} marginBottom={10} _hover={{ bgColor: '#3EA56C', color: 'white' }} onClick={handleDeleteAllItems}>Purchase</Button>
+            <Text color={'white'} fontSize={{base: '15px', md: '20px', lg: '20px'}}>Your total is ${handleFindTotalPrice(items)}. Click below to purchase.</Text>
+            <Button bgColor={'white'} color={'black'} marginBottom={10} _hover={{ bgColor: '#3EA56C', color: 'white' }} onClick={handleDeleteAllItems}>Purchase</Button>
           </Flex>
         </>
       )}
@@ -94,8 +93,8 @@ const CartPage = () => {
           gap={'1rem'}
           paddingBottom={10}
         >
-          <Text className='tan_font'>Your Cart is currently empty</Text>
-          <Text className='tan_font' textAlign={'center'}>Please click the button below to navigate to the menu to start adding items to your cart!</Text>
+          <Text color={'white'}>Your Cart is currently empty</Text>
+          <Text color={'white'} textAlign={'center'}>Please click the button below to navigate to the menu to start adding items to your cart.</Text>
           <Link to={'/menu'}><Button bgColor={'white'} color={'#011627'} _hover={{ bgColor: '#3EA56C', color: 'white' }}>Go to menu</Button></Link>
         </Flex>
       )}

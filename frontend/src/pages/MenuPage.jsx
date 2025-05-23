@@ -1,4 +1,5 @@
 import React from 'react'
+import '../assets/utils.css'
 import { Grid } from '@chakra-ui/react'
 import dragonsFireLatteImg from '../images/dragonsFireLatte.png'
 import enchatedEspressoImg from '../images/enchantedEspresso.png'
@@ -13,7 +14,7 @@ import MenuItem from '../components/MenuItem'
 const MenuPage = () => { 
   return (
     <Grid 
-      className='primary_font blue_background'
+      className='scrollable-page primary-font'
       templateColumns={{lg: "1fr 1fr", md: "1fr 1fr", sm: "1fr"}}
     >
       <MenuItem 

@@ -8,11 +8,11 @@ const Navbar = () => {
 
     return (
         <>
-            <div className='navbar'>
+            <nav className='navbar'>
                 <a href="/cart">Cart</a>
                 <a href="/menu">Menu</a>
                 <a href="/home">Home</a>
-            </div>
+            </nav>
             {/* <div className='main'>
                 <h1>Fixed Top Menu</h1>
                 <h2>Scroll this page to see the effect</h2>
@@ -70,7 +70,7 @@ const Navbar = () => {
 
 
 
-        // <Box className='primary_font tan_font bold' paddingTop={3} bgColor={'#3E3831'}>
+        // <Box className='primary-font bold' paddingTop={3} bgColor={'#3E3831'}>
         //     <Flex 
         //         height={20} 
         //         alignItems={'center'} 
