@@ -30,7 +30,7 @@ const HomePage = () => {
         </Box>
         <Box>
           <Text className={'bold'} fontSize={'2rem'}>Contact</Text>
-          <Text>PHONE NUMBER: (256)-123-4567</Text>
+          <Text>PHONE NUMBER: (123)-456-7890</Text>
           <Text>LOCATION: TBA</Text>
           <Text>HOURS: 7:00 am - 4:00 pm</Text>
           <Text>Everyday</Text>

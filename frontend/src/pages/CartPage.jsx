@@ -44,19 +44,21 @@ const CartPage = () => {
   }
 
   return (
-    <Box className='scrollable-page primary-font bold' fontSize={'20px'}>
+    <Box className='scrollable-page primary-font'>
       <Text 
         textAlign={'center'} 
-        py={10} 
+        paddingTop={'2rem'}
+        paddingBottom={'2rem'}
         fontSize={'1.5rem'} 
         bgClip={'text'}
+        color={'white'}
       >
         Current Items in Your Cart 🛒
       </Text>
 
       {items.length > 0 && (
         <>
-          <TableContainer margin={'auto'} px={{base: 0, md: 10, lg: 20}} paddingBottom={10}>
+          <TableContainer margin={'auto'} paddingLeft={'5rem'} paddingRight={'5rem'} paddingBottom={'1rem'}>
             <Table>
               <Thead>
                 <Tr>
@@ -78,8 +80,8 @@ const CartPage = () => {
             flexDir={'column'}
             gap={'1rem'}
           >
-            <Text color={'white'} fontSize={{base: '15px', md: '20px', lg: '20px'}}>Your total is ${handleFindTotalPrice(items)}. Click below to purchase.</Text>
-            <Button bgColor={'white'} color={'black'} marginBottom={10} _hover={{ bgColor: '#3EA56C', color: 'white' }} onClick={handleDeleteAllItems}>Purchase</Button>
+            <Text color={'white'} fontSize={{base: '1rem', md: '1.25rem'}}>Your total is ${handleFindTotalPrice(items)}. Click below to purchase.</Text>
+            <Button bgColor={'white'} color={'black'} _hover={{bgColor: '#3EA56C', color: 'white'}} onClick={handleDeleteAllItems}>Purchase</Button>
           </Flex>
         </>
       )}
@@ -91,11 +93,10 @@ const CartPage = () => {
           alignItems={'center'}
           flexDir={'column'}
           gap={'1rem'}
-          paddingBottom={10}
         >
           <Text color={'white'}>Your Cart is currently empty</Text>
           <Text color={'white'} textAlign={'center'}>Please click the button below to navigate to the menu to start adding items to your cart.</Text>
-          <Link to={'/menu'}><Button bgColor={'white'} color={'#011627'} _hover={{ bgColor: '#3EA56C', color: 'white' }}>Go to menu</Button></Link>
+          <Link to={'/menu'}><Button bgColor={'white'} color={'black'} _hover={{ bgColor: '#3EA56C', color: 'white' }}>Go to menu</Button></Link>
         </Flex>
       )}
     </Box>

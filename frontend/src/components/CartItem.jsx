@@ -30,8 +30,8 @@ const CartItem = ({ item }) => {
 
     return (
         <Tr>
-          <Td color={'white'} fontSize={{base: '15px', md: '20px', lg: '20px'}}>{item.name}</Td>
-          <Td color={'white'} fontSize={{base: '15px', md: '20px', lg: '20px'}}>${item.price}</Td>
+          <Td color={'white'} fontSize={{base: '1rem', md: '1.25rem'}}>{item.name}</Td>
+          <Td color={'white'} fontSize={{base: '1rem', md: '1.25rem'}}>${item.price}</Td>
           <Td><IconButton icon={<DeleteIcon />} onClick={() => handleDeleteItem(item._id)} colorScheme='green'></IconButton></Td>
         </Tr>
     )
