@@ -1,5 +1,4 @@
 import React from 'react'
-import '../assets/utils.css'
 import { Grid } from '@chakra-ui/react'
 import dragonsFireLatteImg from '../images/dragonsFireLatte.png'
 import enchatedEspressoImg from '../images/enchantedEspresso.png'
@@ -10,6 +9,7 @@ import sorcerersSmoresMochaImg from '../images/sorcerersSmoresMocha.png'
 import unicornColdBrewImg from '../images/unicornColdBrew.png'
 import wizardsWhiteChocolateMochaImg from '../images/wizardsWhiteChocolateMocha.png'
 import MenuItem from '../components/MenuItem'
+import '../assets/utils.css'
 
 const MenuPage = () => { 
   return (
