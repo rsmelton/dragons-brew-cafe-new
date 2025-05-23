@@ -3,9 +3,8 @@
                background-repeat: no-repeat;
                height: 100vh; }
 
-.scrollable-page { overflow: auto; 
-                   height: 100vh; 
-                   padding-top: 3rem; }
+.scrollable-page { overflow: auto;
+                   flex: 1 1 auto; }
 
 .primary-font { font-family: sans-serif;
                 font-weight: 400; }
