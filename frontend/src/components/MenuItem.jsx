@@ -42,7 +42,7 @@ const MenuItem = (props) => {
           <Image src={props.image} alt={props.name} borderRadius={'50%'} width={{base:'50%', md: '75%'}} margin={'auto'} />
           <Text className={'bold'} color={'white'} textAlign={'center'}>{props.nameAndPrice}</Text>
           <Text padding={'1rem'} color={'white'} textAlign={'center'}>{props.description}</Text>
-          <Button bgColor={'white'} color={'black'} _hover={{ bgColor: '#3EA56C', color: 'white' }} onClick={handleAddToCart}>Add to Cart</Button>
+          <Button bgColor={'white'} color={'black'} onClick={handleAddToCart}>Add to Cart</Button>
         </Flex>
     </Box>
   )

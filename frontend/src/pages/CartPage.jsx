@@ -81,7 +81,7 @@ const CartPage = () => {
             gap={'1rem'}
           >
             <Text color={'white'} fontSize={{base: '1rem', md: '1.25rem'}}>Your total is ${handleFindTotalPrice(items)}. Click below to purchase.</Text>
-            <Button bgColor={'white'} color={'black'} _hover={{bgColor: '#3EA56C', color: 'white'}} onClick={handleDeleteAllItems}>Purchase</Button>
+            <Button bgColor={'white'} color={'black'} onClick={handleDeleteAllItems}>Purchase</Button>
           </Flex>
         </>
       )}
@@ -96,7 +96,7 @@ const CartPage = () => {
         >
           <Text color={'white'}>Your Cart is currently empty</Text>
           <Text color={'white'} textAlign={'center'}>Please click the button below to navigate to the menu to start adding items to your cart.</Text>
-          <Link to={'/menu'}><Button bgColor={'white'} color={'black'} _hover={{ bgColor: '#3EA56C', color: 'white' }}>Go to menu</Button></Link>
+          <Link to={'/menu'}><Button bgColor={'white'} color={'black'}>Go to menu</Button></Link>
         </Flex>
       )}
     </Box>
