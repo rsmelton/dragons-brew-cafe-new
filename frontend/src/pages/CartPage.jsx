@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Box, Flex, Text, Table, Thead, Tbody, Tr, Th, TableContainer, Button, useToast } from '@chakra-ui/react'
+import { Flex, Text, Table, Thead, Tbody, Tr, Th, TableContainer, Button, useToast } from '@chakra-ui/react'
 import { Link } from "react-router-dom"
 import { useItemStore } from '../store/item.store.js'
 import CartItem from '../components/CartItem.jsx'
@@ -44,7 +44,7 @@ const CartPage = () => {
   }
 
   return (
-    <Box className='scrollable-page primary-font'>
+    <div className='primary-font'>
       <Text 
         textAlign={'center'} 
         paddingTop={'2rem'}
@@ -99,7 +99,7 @@ const CartPage = () => {
           <Link to={'/menu'}><Button bgColor={'white'} color={'black'}>Go to menu</Button></Link>
         </Flex>
       )}
-    </Box>
+    </div>
   )
 }
 
