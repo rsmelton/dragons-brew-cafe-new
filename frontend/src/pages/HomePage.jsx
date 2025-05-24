@@ -1,6 +1,5 @@
 import React from 'react'
 import { Box, Flex, Text } from '@chakra-ui/react'
-import '../assets/styles.css'
 
 const HomePage = () => {
   return (
@@ -16,13 +15,13 @@ const HomePage = () => {
         <Text paddingBottom={'1rem'}>The baristas, clad in aprons adorned with dragon motifs, are friendly and knowledgeable, ready to guide you through the menu and recommend the perfect drink to suit your mood. Patrons are often seen relaxing with their laptops or books, enjoying the free Wi-Fi and the comforting warmth of their dragon-emblazoned ceramic mugs.</Text>
         <Text>Dragons Brew isn't just a coffee shop; it's a sanctuary where myth and reality blend seamlessly, where every sip transports you on a journey through legends and fantasies. Whether you're seeking a quick caffeine fix or a tranquil retreat from the urban hustle, Dragons Brew promises an unforgettable experience steeped in both magic and the art of coffee.</Text>
       </Box>
-      <Box>
+      {/* <Box>
         <Text fontSize={'1.5rem'}>Contact</Text>
         <Text>(123)-456-7890</Text>
         <Text>LOCATION: TBA</Text>
         <Text>7:00 am - 4:00 pm</Text>
         <Text>Everyday</Text>
-      </Box>
+      </Box> */}
       <Box>
         <Text fontSize={'1.5rem'}>Reviews</Text>
         <Text>Name: Robert Melton</Text>
