@@ -19,6 +19,7 @@ createRoot(document.getElementById('root')).render(
           <nav className='navbar'>
             <a href="/cart">Cart</a>
             <a href="/menu">Menu</a>
+            <a href="/contact">Contact</a>
             <a href="/home">Home</a>
           </nav>
           <Box display={'flex'} flexDirection={'row'} justifyContent={'flex-start'}>
