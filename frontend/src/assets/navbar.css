@@ -1,7 +1,7 @@
 .navbar { overflow: hidden;
           top: 0;
           width: 100%;
-          background-color: rgba(0, 0, 0, 0.5); 
+          /* background-color: rgba(0, 0, 0, 0.5);  */
           height: 3rem; }
 
 .navbar a { float: right;
