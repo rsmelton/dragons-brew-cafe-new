@@ -16,10 +16,10 @@ const HomePage = () => {
       alignItems={'flex-start'}
       flexDirection={'column'}
       color={'white'}
-      paddingTop={'2rem'}
-      paddingBottom={'2rem'}
-      paddingRight={{base: '5rem', md: '10rem'}}
-      paddingLeft={{base: '5rem', md: '10rem'}}
+      // paddingTop={'2rem'}
+      // paddingBottom={'2rem'}
+      // paddingRight={{base: '5rem', md: '10rem'}}
+      // paddingLeft={{base: '5rem', md: '10rem'}}
       gap={'1.5rem'}
     >
       <Box>

@@ -14,12 +14,17 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ChakraProvider>
       <BrowserRouter>
-        <Box>
+        <Box display={'flex'} flexDirection={'column'}>
           <nav className='navbar'>
             <a href="/cart">Cart</a>
             <a href="/menu">Menu</a>
             <a href="/home">Home</a>
           </nav>
+          <Box display={'flex'} flexDirection={'row'} justifyContent={'flex-end'}>
+            <div className='page-title'>
+              Dragon's Brew Cafe
+            </div>
+          </Box>
           <div className="scrollable-page">
             <Routes>
               <Route path='/' element={<HomePage />} />

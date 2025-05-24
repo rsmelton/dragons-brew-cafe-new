@@ -47,8 +47,8 @@ const CartPage = () => {
     <div>
       <Text 
         textAlign={'center'} 
-        paddingTop={'2rem'}
-        paddingBottom={'2rem'}
+        // paddingTop={'2rem'}
+        // paddingBottom={'2rem'}
         fontSize={'1.5rem'} 
         bgClip={'text'}
         color={'white'}
