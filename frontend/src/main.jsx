@@ -20,7 +20,7 @@ createRoot(document.getElementById('root')).render(
             <a href="/menu">Menu</a>
             <a href="/home">Home</a>
           </nav>
-          <Box display={'flex'} flexDirection={'row'} justifyContent={'flex-end'}>
+          <Box display={'flex'} flexDirection={'row'} justifyContent={'flex-start'}>
             <div className='page-title'>
               Dragon's Brew Cafe
             </div>

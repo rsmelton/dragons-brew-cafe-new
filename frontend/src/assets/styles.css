@@ -1,5 +1,6 @@
 :root { --navbar-height: 3rem; 
-        --page-title-height: 3rem; }
+        --page-title-height: 3rem; 
+        --dragon-body-padding: 2rem; }
 
 body, html { margin: 0;
              padding: 0;
@@ -19,11 +20,11 @@ the user resizes the window.
 .dragon-body { background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('../images/welcomeScreen.jpg');
                background-size: cover;
                background-repeat: no-repeat;
-               height: 100vh; }
+               height: 100vh; 
+               padding: var(--dragon-body-padding); }
 
 /* Navbar */
 .navbar { overflow: hidden;
-          top: 0;
           width: 100%;
           /* background-color: rgba(0, 0, 0, 0.5);  */
           height: var(--navbar-height); }
@@ -31,21 +32,17 @@ the user resizes the window.
 .navbar a { float: right;
             display: block;
             text-align: center;
-            padding: 1rem;
             text-decoration: none;
             font-size: 1rem;
+            padding: 0.5rem;
             color: white; }
 
 /* Page title */
 .page-title { height: var(--page-title-height); 
-              padding-top: 0.5rem;
-              padding-bottom: 0.5rem;
-              padding-right: 1rem;
-              padding-left: 1rem;
               color: white; }
 
 /* Scrollable page */
 .scrollable-page { overflow: auto; 
                    /* Subtracting the height of the navbar from the scrollable-page
                       otherwise we will get weird horizontal white bars */
-                   height: calc(100vh - var(--navbar-height) - var(--page-title-height)); }
+                   height: calc(100vh - var(--navbar-height) - var(--page-title-height) - var(--dragon-body-padding)); }
