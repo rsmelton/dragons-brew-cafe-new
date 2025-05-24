@@ -9,7 +9,7 @@ import sorcerersSmoresMochaImg from '../images/sorcerersSmoresMocha.png'
 import unicornColdBrewImg from '../images/unicornColdBrew.png'
 import wizardsWhiteChocolateMochaImg from '../images/wizardsWhiteChocolateMocha.png'
 import MenuItem from '../components/MenuItem'
-import '../assets/utils.css'
+import '../assets/styles.css'
 
 const MenuPage = () => { 
   return (

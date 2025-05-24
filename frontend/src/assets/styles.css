@@ -1,13 +1,14 @@
+:root { --navbar-height: 3rem; }
+
 body, html { margin: 0;
              padding: 0;
              box-sizing: border-box;
              font-family: sans-serif;
              font-weight: 400; }
 
-
 /* Next to do:
 1. Figure out how to get the background to resize correctly when
-   the user resizes the window.
+the user resizes the window.
 2. Replace the image with a video we generate from runway.
 3. Clean up any remaining issues and do another sweep cleaning code */
 
@@ -18,7 +19,22 @@ body, html { margin: 0;
 
 .scrollable-page { overflow: auto; 
                    /* Subtracting the height of the navbar from the scrollable-page
-                   otherwise we will get weird horizontal white bars */
-                   height: calc(100vh - 3rem); }
+                      otherwise we will get weird horizontal white bars */
+                   height: calc(100vh - var(--navbar-height)); }
 
 .bold { font-weight: bold; }
+
+/* Navbar classes */
+.navbar { overflow: hidden;
+          top: 0;
+          width: 100%;
+          /* background-color: rgba(0, 0, 0, 0.5);  */
+          height: var(--navbar-height); }
+
+.navbar a { float: right;
+            display: block;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            color: white; }

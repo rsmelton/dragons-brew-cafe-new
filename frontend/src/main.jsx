@@ -7,8 +7,8 @@ import { Routes, Route } from "react-router-dom"
 import HomePage from "./pages/HomePage.jsx"
 import MenuPage from "./pages/MenuPage.jsx"
 import CartPage from "./pages/CartPage.jsx"
-import './assets/navbar.css'
-import './assets/utils.css'
+import './assets/styles.css'
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

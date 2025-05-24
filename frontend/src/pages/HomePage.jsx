@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Flex, Text } from '@chakra-ui/react'
-import '../assets/utils.css'
- 
+import '../assets/styles.css'
+
 const HomePage = () => {
 
   // May need later
