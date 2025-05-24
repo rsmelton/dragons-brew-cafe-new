@@ -13,11 +13,13 @@ const HomePage = () => {
 
   return (
     <Flex
-      className={'primary-font'}
       alignItems={'flex-start'}
       flexDirection={'column'}
       color={'white'}
-      padding={{base: '5rem', md: '10rem'}}
+      paddingTop={'2rem'}
+      paddingBottom={'2rem'}
+      paddingRight={{base: '5rem', md: '10rem'}}
+      paddingLeft={{base: '5rem', md: '10rem'}}
       gap={'1.5rem'}
     >
       <Box>

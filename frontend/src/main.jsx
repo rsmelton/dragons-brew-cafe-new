@@ -7,15 +7,14 @@ import { Routes, Route } from "react-router-dom"
 import HomePage from "./pages/HomePage.jsx"
 import MenuPage from "./pages/MenuPage.jsx"
 import CartPage from "./pages/CartPage.jsx"
-import './assets/utils.css'
 import './assets/navbar.css'
+import './assets/utils.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ChakraProvider>
       <BrowserRouter>
-        {/* <App /> */}
-        <Box display={'flex'} flexDirection={'column'} height={'100%'}>
+        <Box>
           <nav className='navbar'>
             <a href="/cart">Cart</a>
             <a href="/menu">Menu</a>

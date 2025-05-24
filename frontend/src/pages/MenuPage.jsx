@@ -14,7 +14,6 @@ import '../assets/utils.css'
 const MenuPage = () => { 
   return (
     <Grid 
-      className='primary-font'
       templateColumns={{base: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr'}}
       templateRows={'1fr'}
     >

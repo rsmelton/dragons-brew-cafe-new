@@ -44,7 +44,7 @@ const CartPage = () => {
   }
 
   return (
-    <div className='primary-font'>
+    <div>
       <Text 
         textAlign={'center'} 
         paddingTop={'2rem'}
