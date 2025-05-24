@@ -21,7 +21,7 @@ createRoot(document.getElementById('root')).render(
             <a href="/home">Home</a>
           </nav>
           <Box display={'flex'} flexDirection={'row'} justifyContent={'flex-start'}>
-            <div className='page-title'>
+            <div className='page-title bold'>
               Dragon's Brew Cafe
             </div>
           </Box>

@@ -1,6 +1,6 @@
 :root { --navbar-height: 3rem; 
         --page-title-height: 3rem; 
-        --dragon-body-padding: 2rem; }
+        --dragon-body-padding: 1rem; }
 
 body, html { margin: 0;
              padding: 0;
@@ -39,6 +39,7 @@ the user resizes the window.
 
 /* Page title */
 .page-title { height: var(--page-title-height); 
+              font-size: 1.5rem;
               color: white; }
 
 /* Scrollable page */
