@@ -24,8 +24,7 @@ the user resizes the window.
                padding: var(--dragon-body-padding); }
 
 /* Navbar */
-.navbar { overflow: hidden;
-          width: 100%;
+.navbar { width: 100%;
           height: var(--navbar-height); }
 
 .navbar a { float: right;
@@ -43,6 +42,5 @@ the user resizes the window.
 
 /* Scrollable page */
 .scrollable-page { overflow: auto; 
-                   /* Subtracting the height of the navbar from the scrollable-page
-                      otherwise we will get weird horizontal white bars */
+                   /* We calc the height, otherwise there will be white horizontal bars */
                    height: calc(100vh - var(--navbar-height) - var(--page-title-height) - var(--dragon-body-padding)); }

@@ -11,7 +11,6 @@ import MenuPage from "./pages/MenuPage.jsx"
 import CartPage from "./pages/CartPage.jsx"
 import './assets/styles.css'
 
-
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ChakraProvider>
