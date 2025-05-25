@@ -32,11 +32,11 @@ const MenuItem = (props) => {
   }
 
   return (
-    <Box padding={10}>
+    <Box padding={'1rem'}>
         <Flex justifyContent={'center'}
               alignItems={'center'}
               flexDir={'column'}
-              gap={'1rem'}
+              gap={'0.5rem'}
         >
           <Image src={props.image} alt={props.name} borderRadius={'50%'} width={{base:'50%', md: '75%'}} margin={'auto'} />
           <Text className={'bold'} color={'white'} textAlign={'center'}>{props.nameAndPrice}</Text>

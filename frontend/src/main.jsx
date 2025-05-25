@@ -10,6 +10,7 @@ import ReviewsPage from './pages/ReviewsPage.jsx'
 import MenuPage from "./pages/MenuPage.jsx"
 import CartPage from "./pages/CartPage.jsx"
 import './assets/styles.css'
+import cartIcon from './images/cart-icon.png'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -17,11 +18,13 @@ createRoot(document.getElementById('root')).render(
       <BrowserRouter>
         <Box display={'flex'} flexDirection={'column'}>
           <nav className='navbar'>
-            <a href="/cart">Cart</a>
-            <a href="/menu">Menu</a>
-            <a href="/reviews">Reviews</a>
-            <a href="/contact">Contact</a>
             <a href="/home">Home</a>
+            <a href="/contact">Contact</a>
+            <a href="/reviews">Reviews</a>
+            <a href="/menu">Menu</a>
+            <a href="/cart">
+              <img className='cart-icon' src={cartIcon} alt="Cart icon" />
+            </a>
           </nav>
           <Box display={'flex'} flexDirection={'row'} justifyContent={'flex-start'}>
             <div className='page-title bold'>

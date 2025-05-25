@@ -24,7 +24,22 @@ the user resizes the window.
                padding: var(--dragon-body-padding); }
 
 /* Navbar */
-.navbar { width: 100%;
+.navbar { display: flex; 
+          flex-direction: row;
+          justify-content: flex-end;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 1rem;
+          width: 100%;
+          height: var(--navbar-height); }
+
+.navbar a { color: white; }
+
+.cart-icon { width: 35px; 
+             height: auto; }
+
+
+/* .navbar { width: 100%;
           height: var(--navbar-height); }
 
 .navbar a { float: right;
@@ -33,7 +48,7 @@ the user resizes the window.
             text-decoration: none;
             font-size: 1rem;
             padding: 0.5rem;
-            color: white; }
+            color: white; } */
 
 /* Page title */
 .page-title { height: var(--page-title-height); 
