@@ -26,7 +26,6 @@ the user resizes the window.
 /* Navbar */
 .navbar { overflow: hidden;
           width: 100%;
-          /* background-color: rgba(0, 0, 0, 0.5);  */
           height: var(--navbar-height); }
 
 .navbar a { float: right;

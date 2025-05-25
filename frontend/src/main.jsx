@@ -6,6 +6,7 @@ import { Box } from "@chakra-ui/react"
 import { Routes, Route } from "react-router-dom"
 import HomePage from "./pages/HomePage.jsx"
 import ContactPage from './pages/ContactPage.jsx'
+import ReviewsPage from './pages/ReviewsPage.jsx'
 import MenuPage from "./pages/MenuPage.jsx"
 import CartPage from "./pages/CartPage.jsx"
 import './assets/styles.css'
@@ -19,6 +20,7 @@ createRoot(document.getElementById('root')).render(
           <nav className='navbar'>
             <a href="/cart">Cart</a>
             <a href="/menu">Menu</a>
+            <a href="/reviews">Reviews</a>
             <a href="/contact">Contact</a>
             <a href="/home">Home</a>
           </nav>
@@ -32,6 +34,7 @@ createRoot(document.getElementById('root')).render(
               <Route path='/' element={<HomePage />} />
               <Route path='/home' element={<HomePage />} />
               <Route path='/contact' element={<ContactPage />} />
+              <Route path='/reviews' element={<ReviewsPage />} />
               <Route path='/menu' element={<MenuPage />} />
               <Route path='/cart' element={<CartPage />} />
             </Routes>

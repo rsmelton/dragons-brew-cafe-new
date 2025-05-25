@@ -6,9 +6,9 @@ import CartItem from '../components/CartItem.jsx'
 
 const CartPage = () => {
 
-  const { items, fetchItems, deleteItem, deleteItems } = useItemStore()
+  const { items, fetchItems, deleteItems } = useItemStore()
 
-  useEffect(() => { fetchItems() }, [fetchItems, items])
+  useEffect(() => { fetchItems() }, items)
 
   const toast = useToast()
 
@@ -53,7 +53,7 @@ const CartPage = () => {
         bgClip={'text'}
         color={'white'}
       >
-        Current Items in Your Cart 🛒
+        Current items in Your cart 🛒
       </Text>
 
       {items.length > 0 && (
@@ -94,7 +94,7 @@ const CartPage = () => {
           flexDir={'column'}
           gap={'1rem'}
         >
-          <Text color={'white'}>Your Cart is currently empty</Text>
+          <Text color={'white'}>Your cart is currently empty</Text>
           <Text color={'white'} textAlign={'center'}>Please click the button below to navigate to the menu to start adding items to your cart.</Text>
           <Link to={'/menu'}><Button bgColor={'white'} color={'black'}>Go to menu</Button></Link>
         </Flex>

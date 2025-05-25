@@ -3,7 +3,7 @@ import { Box, Text } from '@chakra-ui/react'
 
 const ContactPage = () => {
   return (
-    <Box>
+    <Box color={'white'}>
         <Text fontSize={'1.5rem'}>Contact</Text>
         <Text>(123)-456-7890</Text>
         <Text>LOCATION: TBA</Text>
