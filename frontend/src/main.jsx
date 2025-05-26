@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+import { StrictMode, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import { ChakraProvider } from '@chakra-ui/react'
@@ -13,10 +13,19 @@ import CartPage from "./pages/CartPage.jsx"
 import cartIcon from './images/cart-icon.png'
 import './assets/styles.css'
 
+/*
+  The items in the db are appearing on the cart page because we are using a useEffect hook to fetch the items.
+  However, we don't want to have to do that every time the user clicks on one of the nav links
+  Maybe we can achieve this by tracking some piece of state that tells us the number of items in the cart
+
+*/
+
 
 const CartItemCount = () => {
 
-  const { items } = useItemStore()
+  const { items, fetchItems } = useItemStore()
+
+  useEffect(() => { fetchItems() }, [items])
 
   return (
     <Box color={'white'}>{items.length}</Box>
