@@ -39,9 +39,9 @@ createRoot(document.getElementById('root')).render(
         <Box display={'flex'} flexDirection={'column'}>
           <nav className='navbar'>
             <a href="/home">Home</a>
-            <a href="/contact">Contact</a>
-            <a href="/reviews">Reviews</a>
             <a href="/menu">Menu</a>
+            <a href="/reviews">Reviews</a>
+            <a href="/contact">Contact</a>
             <Box display={'flex'} flexDirection={'column'} alignItems={'center'}>
               <CartItemCount />
               <a href="/cart">

@@ -46,27 +46,26 @@ const CartPage = () => {
   return (
     <div>
       <Text 
-        textAlign={'center'} 
         // paddingTop={'2rem'}
         // paddingBottom={'2rem'}
         fontSize={'1.5rem'} 
         bgClip={'text'}
         color={'white'}
       >
-        Current items in Your cart 🛒
+        Cart
       </Text>
 
       {items.length > 0 && (
         <>
-          <TableContainer margin={'auto'} paddingLeft={'5rem'} paddingRight={'5rem'} paddingBottom={'1rem'}>
+          <TableContainer margin={'auto'} paddingBottom={'1rem'}>
             <Table>
-              <Thead>
+              {/* <Thead>
                 <Tr>
                   <Th fontSize={'1rem'} color={'white'}>Name</Th>
                   <Th fontSize={'1rem'} color={'white'}>Price</Th>
                   <Th></Th>
                 </Tr>
-              </Thead>
+              </Thead> */}
               <Tbody backgroundColor={'rgba(0, 0, 0, 0.5)'}>
                 {items.map((item, index) => {
                   return <CartItem key={item._id} item={item} />

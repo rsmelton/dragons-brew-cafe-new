@@ -32,7 +32,7 @@ const CartItem = ({ item }) => {
         <Tr>
           <Td color={'white'} fontSize={{base: '1rem', md: '1.25rem'}}>{item.name}</Td>
           <Td color={'white'} fontSize={{base: '1rem', md: '1.25rem'}}>${item.price}</Td>
-          <Td><IconButton icon={<DeleteIcon />} onClick={() => handleDeleteItem(item._id)} colorScheme='green'></IconButton></Td>
+          <Td><IconButton icon={<DeleteIcon />} onClick={() => handleDeleteItem(item._id)}></IconButton></Td>
         </Tr>
     )
 }

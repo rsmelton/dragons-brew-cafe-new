@@ -19,9 +19,9 @@ const MenuPage = () => {
     >
       <MenuItem 
         image={dragonsFireLatteImg} 
-        name={"Dragons Fire Latte"} 
+        name={"Dragon's Fire Latte"} 
         price={"7.95"}
-        nameAndPrice={"Dragons Fire Latte - $7.95"} 
+        nameAndPrice={"Dragon's Fire Latte - $7.95"} 
         description={"A spicy twist on a classic latte with a hint of cinnamon and cayenne pepper, topped with a good amount of whipped cream"} 
       />
       <MenuItem 

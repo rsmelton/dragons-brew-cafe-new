@@ -32,15 +32,15 @@ const MenuItem = (props) => {
   }
 
   return (
-    <Box padding={'1rem'}>
+    <Box paddingLeft={'1rem'} paddingTop={'1rem'} paddingRight={'1rem'} paddingBottom={'2rem'} >
         <Flex justifyContent={'center'}
               alignItems={'center'}
               flexDir={'column'}
-              gap={'0.5rem'}
+              gap={'0.25rem'}
         >
           <Image src={props.image} alt={props.name} borderRadius={'50%'} width={{base:'50%', md: '75%'}} margin={'auto'} />
           <Text className={'bold'} color={'white'} textAlign={'center'}>{props.nameAndPrice}</Text>
-          <Text padding={'1rem'} color={'white'} textAlign={'center'}>{props.description}</Text>
+          <Text color={'white'} textAlign={'center'}>{props.description}</Text>
           <Button bgColor={'white'} color={'black'} onClick={handleAddToCart}>Add to Cart</Button>
         </Flex>
     </Box>
