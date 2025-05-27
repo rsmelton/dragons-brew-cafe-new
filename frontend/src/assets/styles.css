@@ -8,6 +8,9 @@ body, html { margin: 0;
              font-family: sans-serif;
              font-weight: 400; }
 
+#root { position: relative;
+        z-index: 0; }
+
 .bold { font-weight: bold; }
 
 /* Next to do:
@@ -17,11 +20,29 @@ the user resizes the window.
 3. Clean up any remaining issues and do another sweep cleaning code */
 
 /* Dragon body */
-.dragon-body { background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('../images/welcomeScreen.jpg');
+/* .dragon-body { background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('../images/welcomeScreen.jpg');
                background-size: cover;
                background-repeat: no-repeat;
                height: 100vh; 
-               padding: var(--dragon-body-padding); }
+               padding: var(--dragon-body-padding); } */
+
+/* .dragon-body { height: 100vh; 
+               padding: var(--dragon-body-padding); } */
+
+.overlay { background-color: rgba(0, 0, 0, 0.65); 
+           z-index: -1; 
+           height: 100vh; 
+           padding: var(--dragon-body-padding);}
+
+.dragon-video { position: fixed;
+                top: 0;
+                left: 0;
+                min-width: 100%;
+                min-height: 100%;
+                object-fit: cover;
+                z-index: -2; }
+
+/* .dragon-video::before { background: rgba(0, 0, 0, 0.65); } */
 
 /* Navbar */
 .navbar { display: flex; 
