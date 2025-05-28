@@ -3,6 +3,7 @@ import { Flex, Text, Table, Thead, Tbody, Tr, Th, TableContainer, Button, useToa
 import { Link } from "react-router-dom"
 import { useItemStore } from '../store/item.store.js'
 import CartItem from '../components/CartItem.jsx'
+import '../assets/styles.css'
 
 const CartPage = () => {
 
@@ -57,22 +58,27 @@ const CartPage = () => {
 
       {items.length > 0 && (
         <>
-          <TableContainer margin={'auto'} paddingBottom={'1rem'}>
+          <table className='cart-table'>
+            {items.map((item, index) => {
+              return <CartItem key={item._id} item={item} />
+            })}
+          </table>
+          {/* <TableContainer margin={'auto'} paddingBottom={'1rem'}>
             <Table>
-              {/* <Thead>
+              <Thead>
                 <Tr>
                   <Th fontSize={'1rem'} color={'white'}>Name</Th>
                   <Th fontSize={'1rem'} color={'white'}>Price</Th>
                   <Th></Th>
                 </Tr>
-              </Thead> */}
+              </Thead>
               <Tbody backgroundColor={'rgba(0, 0, 0, 0.5)'}>
                 {items.map((item, index) => {
                   return <CartItem key={item._id} item={item} />
                 })}
               </Tbody>
             </Table>
-          </TableContainer>
+          </TableContainer> */}
           <Flex
             justifyContent={'center'}
             alignItems={'center'}

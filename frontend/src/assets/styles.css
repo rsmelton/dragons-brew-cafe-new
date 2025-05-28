@@ -48,7 +48,7 @@ the user resizes the window.
 .navbar { display: flex; 
           flex-direction: row;
           justify-content: flex-end;
-          align-items: center;
+          align-items: flex-end;
           flex-wrap: wrap;
           gap: 1rem;
           width: 100%;
@@ -56,7 +56,7 @@ the user resizes the window.
 
 .navbar a { color: white; }
 
-.cart-icon { width: 35px; 
+.cart-icon { width: 24px; 
              height: auto; }
 
 
@@ -73,10 +73,34 @@ the user resizes the window.
 
 /* Page title */
 .page-title { height: var(--page-title-height); 
-              font-size: 1.5rem;
+              font-family: "MedievalSharp", cursive;
+              font-size: 2rem;
+              text-transform: uppercase;
               color: white; }
 
 /* Scrollable page */
 .scrollable-page { overflow: auto; 
                    /* We calc the height, otherwise there will be white horizontal bars */
                    height: calc(100vh - var(--navbar-height) - var(--page-title-height) - var(--dragon-body-padding)); }
+
+.home-page-logo-container { display: flex; 
+                            flex-direction: row; 
+                            justify-content: center;
+                            align-items: center; }
+
+.home-page-logo { width: 80%; 
+                  height: auto; }
+
+/* Cart page table */
+.cart-table { border-collapse: separate;
+              border-spacing: 0rem 1rem;
+              width: 100%;
+              height: 100vh;
+              background-color: black; 
+              color: white; }
+
+/* .cart-table-item { border: 1px solid white; } */
+
+.trashcan-icon { width: 25px;
+                 height: auto; 
+                 cursor: pointer; }
