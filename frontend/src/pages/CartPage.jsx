@@ -60,7 +60,7 @@ const CartPage = () => {
         <>
           <table className='cart-table'>
             {cartItems.map((cartItem, index) => {
-              return <CartItem key={cartItem._id} item={cartItem} />
+              return <CartItem key={cartItem._id} cartItem={cartItem} />
             })}
           </table>
           <Flex

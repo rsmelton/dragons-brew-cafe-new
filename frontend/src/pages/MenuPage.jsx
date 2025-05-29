@@ -17,11 +17,11 @@ const MenuPage = () => {
     >
       {menuItems.map((menuItem) => {
         return <MenuItem 
-          name={menuItem.name}
-          price={menuItem.price}   
-          description={menuItem.description} 
-          image={menuItem.imageURLString}
-        />
+                  name={menuItem.name}
+                  price={menuItem.price}   
+                  description={menuItem.description} 
+                  image={menuItem.imageURLString}
+               />
       })}
     </Grid>
   )
