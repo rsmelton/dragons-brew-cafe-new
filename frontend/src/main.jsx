@@ -4,14 +4,13 @@ import { BrowserRouter } from 'react-router-dom'
 import { ChakraProvider } from '@chakra-ui/react'
 import { Box } from "@chakra-ui/react"
 import { Routes, Route } from "react-router-dom"
-import { useItemStore } from './store/item.store.js'
+import { useCartItemStore } from './store/cartItem.store.js'
 import HomePage from "./pages/HomePage.jsx"
 import AboutPage from './pages/AboutPage.jsx'
 import ContactPage from './pages/ContactPage.jsx'
 import ReviewsPage from './pages/ReviewsPage.jsx'
 import MenuPage from "./pages/MenuPage.jsx"
 import CartPage from "./pages/CartPage.jsx"
-import cartIcon from './images/cart-icon.png'
 import './assets/styles.css'
 
 /*
@@ -24,12 +23,12 @@ import './assets/styles.css'
 
 const CartItemCount = () => {
 
-  const { items, fetchItems } = useItemStore()
+  const { cartItems, fetchCartItems } = useCartItemStore()
 
-  useEffect(() => { fetchItems() }, [items])
+  useEffect(() => { fetchCartItems() }, [cartItems])
 
   return (
-    <Box color={'white'}>{items.length}</Box>
+    <Box color={'white'}>{cartItems.length}</Box>
   )
 }
 
@@ -47,7 +46,7 @@ createRoot(document.getElementById('root')).render(
             <Box display={'flex'} flexDirection={'column'} alignItems={'center'}>
               <CartItemCount />
               <a href="/cart">
-                <img className='cart-icon' src={cartIcon} alt="Cart icon" />
+                <img className='cart-icon' src={'/images/cart-icon.png'} alt="Cart icon" />
               </a>
             </Box>
           </nav>

@@ -1,17 +1,17 @@
 import React from 'react'
 import { Tr, Td, useToast, IconButton } from '@chakra-ui/react'
 import { DeleteIcon } from '@chakra-ui/icons'
-import { useItemStore } from '../store/item.store'
-import trashcanIcon from '../images/trashcan-icon.png'
+import { useCartItemStore } from '../store/cartItem.store.js'
+// import AddOrRemoveCartItemClicker from './AddOrRemoveCartItemClicker'
 import '../assets/styles.css'
 
-const CartItem = ({ item }) => {
+const CartItem = ({ cartItem }) => {
 
-    const { deleteItem } = useItemStore() 
+    const { deleteCartItem } = useCartItemStore() 
     const toast = useToast()
 
-    const handleDeleteItem = async (itemId) => {
-        const { success, message } = await deleteItem(itemId)
+    const handleDeleteCartItem = async (cartItemId) => {
+        const { success, message } = await deleteCartItem(cartItemId)
     
         if (success === false) {
           toast({
@@ -31,18 +31,12 @@ const CartItem = ({ item }) => {
       }
 
     return (
-      // <Tr>
-      //   <Td color={'white'} fontSize={{base: '1rem', md: '1.25rem'}}>{item.name}</Td>
-      //   <Td color={'white'} fontSize={{base: '1rem', md: '1.25rem'}}>${item.price}</Td>
-      //   {/* <td><img className='trashcan-icon' src={trashcanIcon} alt="trashcan icon" onClick={() => handleDeleteItem(item._id)} /></td> */}
-      //   <Td><IconButton icon={<DeleteIcon />} onClick={() => handleDeleteItem(item._id)}></IconButton></Td>
-      // </Tr>
-
       <tr>
-        <td>{item.name}</td>
-        <td>${item.price}</td>
+        <td>{cartItem.name}</td>
+        <td>${cartItem.price}</td>
         <td>
-          <img className='trashcan-icon' src={trashcanIcon} alt="trashcan icon" onClick={() => handleDeleteItem(item._id)} />
+          {/* <AddOrRemoveCartItemClicker key={item._id} item={item} /> */}
+          <img className='trashcan-icon' src={'/images/trashcan-icon.png'} alt="trashcan icon" onClick={() => handleDeleteCartItem(cartItem._id)} />
         </td>
       </tr>
     )

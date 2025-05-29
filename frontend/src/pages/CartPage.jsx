@@ -1,31 +1,31 @@
 import React, { useEffect } from 'react'
 import { Flex, Text, Table, Thead, Tbody, Tr, Th, TableContainer, Button, useToast } from '@chakra-ui/react'
 import { Link } from "react-router-dom"
-import { useItemStore } from '../store/item.store.js'
+import { useCartItemStore } from '../store/cartItem.store.js'
 import CartItem from '../components/CartItem.jsx'
 import '../assets/styles.css'
 
 const CartPage = () => {
 
-  const { items, fetchItems, deleteItems } = useItemStore()
+  const { cartItems, fetchCartItems, deleteCartItems } = useCartItemStore()
 
-  useEffect(() => { fetchItems() }, [items])
+  useEffect(() => { fetchCartItems() }, [cartItems])
 
   const toast = useToast()
 
-  const handleFindTotalPrice = (items) => {
+  const handleFindTotalPrice = (cartItems) => {
     let totalPrice = 0
 
-    items.map((item) => {
-      totalPrice += item.price
+    cartItems.map((cartItem) => {
+      totalPrice += cartItem.price
     })
 
     return totalPrice.toFixed(2)
   }
 
-  const handleDeleteAllItems = async () => {
+  const handleDeleteAllCartItems = async () => {
     // delete all items from database to show that the user "purchased" their items
-    const {success, message} = await deleteItems()
+    const {success, message} = await deleteCartItems()
 
     if (success === false) {
       toast({
@@ -56,43 +56,26 @@ const CartPage = () => {
         Cart
       </Text>
 
-      {items.length > 0 && (
+      {cartItems.length > 0 && (
         <>
           <table className='cart-table'>
-            {items.map((item, index) => {
-              return <CartItem key={item._id} item={item} />
+            {cartItems.map((cartItem, index) => {
+              return <CartItem key={cartItem._id} item={cartItem} />
             })}
           </table>
-          {/* <TableContainer margin={'auto'} paddingBottom={'1rem'}>
-            <Table>
-              <Thead>
-                <Tr>
-                  <Th fontSize={'1rem'} color={'white'}>Name</Th>
-                  <Th fontSize={'1rem'} color={'white'}>Price</Th>
-                  <Th></Th>
-                </Tr>
-              </Thead>
-              <Tbody backgroundColor={'rgba(0, 0, 0, 0.5)'}>
-                {items.map((item, index) => {
-                  return <CartItem key={item._id} item={item} />
-                })}
-              </Tbody>
-            </Table>
-          </TableContainer> */}
           <Flex
             justifyContent={'center'}
             alignItems={'center'}
             flexDir={'column'}
             gap={'1rem'}
           >
-            <Text color={'white'} fontSize={{base: '1rem', md: '1.25rem'}}>Your total is ${handleFindTotalPrice(items)}. Click below to purchase.</Text>
-            <Button bgColor={'white'} color={'black'} onClick={handleDeleteAllItems}>Purchase</Button>
+            <Text color={'white'} fontSize={{base: '1rem', md: '1.25rem'}}>Your total is ${handleFindTotalPrice(cartItems)}. Click below to purchase.</Text>
+            <Button bgColor={'white'} color={'black'} onClick={handleDeleteAllCartItems}>Purchase</Button>
           </Flex>
         </>
       )}
 
-      {items.length === 0 && (
-        // render empty page here
+      {cartItems.length === 0 && (
         <Flex
           justifyContent={'center'}
           alignItems={'center'}

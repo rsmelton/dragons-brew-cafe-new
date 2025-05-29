@@ -1,16 +1,16 @@
 import React from 'react'
 import { Box, Flex, Image, Text, Button, useToast } from '@chakra-ui/react'
-import { useItemStore } from '../store/item.store'
+import { useCartItemStore } from '../store/cartItem.store.js'
 
 const MenuItem = (props) => {
 
   const toast = useToast()
-  const { createItem } = useItemStore()
+  const { createCartItem } = useCartItemStore()
 
   const handleAddToCart = async () => {
 
     // Changed price: props.price to price: Number(props.price)
-    const { success, message } = await createItem({
+    const { success, message } = await createCartItem({
       name: props.name, price: Number(props.price)
     })
 
@@ -38,8 +38,8 @@ const MenuItem = (props) => {
               flexDir={'column'}
               gap={'0.25rem'}
         >
-          <Image src={props.image} alt={props.name} borderRadius={'50%'} width={{base:'50%', md: '75%'}} margin={'auto'} />
-          <Text className={'bold'} color={'white'} textAlign={'center'}>{props.nameAndPrice}</Text>
+          <Image src={`/images/${props.image}`} alt={props.name} borderRadius={'50%'} width={{base:'50%', md: '75%'}} margin={'auto'} />
+          <Text className={'bold'} color={'white'} textAlign={'center'}>{`${props.name} - ${props.price}`}</Text>
           <Text color={'white'} textAlign={'center'}>{props.description}</Text>
           <Button bgColor={'white'} color={'black'} onClick={handleAddToCart}>Add to Cart</Button>
         </Flex>
