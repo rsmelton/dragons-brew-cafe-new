@@ -83,6 +83,7 @@ the user resizes the window.
                    /* We calc the height, otherwise there will be white horizontal bars */
                    height: calc(100vh - var(--navbar-height) - var(--page-title-height) - var(--dragon-body-padding)); }
 
+/* Home page logo */
 .home-page-logo-container { display: flex; 
                             flex-direction: row; 
                             justify-content: center;
@@ -90,6 +91,22 @@ the user resizes the window.
 
 .home-page-logo { width: 80%; 
                   height: auto; }
+
+
+/* Cart item clicker */
+.cart-item-clicker-container { display: flex;
+                               flex-direction: row;
+                               flex-wrap: nowrap; 
+                               justify-content: center;
+                               align-items: center;
+                               color: white;
+                               gap: 1rem; }
+
+.cart-minus-icon { cursor: pointer; }
+
+.cart-item-count { font-size: 2rem; }
+
+.cart-plus-icon { cursor: pointer; }
 
 /* Cart page table */
 .cart-table { border-collapse: separate;
