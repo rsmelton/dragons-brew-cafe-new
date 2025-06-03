@@ -1,45 +1,32 @@
 import React from 'react'
-import { Tr, Td, useToast, IconButton } from '@chakra-ui/react'
-import { DeleteIcon } from '@chakra-ui/icons'
-import { useCartItemStore } from '../store/cartItem.store.js'
-// import AddOrRemoveCartItemClicker from './AddOrRemoveCartItemClicker'
+import { useCart } from '../context/CartContext.jsx'
 import '../assets/styles.css'
 
-const CartItem = ({ cartItem }) => {
+const CartItem = ({ cartItemID, cartItemQuantity, menuItemName, menuItemPrice }) => {
 
-    const { deleteCartItem } = useCartItemStore() 
-    const toast = useToast()
+  const {handleDeleteCartItem, handleModifyCartItemQuantity} = useCart()
 
-    const handleDeleteCartItem = async (cartItemId) => {
-        const { success, message } = await deleteCartItem(cartItemId)
-    
-        if (success === false) {
-          toast({
-            title: "Error",
-            description: message,
-            status: "error",
-            isClosable: true
-          })
-        } else {
-          toast({
-            title: "Success",
-            description: "Item removed from cart successfully!",
-            status: "success",
-            isClosable: true
-          })
-        }
-      }
-
-    return (
-      <tr>
-        <td>{cartItem.name}</td>
-        <td>${cartItem.price}</td>
-        <td>
-          {/* <AddOrRemoveCartItemClicker key={item._id} item={item} /> */}
-          <img className='trashcan-icon' src={'/images/trashcan-icon.png'} alt="trashcan icon" onClick={() => handleDeleteCartItem(cartItem._id)} />
-        </td>
-      </tr>
-    )
+  return (
+    <tr>
+      <td>{menuItemName}</td>
+      <td>${menuItemPrice}</td>
+      <td>
+        <div className='cart-item-clicker-container'>
+          {/* Here we are decrementing the quantitiy of the cart item */}
+          {(cartItemQuantity > 1) && (
+            <img className='cart-minus-icon' src={'/images/minus-icon.png'} onClick={() => handleModifyCartItemQuantity(cartItemID, -1)} alt="Minus Icon" />
+          )}
+          {/* Here we are removing the cartItem all together */}
+          {cartItemQuantity === 1 && (
+            <img className='trashcan-icon' src={'/images/trashcan-icon.png'} onClick={() => handleDeleteCartItem(cartItemID)} alt="Trashcan Icon" />
+          )}
+          <div className='cart-item-count'>{cartItemQuantity}</div>
+          {/* Here we are incrementing the quantitiy of the cart item */}
+          <img className='cart-plus-icon' src={'/images/plus-icon.png'} onClick={() => handleModifyCartItemQuantity(cartItemID, 1)} alt="Plus Icon" />
+        </div>
+      </td>
+    </tr>
+  )
 }
 
 export default CartItem
