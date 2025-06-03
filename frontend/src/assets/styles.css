@@ -90,7 +90,8 @@ the user resizes the window.
                             align-items: center; }
 
 .home-page-logo { width: 80%; 
-                  height: auto; }
+                  height: auto; 
+                  opacity: 0.5; }
 
 
 /* Cart item clicker */
