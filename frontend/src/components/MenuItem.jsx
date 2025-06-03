@@ -1,35 +1,10 @@
 import React from 'react'
-import { Box, Flex, Image, Text, Button, useToast } from '@chakra-ui/react'
-import { useCartItemStore } from '../store/cartItem.store.js'
+import { Box, Flex, Image, Text, Button } from '@chakra-ui/react'
+import { useCart } from '../context/CartContext.jsx'
 
-const MenuItem = (props) => {
+const MenuItem = ({menuItemID, menuItemName, menuItemPrice, menuItemDescription, menuItemImageURLString}) => {
 
-  const toast = useToast()
-  const { createCartItem } = useCartItemStore()
-
-  const handleAddToCart = async () => {
-
-    // Changed price: props.price to price: Number(props.price)
-    const { success, message } = await createCartItem({
-      name: props.name, price: Number(props.price)
-    })
-
-    if (success === false) {
-      toast({
-        title: "Error",
-        description: message,
-        status: "error",
-        isClosable: true
-      })
-    } else {
-      toast({
-        title: "Success",
-        description: "Added to cart successfully",
-        status: "success",
-        isClosable: true
-      })
-    }
-  }
+  const {handleAddToCart} = useCart()
 
   return (
     <Box paddingLeft={'1rem'} paddingTop={'1rem'} paddingRight={'1rem'} paddingBottom={'2rem'} >
@@ -38,10 +13,10 @@ const MenuItem = (props) => {
               flexDir={'column'}
               gap={'0.25rem'}
         >
-          <Image src={`/images/${props.image}`} alt={props.name} borderRadius={'50%'} width={{base:'50%', md: '75%'}} margin={'auto'} />
-          <Text className={'bold'} color={'white'} textAlign={'center'}>{`${props.name} - ${props.price}`}</Text>
-          <Text color={'white'} textAlign={'center'}>{props.description}</Text>
-          <Button bgColor={'white'} color={'black'} onClick={handleAddToCart}>Add to Cart</Button>
+          <Image src={`/images/${menuItemImageURLString}`} alt={menuItemName} borderRadius={'50%'} width={{base:'50%', md: '75%'}} margin={'auto'} />
+          <Text className={'bold'} color={'white'} textAlign={'center'}>{`${menuItemName} - $${menuItemPrice}`}</Text>
+          <Text color={'white'} textAlign={'center'}>{menuItemDescription}</Text>
+          <Button bgColor={'white'} color={'black'} onClick={() => handleAddToCart(menuItemID)}>Add to Cart</Button>
         </Flex>
     </Box>
   )
