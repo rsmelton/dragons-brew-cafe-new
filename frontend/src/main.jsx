@@ -1,6 +1,6 @@
 import { StrictMode, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import { ChakraProvider, Box } from '@chakra-ui/react'
 import { CartProvider, useCart } from './context/CartContext.jsx'
 import HomePage from "./pages/HomePage.jsx"
@@ -28,16 +28,24 @@ createRoot(document.getElementById('root')).render(
         <BrowserRouter>
           <Box display={'flex'} flexDirection={'column'}>
             <nav className='navbar'>
-              <a href="/home">Home</a>
+              <Link to="/home">Home</Link>
+              <Link to="/about">About</Link>
+              <Link to="/menu">Menu</Link>
+              <Link to="/reviews">Reviews</Link>
+              <Link to="/contact">Contact</Link>
+              {/* <a href="/home">Home</a>
               <a href="/about">About</a>
               <a href="/menu">Menu</a>
               <a href="/reviews">Reviews</a>
-              <a href="/contact">Contact</a>
+              <a href="/contact">Contact</a> */}
               <Box display={'flex'} flexDirection={'column'} alignItems={'center'}>
                 <CartTotalQuantity />
-                <a href="/cart">
+                <Link to="/cart">
                   <img className='cart-icon' src={'/images/cart-icon.png'} alt="Cart icon" />
-                </a>
+                </Link>
+                {/* <a href="/cart">
+                  <img className='cart-icon' src={'/images/cart-icon.png'} alt="Cart icon" />
+                </a> */}
               </Box>
             </nav>
             <Box display={'flex'} flexDirection={'row'} justifyContent={'flex-start'}>
