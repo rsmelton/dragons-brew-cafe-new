@@ -1,20 +1,17 @@
 import mongoose from "mongoose"
 
 const cartItemSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        // required: true
+    _id: {
+        type: mongoose.Schema.Types.ObjectId,
     },
-    price: {
+    quantity: {
         type: Number,
-        // required: true
     },
 }, {
-    collection: 'cart' // this forces mongodb to name the collection 'cart'
-}, {
+    collection: 'cart', // this forces mongodb to name the collection 'cart'
     timestamps: true
 })
 
-const CartItem = mongoose.model("cartItem", cartItemSchema)
+const CartItemModel = mongoose.model("cartItem", cartItemSchema)
 
-export default CartItem
+export default CartItemModel

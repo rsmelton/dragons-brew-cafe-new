@@ -14,11 +14,10 @@ const menuItemSchema = new mongoose.Schema({
         type: String
     },
 }, {
-    collection: 'menu' // this forces mongodb to name the collection 'menu'
-}, {
+    collection: 'menu', // this forces mongodb to name the collection 'menu'
     timestamps: true
 })
 
-const MenuItem = mongoose.model("menuItem", menuItemSchema)
+const MenuItemModel = mongoose.model("menuItem", menuItemSchema)
 
-export default MenuItem
+export default MenuItemModel
