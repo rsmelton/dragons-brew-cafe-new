@@ -33,19 +33,11 @@ createRoot(document.getElementById('root')).render(
               <Link to="/menu">Menu</Link>
               <Link to="/reviews">Reviews</Link>
               <Link to="/contact">Contact</Link>
-              {/* <a href="/home">Home</a>
-              <a href="/about">About</a>
-              <a href="/menu">Menu</a>
-              <a href="/reviews">Reviews</a>
-              <a href="/contact">Contact</a> */}
               <Box display={'flex'} flexDirection={'column'} alignItems={'center'}>
                 <CartTotalQuantity />
                 <Link to="/cart">
                   <img className='cart-icon' src={'/images/cart-icon.png'} alt="Cart icon" />
                 </Link>
-                {/* <a href="/cart">
-                  <img className='cart-icon' src={'/images/cart-icon.png'} alt="Cart icon" />
-                </a> */}
               </Box>
             </nav>
             <Box display={'flex'} flexDirection={'row'} justifyContent={'flex-start'}>
