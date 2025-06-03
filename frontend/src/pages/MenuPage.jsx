@@ -1,29 +1,43 @@
 import React, { useEffect } from 'react'
-import { Grid } from '@chakra-ui/react'
-import { useMenuItemStore } from '../store/menuItem.store.js'
-import MenuItem from '../components/MenuItem'
+import { Flex, Text, Grid } from '@chakra-ui/react'
+import { useCart } from '../context/CartContext.jsx'
+import MenuItem from '../components/MenuItem.jsx'
 import '../assets/styles.css'
 
 const MenuPage = () => { 
 
-  const { menuItems, fetchMenuItems } = useMenuItemStore()
+  const {menuItems, fetchMenuItems, getMenuItemID, getMenuItemName, 
+         getMenuItemPrice, getMenuItemDescription, getMenuItemImageURLString} = useCart()
 
   useEffect(() => { fetchMenuItems() }, [])
 
   return (
-    <Grid 
-      templateColumns={{base: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr'}}
-      templateRows={'1fr'}
-    >
-      {menuItems.map((menuItem) => {
-        return <MenuItem 
-                  name={menuItem.name}
-                  price={menuItem.price}   
-                  description={menuItem.description} 
-                  image={menuItem.imageURLString}
-               />
-      })}
-    </Grid>
+    <>
+      {menuItems.length === 0 ? (
+        <Flex
+          justifyContent={'center'}
+          alignItems={'center'}
+          flexDir={'row'}
+        >
+          <Text color={'white'} fontSize={'1.5rem'}>Loading menu...</Text>
+        </Flex>
+        ) : (
+          <Grid 
+            templateColumns={{base: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr'}}
+            templateRows={'1fr'}
+          >
+            {menuItems.map((menuItem) => (
+              <MenuItem key={getMenuItemID(menuItem)} 
+                        menuItemID={getMenuItemID(menuItem)} 
+                        menuItemName={getMenuItemName(menuItem)}
+                        menuItemPrice={getMenuItemPrice(menuItem)}
+                        menuItemDescription={getMenuItemDescription(menuItem)}
+                        menuItemImageURLString={getMenuItemImageURLString(menuItem)} />
+            ))}
+          </Grid>
+        )
+      }
+    </>
   )
 }
 
