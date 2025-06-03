@@ -118,6 +118,6 @@ the user resizes the window.
 
 /* .cart-table-item { border: 1px solid white; } */
 
-.trashcan-icon { width: 25px;
+.trashcan-icon { width: 50px;
                  height: auto; 
                  cursor: pointer; }
