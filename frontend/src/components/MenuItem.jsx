@@ -14,8 +14,8 @@ const MenuItem = ({menuItemID, menuItemName, menuItemPrice, menuItemDescription,
               gap={'0.25rem'}
         >
           <Image src={`/images/${menuItemImageURLString}`} alt={menuItemName} borderRadius={'50%'} width={{base:'50%', md: '75%'}} margin={'auto'} />
-          <Text className={'bold'} color={'white'} textAlign={'center'}>{`${menuItemName} - $${menuItemPrice}`}</Text>
-          <Text color={'white'} textAlign={'center'}>{menuItemDescription}</Text>
+          <Text className={'bold'} textAlign={'center'}>{`${menuItemName} - $${menuItemPrice}`}</Text>
+          <Text textAlign={'center'}>{menuItemDescription}</Text>
           <Button bgColor={'white'} color={'black'} onClick={() => handleAddToCart(menuItemID)}>Add to Cart</Button>
         </Flex>
     </Box>
