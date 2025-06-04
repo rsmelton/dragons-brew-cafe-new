@@ -57,7 +57,7 @@ const CartItem = ({ cartItemID, cartItemQuantity, menuItemName, menuItemPrice })
           {cartItemQuantity === 1 && (
             <img className='trashcan-icon' src={'/images/trashcan-icon.png'} onClick={() => handleDeleteCartItem(cartItemID)} alt="Trashcan Icon" />
           )}
-          <div className='cart-item-quantity'>{cartItemQuantity}</div>
+          <div>{cartItemQuantity}</div>
           {/* Here we are incrementing the quantitiy of the cart item */}
           <img className='cart-plus-icon' src={'/images/plus-icon.png'} onClick={() => handleModifyCartItemQuantity(cartItemID, 1)} alt="Plus Icon" />
         </div>

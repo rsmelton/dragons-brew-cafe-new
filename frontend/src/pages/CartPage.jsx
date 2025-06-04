@@ -111,16 +111,21 @@ const CartPage = () => {
               <td style={{textAlign: 'left'}}>Total</td>
               <td style={{textAlign: 'right'}} colSpan={'6'}>${handleFindTotalPrice(cartItems)}</td>
             </tr>
+            <tr>
+              <td style={{textAlign: 'right'}} colSpan={'7'}>
+                <Button bgColor={'white'} color={'black'} onClick={handleDeleteAllCartItems}>Purchase</Button>
+              </td>
+            </tr>
           </table>
-          <Flex
+          {/* <Flex
             justifyContent={'center'}
             alignItems={'center'}
             flexDir={'column'}
             // gap={'1rem'}
           >
-            {/* <Text textAlign={'center'}>Your total is ${handleFindTotalPrice(cartItems)}. Click below to purchase.</Text> */}
+            <Text textAlign={'center'}>Your total is ${handleFindTotalPrice(cartItems)}. Click below to purchase.</Text>
             <Button bgColor={'white'} color={'black'} onClick={handleDeleteAllCartItems}>Purchase</Button>
-          </Flex>
+          </Flex> */}
         </>
       )}
     </div>

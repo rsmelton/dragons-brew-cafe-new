@@ -102,21 +102,21 @@ the user resizes the window.
                                gap: 0.5rem; }
 
 .cart-minus-icon { cursor: pointer; 
-                   width: 37.5px; 
+                   width: 25px; 
                    height: auto; }
 
 .cart-item-quantity { font-size: 1.5rem; }
 
 .cart-plus-icon { cursor: pointer; 
-                  width: 37.5px; 
+                  width: 25px; 
                   height: auto; }
 
 /* Cart page table */
 .cart-table { border-collapse: separate;
               border-spacing: 0rem 1rem;
-              width: 100%;
-              background-color: rgba(0, 0, 0, 0.65); }
+              /* width: 100%; */
+              /* background-color: rgba(0, 0, 0, 0.65);  */ }
 
-.trashcan-icon { width: 37.5px;
+.trashcan-icon { width: 25px;
                  height: auto; 
                  cursor: pointer; }
