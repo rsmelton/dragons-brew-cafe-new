@@ -100,8 +100,7 @@ the user resizes the window.
                                flex-wrap: nowrap; 
                                justify-content: center;
                                align-items: center;
-                               color: white;
-                               gap: 1rem; }
+                               gap: 0.5rem; }
 
 .cart-minus-icon { cursor: pointer; 
                    width: 37.5px; 
@@ -116,8 +115,6 @@ the user resizes the window.
 /* Cart page table */
 .cart-table { border-collapse: separate;
               border-spacing: 0rem 1rem;
-              padding-left: 5rem;
-              padding-right: 5rem;
               width: 100%;
               background-color: rgba(0, 0, 0, 0.65); 
               color: white; }

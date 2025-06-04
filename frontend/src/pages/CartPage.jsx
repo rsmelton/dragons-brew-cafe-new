@@ -79,7 +79,8 @@ const CartPage = () => {
           to access otherwise we would be accessing something that is undefined */}
       {cartItems.length > 0 && Object.keys(menuItemMap).length !== 0 && (
         <>
-          <Grid
+          {/* Grid implementation */}
+          {/* <Grid
             templateColumns={{base: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr'}}
             templateRows={'1fr'}
             backgroundColor={'rgba(0, 0, 0, 0.45)'}
@@ -91,9 +92,9 @@ const CartPage = () => {
                                  menuItemName={getMenuItemName(menuItem)} 
                                  menuItemPrice={getMenuItemPrice(menuItem)} />
             })}
-          </Grid>
+          </Grid> */}
           {/* Table implementation */}
-          {/* <table className='cart-table'>
+          <table className='cart-table'>
             {cartItems.map((cartItem) => {
               const menuItem = menuItemMap[getCartItemID(cartItem)]
               return <CartItem cartItemID={getCartItemID(cartItem)}
@@ -101,14 +102,14 @@ const CartPage = () => {
                                menuItemName={getMenuItemName(menuItem)} 
                                menuItemPrice={getMenuItemPrice(menuItem)} />
             })}
-          </table> */}
+          </table>
           <Flex
             justifyContent={'center'}
             alignItems={'center'}
             flexDir={'column'}
             gap={'1rem'}
           >
-            <Text textAlign={'center'} fontSize={{base: '1rem', md: '1.25rem'}}>Your total is ${handleFindTotalPrice(cartItems)}. Click below to purchase.</Text>
+            <Text textAlign={'center'}>Your total is ${handleFindTotalPrice(cartItems)}. Click below to purchase.</Text>
             <Button bgColor={'white'} color={'black'} onClick={handleDeleteAllCartItems}>Purchase</Button>
           </Flex>
         </>
