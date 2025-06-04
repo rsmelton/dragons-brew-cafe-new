@@ -1,5 +1,5 @@
 import React from 'react'
-import { useCart } from '../context/CartContext.jsx'
+import { useCart } from '../context/AppContext.jsx'
 import { Flex, Text } from '@chakra-ui/react'
 import '../assets/styles.css'
 
@@ -68,7 +68,6 @@ const CartItem = ({ cartItemID, cartItemQuantity, menuItemName, menuItemPrice })
       <td className='cart-table-padding-right' style={{textAlign: 'right'}}>{cartItemQuantity}</td>
       <td className='cart-table-padding-right' style={{textAlign: 'right'}}>=</td>
       <td className='cart-table-padding-right' style={{textAlign: 'right'}}>${(menuItemPrice * cartItemQuantity).toFixed(2)}</td>
-      {/* <td>${menuItemPrice.toFixed(2)} x {cartItemQuantity} = ${(menuItemPrice * cartItemQuantity).toFixed(2)}</td> */}
     </tr>
   )
 }

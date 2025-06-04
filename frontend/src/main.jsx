@@ -2,7 +2,7 @@ import { StrictMode, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import { ChakraProvider, Flex } from '@chakra-ui/react'
-import { CartProvider, useCart } from './context/CartContext.jsx'
+import { AppProvider, useCart } from './context/AppContext.jsx'
 import HomePage from './pages/HomePage.jsx'
 import AboutPage from './pages/AboutPage.jsx'
 import ContactPage from './pages/ContactPage.jsx'
@@ -25,7 +25,7 @@ const CartTotalQuantity = () => {
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ChakraProvider theme={theme}>
-      <CartProvider>
+      <AppProvider>
         <BrowserRouter>
           <Flex flexDirection={'column'}>
             <nav className='navbar'>
@@ -59,7 +59,7 @@ createRoot(document.getElementById('root')).render(
             </div>
           </Flex>
         </BrowserRouter>
-      </CartProvider>
+      </AppProvider>
     </ChakraProvider>
   </StrictMode>,
 )

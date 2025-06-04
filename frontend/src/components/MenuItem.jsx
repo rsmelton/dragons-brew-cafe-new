@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Flex, Image, Text, Button } from '@chakra-ui/react'
-import { useCart } from '../context/CartContext.jsx'
+import { useCart } from '../context/AppContext.jsx'
 
 const MenuItem = ({menuItem}) => {
 

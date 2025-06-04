@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Flex, Text, Grid } from '@chakra-ui/react'
-import { useCart } from '../context/CartContext.jsx'
+import { useCart } from '../context/AppContext.jsx'
 import MenuItem from '../components/MenuItem.jsx'
 import '../assets/styles.css'
 

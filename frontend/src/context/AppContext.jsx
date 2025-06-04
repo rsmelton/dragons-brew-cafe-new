@@ -1,8 +1,8 @@
 import React, { createContext, useContext, useState, useEffect } from 'react'
 
-const CartContext = createContext()
+const AppContext = createContext()
 
-export const CartProvider = ({ children }) => {
+export const AppProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState([])
     const [menuItems, setMenuItems] = useState([])
     const [cartTotalQuantity, setCartTotalQuantity] = useState(0)
@@ -113,7 +113,7 @@ export const CartProvider = ({ children }) => {
     // We wrap our application with this context so we can use
     // these states and functions anywhere we want
     return (
-        <CartContext.Provider
+        <AppContext.Provider
             value={{
                 cartItems,
                 menuItems,
@@ -134,8 +134,8 @@ export const CartProvider = ({ children }) => {
             }}
         >
             {children}
-        </CartContext.Provider>
+        </AppContext.Provider>
     )
 }
 
-export const useCart = () => useContext(CartContext)
+export const useCart = () => useContext(AppContext)

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { useCart } from '../context/CartContext.jsx'
-import { Flex, Grid, Text, Button } from '@chakra-ui/react'
+import { useCart } from '../context/AppContext.jsx'
+import { Flex, Text, Button } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import CartItem from '../components/CartItem.jsx'
 import '../assets/styles.css'
@@ -9,7 +9,7 @@ const CartPage = () => {
 
   const {cartItems, menuItems, fetchCartItems, 
          fetchMenuItems, handleDeleteAllCartItems, getCartItemID, 
-         getCartItemQuantity, getMenuItemName, getMenuItemPrice} = useCart()
+         getCartItemQuantity, getMenuItemID, getMenuItemName, getMenuItemPrice} = useCart()
          
   const [menuItemMap, setMenuItemMap] = useState({})
 
@@ -24,7 +24,7 @@ const CartPage = () => {
     // Here we are converting our menuItems array to a Map so we can have constant lookup time
     // instead of mapping over the cartItems and then having to find the menuItem every time
     // using the cartItem._id
-    const menuMap = Object.fromEntries(menuItems.map(menuItem => [menuItem._id, menuItem]))
+    const menuMap = Object.fromEntries(menuItems.map(menuItem => [getMenuItemID(menuItem), menuItem]))
     setMenuItemMap(menuMap)
   }, [menuItems])
 
@@ -43,13 +43,6 @@ const CartPage = () => {
 
   return (
     <div>
-      {/* <Text 
-        fontSize={'1.5rem'} 
-        bgClip={'text'}
-      >
-        Cart
-      </Text> */}
-
       {cartItems.length === 0 && (
         <Flex
           justifyContent={'center'}
@@ -79,25 +72,12 @@ const CartPage = () => {
           to access otherwise we would be accessing something that is undefined */}
       {cartItems.length > 0 && Object.keys(menuItemMap).length !== 0 && (
         <>
-          {/* Grid implementation */}
-          {/* <Grid
-            templateColumns={{base: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr'}}
-            templateRows={'1fr'}
-            backgroundColor={'rgba(0, 0, 0, 0.45)'}
-          >
-            {cartItems.map((cartItem) => {
-                const menuItem = menuItemMap[getCartItemID(cartItem)]
-                return <CartItem cartItemID={getCartItemID(cartItem)}
-                                 cartItemQuantity={getCartItemQuantity(cartItem)} 
-                                 menuItemName={getMenuItemName(menuItem)} 
-                                 menuItemPrice={getMenuItemPrice(menuItem)} />
-            })}
-          </Grid> */}
           {/* Table implementation */}
           <table className='cart-table'>
             {cartItems.map((cartItem) => {
               const menuItem = menuItemMap[getCartItemID(cartItem)]
-              return <CartItem cartItemID={getCartItemID(cartItem)}
+              return <CartItem key={getCartItemID(cartItem)}
+                               cartItemID={getCartItemID(cartItem)}
                                cartItemQuantity={getCartItemQuantity(cartItem)} 
                                menuItemName={getMenuItemName(menuItem)} 
                                menuItemPrice={getMenuItemPrice(menuItem)} />
@@ -117,15 +97,6 @@ const CartPage = () => {
               </td>
             </tr>
           </table>
-          {/* <Flex
-            justifyContent={'center'}
-            alignItems={'center'}
-            flexDir={'column'}
-            // gap={'1rem'}
-          >
-            <Text textAlign={'center'}>Your total is ${handleFindTotalPrice(cartItems)}. Click below to purchase.</Text>
-            <Button bgColor={'white'} color={'black'} onClick={handleDeleteAllCartItems}>Purchase</Button>
-          </Flex> */}
         </>
       )}
     </div>
