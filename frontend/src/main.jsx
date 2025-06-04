@@ -1,14 +1,15 @@
 import { StrictMode, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-import { ChakraProvider, Box } from '@chakra-ui/react'
+import { ChakraProvider, Flex } from '@chakra-ui/react'
 import { CartProvider, useCart } from './context/CartContext.jsx'
-import HomePage from "./pages/HomePage.jsx"
+import HomePage from './pages/HomePage.jsx'
 import AboutPage from './pages/AboutPage.jsx'
 import ContactPage from './pages/ContactPage.jsx'
 import ReviewsPage from './pages/ReviewsPage.jsx'
-import MenuPage from "./pages/MenuPage.jsx"
-import CartPage from "./pages/CartPage.jsx"
+import MenuPage from './pages/MenuPage.jsx'
+import CartPage from './pages/CartPage.jsx'
+import theme from './theme/theme.js'
 import './assets/styles.css'
 
 const CartTotalQuantity = () => {
@@ -17,34 +18,34 @@ const CartTotalQuantity = () => {
   useEffect(() => { fetchCartItems() }, [])
 
   return (
-    <Box color={'white'}>{cartTotalQuantity}</Box>
+    <div>{cartTotalQuantity}</div>
   )
 }
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <CartProvider>
         <BrowserRouter>
-          <Box display={'flex'} flexDirection={'column'}>
+          <Flex flexDirection={'column'}>
             <nav className='navbar'>
               <Link to="/home">Home</Link>
               <Link to="/about">About</Link>
               <Link to="/menu">Menu</Link>
               <Link to="/reviews">Reviews</Link>
               <Link to="/contact">Contact</Link>
-              <Box display={'flex'} flexDirection={'column'} alignItems={'center'}>
+              <Flex flexDirection={'column'} alignItems={'center'}>
                 <CartTotalQuantity />
                 <Link to="/cart">
                   <img className='cart-icon' src={'/images/cart-icon.png'} alt="Cart icon" />
                 </Link>
-              </Box>
+              </Flex>
             </nav>
-            <Box display={'flex'} flexDirection={'row'} justifyContent={'flex-start'}>
+            <Flex flexDirection={'row'} justifyContent={'flex-start'}>
               <div className='page-title bold'>
                 Dragon's Brew Cafe
               </div>
-            </Box>
+            </Flex>
             <div className="scrollable-page">
               <Routes>
                 <Route path='/' element={<HomePage />} />
@@ -56,7 +57,7 @@ createRoot(document.getElementById('root')).render(
                 <Route path='/cart' element={<CartPage />} />
               </Routes>
             </div>
-          </Box>
+          </Flex>
         </BrowserRouter>
       </CartProvider>
     </ChakraProvider>
