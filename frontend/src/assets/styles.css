@@ -1,4 +1,5 @@
 :root { --navbar-height: 3rem; 
+        --navbar-margin-bottom: 1rem;
         --page-title-height: 3rem; 
         --dragon-body-padding: 1rem; }
 
@@ -32,7 +33,7 @@ the user resizes the window.
 .overlay { background-color: rgba(0, 0, 0, 0.65); 
            z-index: -1; 
            height: 100vh; 
-           padding: var(--dragon-body-padding);}
+           padding: var(--dragon-body-padding); }
 
 .dragon-video { position: fixed;
                 top: 0;
@@ -42,8 +43,6 @@ the user resizes the window.
                 object-fit: cover;
                 z-index: -2; }
 
-/* .dragon-video::before { background: rgba(0, 0, 0, 0.65); } */
-
 /* Navbar */
 .navbar { display: flex; 
           flex-direction: row;
@@ -52,7 +51,8 @@ the user resizes the window.
           flex-wrap: wrap;
           gap: 1rem;
           width: 100%;
-          height: var(--navbar-height); }
+          height: var(--navbar-height); 
+          margin-bottom: var(--navbar-margin-bottom); }
 
 .navbar a { color: white; }
 
@@ -74,14 +74,14 @@ the user resizes the window.
 /* Page title */
 .page-title { height: var(--page-title-height); 
               font-family: "MedievalSharp", cursive;
-              font-size: 2rem;
+              font-size: 1.5rem;
               text-transform: uppercase;
               color: white; }
 
 /* Scrollable page */
 .scrollable-page { overflow: auto; 
                    /* We calc the height, otherwise there will be white horizontal bars */
-                   height: calc(100vh - var(--navbar-height) - var(--page-title-height) - var(--dragon-body-padding)); }
+                   height: calc(100vh - var(--navbar-height) - var(--navbar-margin-bottom) - var(--page-title-height) - var(--dragon-body-padding)); }
 
 /* Home page logo */
 .home-page-logo-container { display: flex; 
@@ -103,22 +103,25 @@ the user resizes the window.
                                color: white;
                                gap: 1rem; }
 
-.cart-minus-icon { cursor: pointer; }
+.cart-minus-icon { cursor: pointer; 
+                   width: 37.5px; 
+                   height: auto; }
 
-.cart-item-count { font-size: 2rem; }
+.cart-item-quantity { font-size: 1.5rem; }
 
-.cart-plus-icon { cursor: pointer; }
+.cart-plus-icon { cursor: pointer; 
+                  width: 37.5px; 
+                  height: auto; }
 
 /* Cart page table */
 .cart-table { border-collapse: separate;
               border-spacing: 0rem 1rem;
+              padding-left: 5rem;
+              padding-right: 5rem;
               width: 100%;
-              height: 100vh;
-              background-color: black; 
+              background-color: rgba(0, 0, 0, 0.65); 
               color: white; }
 
-/* .cart-table-item { border: 1px solid white; } */
-
-.trashcan-icon { width: 50px;
+.trashcan-icon { width: 37.5px;
                  height: auto; 
                  cursor: pointer; }
