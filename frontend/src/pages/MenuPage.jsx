@@ -6,8 +6,7 @@ import '../assets/styles.css'
 
 const MenuPage = () => { 
 
-  const {menuItems, fetchMenuItems, getMenuItemID, getMenuItemName, 
-         getMenuItemPrice, getMenuItemDescription, getMenuItemImageURLString} = useCart()
+  const {menuItems, fetchMenuItems, getMenuItemID} = useCart()
 
   useEffect(() => { fetchMenuItems() }, [])
 
@@ -28,11 +27,7 @@ const MenuPage = () => {
           >
             {menuItems.map((menuItem) => (
               <MenuItem key={getMenuItemID(menuItem)} 
-                        menuItemID={getMenuItemID(menuItem)} 
-                        menuItemName={getMenuItemName(menuItem)}
-                        menuItemPrice={getMenuItemPrice(menuItem)}
-                        menuItemDescription={getMenuItemDescription(menuItem)}
-                        menuItemImageURLString={getMenuItemImageURLString(menuItem)} />
+                        menuItem={menuItem} />
             ))}
           </Grid>
         )
