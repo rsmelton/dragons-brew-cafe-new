@@ -3,7 +3,7 @@ import { Box, Text } from '@chakra-ui/react'
 
 const ReviewsPage = () => {
   return (
-    <Box color={'white'}>
+    <Box>
         <Text>Name: Robert Melton</Text>
         <Text>Review: ⭐️⭐️⭐️⭐️⭐️</Text>
         <Text paddingBottom={'1rem'}>Dragon's Brew is my go-to spot for a perfect cup of coffee! The ambiance is cozy with just the right touch of dragon-themed decor that adds a whimsical charm. The baristas are friendly and knowledgeable, always recommending new blends to try. Their Dragon's Fire Latte is my favorite; it's rich and smooth, perfect for starting my day right!</Text>

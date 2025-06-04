@@ -19,7 +19,7 @@ const MenuPage = () => {
           alignItems={'center'}
           flexDir={'row'}
         >
-          <Text color={'white'} fontSize={'1.5rem'}>Loading menu...</Text>
+          <Text fontSize={'1.5rem'}>Loading menu...</Text>
         </Flex>
         ) : (
           <Grid 
