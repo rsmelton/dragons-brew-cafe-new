@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useCart } from '../context/CartContext.jsx'
-import { Flex, Text, Button } from '@chakra-ui/react'
-import { Link } from "react-router-dom"
+import { Flex, Grid, Text, Button } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
 import CartItem from '../components/CartItem.jsx'
 import '../assets/styles.css'
 
@@ -46,7 +46,6 @@ const CartPage = () => {
       {/* <Text 
         fontSize={'1.5rem'} 
         bgClip={'text'}
-        color={'white'}
       >
         Cart
       </Text> */}
@@ -58,8 +57,8 @@ const CartPage = () => {
           flexDir={'column'}
           gap={'1rem'}
         >
-          <Text color={'white'}>Your cart is currently empty</Text>
-          <Text color={'white'} textAlign={'center'}>Please click the button below to navigate to the menu to start adding items to your cart.</Text>
+          <Text>Your cart is currently empty</Text>
+          <Text textAlign={'center'}>Please click the button below to navigate to the menu to start adding items to your cart.</Text>
           <Link to={'/menu'}><Button bgColor={'white'} color={'black'}>Go to menu</Button></Link>
         </Flex>
       )}
@@ -72,7 +71,7 @@ const CartPage = () => {
           alignItems={'center'}
           flexDir={'row'}
         >
-          <Text color={'white'} fontSize={'1.5rem'}>Loading cart...</Text>
+          <Text fontSize={'1.5rem'}>Loading cart...</Text>
         </Flex>
       )}
 
@@ -80,7 +79,21 @@ const CartPage = () => {
           to access otherwise we would be accessing something that is undefined */}
       {cartItems.length > 0 && Object.keys(menuItemMap).length !== 0 && (
         <>
-          <table className='cart-table'>
+          <Grid
+            templateColumns={{base: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr'}}
+            templateRows={'1fr'}
+            backgroundColor={'rgba(0, 0, 0, 0.45)'}
+          >
+            {cartItems.map((cartItem) => {
+                const menuItem = menuItemMap[getCartItemID(cartItem)]
+                return <CartItem cartItemID={getCartItemID(cartItem)}
+                                 cartItemQuantity={getCartItemQuantity(cartItem)} 
+                                 menuItemName={getMenuItemName(menuItem)} 
+                                 menuItemPrice={getMenuItemPrice(menuItem)} />
+            })}
+          </Grid>
+          {/* Table implementation */}
+          {/* <table className='cart-table'>
             {cartItems.map((cartItem) => {
               const menuItem = menuItemMap[getCartItemID(cartItem)]
               return <CartItem cartItemID={getCartItemID(cartItem)}
@@ -88,14 +101,14 @@ const CartPage = () => {
                                menuItemName={getMenuItemName(menuItem)} 
                                menuItemPrice={getMenuItemPrice(menuItem)} />
             })}
-          </table>
+          </table> */}
           <Flex
             justifyContent={'center'}
             alignItems={'center'}
             flexDir={'column'}
             gap={'1rem'}
           >
-            <Text color={'white'} fontSize={{base: '1rem', md: '1.25rem'}}>Your total is ${handleFindTotalPrice(cartItems)}. Click below to purchase.</Text>
+            <Text textAlign={'center'} fontSize={{base: '1rem', md: '1.25rem'}}>Your total is ${handleFindTotalPrice(cartItems)}. Click below to purchase.</Text>
             <Button bgColor={'white'} color={'black'} onClick={handleDeleteAllCartItems}>Purchase</Button>
           </Flex>
         </>
