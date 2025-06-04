@@ -6,7 +6,6 @@ const ContactPage = () => {
     <Box>
         <Text>(123)-456-7890</Text>
         <Text>Open every day from 7:00 am - 4:00 pm</Text>
-        <Text></Text>
     </Box>
   )
 }
