@@ -50,7 +50,7 @@ const CartItem = ({ cartItemID, cartItemQuantity, menuItemName, menuItemPrice })
       <td>
         <div className='cart-item-clicker-container'>
           {/* Here we are decrementing the quantitiy of the cart item */}
-          {(cartItemQuantity > 1) && (
+          {cartItemQuantity > 1 && (
             <img className='cart-minus-icon' src={'/images/minus-icon.png'} onClick={() => handleModifyCartItemQuantity(cartItemID, -1)} alt="Minus Icon" />
           )}
           {/* Here we are removing the cartItem all together */}
@@ -63,7 +63,12 @@ const CartItem = ({ cartItemID, cartItemQuantity, menuItemName, menuItemPrice })
         </div>
       </td>
       <td>{menuItemName}</td>
-      <td>${menuItemPrice} x {cartItemQuantity} = ${menuItemPrice * cartItemQuantity}</td>
+      <td style={{textAlign: 'right'}}>${menuItemPrice.toFixed(2)}</td>
+      <td style={{textAlign: 'right'}}>x</td>
+      <td style={{textAlign: 'right'}}>{cartItemQuantity}</td>
+      <td style={{textAlign: 'right'}}>=</td>
+      <td style={{textAlign: 'right'}}>${(menuItemPrice * cartItemQuantity).toFixed(2)}</td>
+      {/* <td>${menuItemPrice.toFixed(2)} x {cartItemQuantity} = ${(menuItemPrice * cartItemQuantity).toFixed(2)}</td> */}
     </tr>
   )
 }

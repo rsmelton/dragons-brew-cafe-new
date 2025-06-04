@@ -54,7 +54,7 @@ the user resizes the window.
           height: var(--navbar-height); 
           margin-bottom: var(--navbar-margin-bottom); }
 
-.navbar a { color: white; }
+/* .navbar a { color: white; } */
 
 .cart-icon { width: 24px; 
              height: auto; }
@@ -75,8 +75,7 @@ the user resizes the window.
 .page-title { height: var(--page-title-height); 
               font-family: "MedievalSharp", cursive;
               font-size: 1.5rem;
-              text-transform: uppercase;
-              color: white; }
+              text-transform: uppercase; }
 
 /* Scrollable page */
 .scrollable-page { overflow: auto; 
@@ -98,8 +97,8 @@ the user resizes the window.
 .cart-item-clicker-container { display: flex;
                                flex-direction: row;
                                flex-wrap: nowrap; 
-                               justify-content: center;
-                               align-items: center;
+                               /* justify-content: center;
+                               align-items: center; */
                                gap: 0.5rem; }
 
 .cart-minus-icon { cursor: pointer; 
@@ -116,8 +115,7 @@ the user resizes the window.
 .cart-table { border-collapse: separate;
               border-spacing: 0rem 1rem;
               width: 100%;
-              background-color: rgba(0, 0, 0, 0.65); 
-              color: white; }
+              background-color: rgba(0, 0, 0, 0.65); }
 
 .trashcan-icon { width: 37.5px;
                  height: auto; 

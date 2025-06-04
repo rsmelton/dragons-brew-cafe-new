@@ -102,14 +102,23 @@ const CartPage = () => {
                                menuItemName={getMenuItemName(menuItem)} 
                                menuItemPrice={getMenuItemPrice(menuItem)} />
             })}
+            <tr>
+              <td colSpan={'7'}>
+                <hr />
+              </td>
+            </tr>
+            <tr>
+              <td style={{textAlign: 'left'}}>Total</td>
+              <td style={{textAlign: 'right'}} colSpan={'6'}>${handleFindTotalPrice(cartItems)}</td>
+            </tr>
           </table>
           <Flex
             justifyContent={'center'}
             alignItems={'center'}
             flexDir={'column'}
-            gap={'1rem'}
+            // gap={'1rem'}
           >
-            <Text textAlign={'center'}>Your total is ${handleFindTotalPrice(cartItems)}. Click below to purchase.</Text>
+            {/* <Text textAlign={'center'}>Your total is ${handleFindTotalPrice(cartItems)}. Click below to purchase.</Text> */}
             <Button bgColor={'white'} color={'black'} onClick={handleDeleteAllCartItems}>Purchase</Button>
           </Flex>
         </>
