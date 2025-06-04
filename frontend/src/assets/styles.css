@@ -102,13 +102,13 @@ the user resizes the window.
                                gap: 0.5rem; }
 
 .cart-minus-icon { cursor: pointer; 
-                   width: 25px; 
+                   width: 20px; 
                    height: auto; }
 
 .cart-item-quantity { font-size: 1.5rem; }
 
 .cart-plus-icon { cursor: pointer; 
-                  width: 25px; 
+                  width: 20px; 
                   height: auto; }
 
 /* Cart page table */
@@ -117,6 +117,8 @@ the user resizes the window.
               /* width: 100%; */
               /* background-color: rgba(0, 0, 0, 0.65);  */ }
 
-.trashcan-icon { width: 25px;
+.cart-table-padding-right { padding-right: 2rem; }
+
+.trashcan-icon { width: 20px;
                  height: auto; 
                  cursor: pointer; }

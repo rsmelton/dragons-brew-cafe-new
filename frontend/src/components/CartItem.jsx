@@ -47,7 +47,7 @@ const CartItem = ({ cartItemID, cartItemQuantity, menuItemName, menuItemPrice })
     // </Flex>
     // Table implementation
     <tr>
-      <td>
+      <td className='cart-table-padding-right'>
         <div className='cart-item-clicker-container'>
           {/* Here we are decrementing the quantitiy of the cart item */}
           {cartItemQuantity > 1 && (
@@ -62,12 +62,12 @@ const CartItem = ({ cartItemID, cartItemQuantity, menuItemName, menuItemPrice })
           <img className='cart-plus-icon' src={'/images/plus-icon.png'} onClick={() => handleModifyCartItemQuantity(cartItemID, 1)} alt="Plus Icon" />
         </div>
       </td>
-      <td>{menuItemName}</td>
-      <td style={{textAlign: 'right'}}>${menuItemPrice.toFixed(2)}</td>
-      <td style={{textAlign: 'right'}}>x</td>
-      <td style={{textAlign: 'right'}}>{cartItemQuantity}</td>
-      <td style={{textAlign: 'right'}}>=</td>
-      <td style={{textAlign: 'right'}}>${(menuItemPrice * cartItemQuantity).toFixed(2)}</td>
+      <td className='cart-table-padding-right'>{menuItemName}</td>
+      <td className='cart-table-padding-right' style={{textAlign: 'right'}}>${menuItemPrice.toFixed(2)}</td>
+      <td className='cart-table-padding-right' style={{textAlign: 'right'}}>x</td>
+      <td className='cart-table-padding-right' style={{textAlign: 'right'}}>{cartItemQuantity}</td>
+      <td className='cart-table-padding-right' style={{textAlign: 'right'}}>=</td>
+      <td className='cart-table-padding-right' style={{textAlign: 'right'}}>${(menuItemPrice * cartItemQuantity).toFixed(2)}</td>
       {/* <td>${menuItemPrice.toFixed(2)} x {cartItemQuantity} = ${(menuItemPrice * cartItemQuantity).toFixed(2)}</td> */}
     </tr>
   )

@@ -103,16 +103,16 @@ const CartPage = () => {
                                menuItemPrice={getMenuItemPrice(menuItem)} />
             })}
             <tr>
-              <td colSpan={'7'}>
+              <td className='cart-table-padding-right' colSpan={'7'}>
                 <hr />
               </td>
             </tr>
             <tr>
               <td style={{textAlign: 'left'}}>Total</td>
-              <td style={{textAlign: 'right'}} colSpan={'6'}>${handleFindTotalPrice(cartItems)}</td>
+              <td className='cart-table-padding-right' style={{textAlign: 'right'}} colSpan={'6'}>${handleFindTotalPrice(cartItems)}</td>
             </tr>
             <tr>
-              <td style={{textAlign: 'right'}} colSpan={'7'}>
+              <td className='cart-table-padding-right' style={{textAlign: 'right'}} colSpan={'7'}>
                 <Button bgColor={'white'} color={'black'} onClick={handleDeleteAllCartItems}>Purchase</Button>
               </td>
             </tr>
