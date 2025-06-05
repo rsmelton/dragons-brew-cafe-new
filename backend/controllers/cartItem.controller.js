@@ -15,25 +15,22 @@ export const getCartItems = async (req, res) => {
 export const postCartItem = async (req, res) => {
    const { id } = req.params
 
-    try {
-        const cartItem = await CartItemModel.findById(id)
-    
-        if (cartItem) {
-            cartItem.quantity += 1
-            await cartItem.save()
-            return res.status(200).json({ success: true, data: cartItem })
-        }
+    // Checks to see if the id has a valid format
+    if (mongoose.Types.ObjectId.isValid(id) === false) {
+        return res.status(400).json({ success: false, message: "ID is in an invalid format." })
+    }
 
-        // If the cartItem didn't exist
-        const newCartItem = new CartItemModel({
-            _id: id,
-            quantity: 1
-        })
-        await newCartItem.save()
-        res.status(201).json({ success: true, data: newCartItem })
+    try {
+        await CartItemModel.findByIdAndUpdate(
+            id,
+            { $inc: { quantity: 1 }},
+            { upsert: true, new: true, setDefaultsOnInsert: true }
+        )
+        const cartItems = await CartItemModel.find({})
+        res.status(201).json({ success: true, data: cartItems })
     } catch (error) {
         console.log("Error with saving cart item to database:", error.message)
-        res.status(500).json({ success: false, message: "Cart item did not get added to database."})
+        res.status(500).json({ success: false, message: "Cart item did not get added to database." })
     }
 }
 
@@ -41,24 +38,26 @@ export const updateCartItemQuantity = async (req, res) => {
     const { id } = req.params
     const { modifyQuantityBy } = req.body
 
-    // if the id doesn't exist or is not in the database
+    // Checks to see if the id has a valid format
     if (mongoose.Types.ObjectId.isValid(id) === false) {
-        return res.status(404).json({ success: false, message: "Cart item not found."})
+        return res.status(400).json({ success: false, message: "ID is in an invalid format." })
     }
 
     try {
-        const updatedCartItem = await CartItemModel.findByIdAndUpdate(
-            id,
-            { $inc: { quantity: modifyQuantityBy } }, // updates quantity field
-            { new: true } // returns newly modified cart item
+        // $expr line: adds the quantity field + modifyQuantityBy and then
+        // checks to see if that is >= 1. If true then we update the quantity field
+        // and save the item. Otherwise we don't update the item. 
+        await CartItemModel.findOneAndUpdate(
+            {
+                _id: id,
+                $expr: { $gte: [{ $add: ["$quantity", modifyQuantityBy] }, 1] }
+            },
+            { $inc: { quantity: modifyQuantityBy } },
+            { new: true }
         )
 
-        // This means we could not find the cart item by its id
-        if (!updatedCartItem) {
-            return res.status(404).json({ success: false, message: "Cart item not found!" })
-        }
-
-        res.status(200).json({ success: true, message: "Updated cart item quantity successfully." })
+        const cartItems = await CartItemModel.find({})
+        res.status(200).json({ success: true, data: cartItems })
     } catch (error) {
         console.error(error)
         res.status(500).json({ success: false, message: "Cart item quantity could not be updated." })
@@ -68,14 +67,15 @@ export const updateCartItemQuantity = async (req, res) => {
 export const deleteCartItem = async (req, res) => {
     const { id } = req.params
 
-    // if the id doesn't exist or is not in the database
+    // Checks to see if the id has a valid format
     if (mongoose.Types.ObjectId.isValid(id) === false) {
-        return res.status(404).json({ success: false, message: "Cart item not found."})
+        return res.status(400).json({ success: false, message: "ID is in an invalid format." })
     }
 
     try {
         await CartItemModel.findByIdAndDelete(id)
-        res.status(201).json({ success: true, message: "Cart item removed successfully."})
+        const cartItems = await CartItemModel.find({})
+        res.status(201).json({ success: true, data: cartItems })
     } catch (error) {
         console.log("Error when removing item:", error.message)
         res.status(500).json({ success: false, message: "Cart item could not be removed."})
@@ -85,7 +85,8 @@ export const deleteCartItem = async (req, res) => {
 export const deleteCartItems = async (req, res) => {
     try {
         await CartItemModel.deleteMany({})
-        res.status(200).json({ success: true, data: [] })
+        const cartItems = await CartItemModel.find({})
+        res.status(200).json({ success: true, data: cartItems })
     } catch (error) {
         console.log(`Error: ${error}`)
         res.status(500).json({ success: false, message: "Was not able to delete all cart items" })
