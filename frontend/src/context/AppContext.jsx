@@ -9,39 +9,22 @@ export const AppProvider = ({ children }) => {
 
     // Functions that make a request to the backend
     const fetchCartItems = async () => {
-        const res = await fetch("/api/cart")
-        const data = await res.json()
-        setCartItems(data.data)
+        await fetch("/api/cart")
+            .then((res) => res.json())
+            .then((data) => setCartItems(data.data))
     }
 
     const fetchMenuItems = async () => {
-        const res = await fetch("/api/menu")
-        const data = await res.json()
-        setMenuItems(data.data)
+        await fetch("/api/menu")
+            .then((res) => res.json())
+            .then((data) => setMenuItems(data.data))
     }
 
     const handleAddToCart = async (menuItemID) => {
-        const res = await fetch(`/api/cart/${menuItemID}`, {
+        await fetch(`/api/cart/${menuItemID}`, {
             method: "POST",
-        })
-        const data = await res.json()
-        
-        // setCartItems(prevCartItems => {
-        //     const existingItemIndex = prevCartItems.findIndex(
-        //         cartItem => cartItem._id === data.data._id
-        //     )
-
-        //     if (existingItemIndex !== -1) {
-        //         // Item was found and we can update it
-        //         const updatedCartItems = [...prevCartItems]
-        //         updatedCartItems[existingItemIndex] = data.data
-        //         return updatedCartItems
-        //     } else {
-        //         // Item did not exist, so we add it 
-        //         return [...prevCartItems, data.data]
-        //     }
-        // })
-        fetchCartItems()
+        }).then((res) => res.json())
+          .then((data) => setCartItems(data.data))
     }
 
     const handleModifyCartItemQuantity = async (cartItemID, modifyQuantityBy) => {
@@ -51,23 +34,22 @@ export const AppProvider = ({ children }) => {
                 "Content-Type" : "application/json"
             },
             body: JSON.stringify({ modifyQuantityBy })
-        })
-        fetchCartItems()
+        }).then((res) => res.json())
+          .then((data) => setCartItems(data.data))
     }
 
     const handleDeleteCartItem = async (cartItemID) => {
         await fetch(`/api/cart/${cartItemID}`, {
-          method: "DELETE",
-        })
-        setCartItems(cartItems.filter((cartItem) => cartItem._id !== cartItemID))
+            method: "DELETE",
+        }).then((res) => res.json())
+          .then((data) => setCartItems(data.data))
     }
 
     const handleDeleteAllCartItems = async () => {
-        const res = await fetch("/api/cart", {
-          method: "DELETE",
-        })
-        const data = await res.json()
-        setCartItems(data.data)
+        await fetch("/api/cart", {
+            method: "DELETE",
+        }).then((res) => res.json())
+          .then((data) => setCartItems(data.data))
     }
 
     // When the cartItems state changes we run this hook to calculate
