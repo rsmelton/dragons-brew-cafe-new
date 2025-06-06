@@ -7,39 +7,12 @@ import '../assets/styles.css'
 
 const CartPage = () => {
 
-  const {cartItems, menuItems, fetchCartItems, 
-         fetchMenuItems, handleDeleteAllCartItems, getCartItemID, 
-         getCartItemQuantity, getMenuItemID, getMenuItemName, getMenuItemPrice} = useCart()
-         
-  const [menuItemMap, setMenuItemMap] = useState({})
+  const {cartItems, menuItems, fetchCartItems, fetchMenuItems, 
+         doesMenuItemMatchCartItem, handleDeleteAllCartItems, handleFindTotalPriceOfCart} = useCart()
 
   useEffect(() => { fetchCartItems() }, [])
 
   useEffect(() => { fetchMenuItems() }, [])
-
-  useEffect(() => {
-    // This ensures we don't access the menuItems array before its populated
-    if (menuItems.length === 0) return
-
-    // Here we are converting our menuItems array to a Map so we can have constant lookup time
-    // instead of mapping over the cartItems and then having to find the menuItem every time
-    // using the cartItem._id
-    const menuMap = Object.fromEntries(menuItems.map(menuItem => [getMenuItemID(menuItem), menuItem]))
-    setMenuItemMap(menuMap)
-  }, [menuItems])
-
-  const handleFindTotalPrice = (cartItems) => {
-    let totalPrice = 0
-
-    cartItems.map((cartItem) => {
-      const cartItemQuantity = getCartItemQuantity(cartItem)
-      const menuItem = menuItemMap[getCartItemID(cartItem)]
-      const menuItemPrice = getMenuItemPrice(menuItem)
-      totalPrice += menuItemPrice * cartItemQuantity
-    })
-
-    return totalPrice.toFixed(2)
-  }
 
   return (
     <div>
@@ -52,13 +25,14 @@ const CartPage = () => {
         >
           <Text>Your cart is currently empty</Text>
           <Text textAlign={'center'}>Please click the button below to navigate to the menu to start adding items to your cart.</Text>
-          <Link to={'/menu'}><Button bgColor={'white'} color={'black'}>Go to menu</Button></Link>
+          <Link to={'/menu'}><button className='button'>Go to menu</button></Link>
+          {/* <Link to={'/menu'}><Button bgColor={'white'} color={'black'}>Go to menu</Button></Link> */}
         </Flex>
       )}
 
       {/* We can display a loading message when there are items in the cart, 
-          the menuItem map has yet to be populated */}
-      {cartItems.length > 0 && Object.keys(menuItemMap).length === 0 && (
+          and the menuItems has yet to be populated */}
+      {cartItems.length > 0 && menuItems.length === 0 && (
         <Flex
           justifyContent={'center'}
           alignItems={'center'}
@@ -68,19 +42,14 @@ const CartPage = () => {
         </Flex>
       )}
 
-      {/* We are ensuring that we have items in the cart and that the menuItemMap has items
+      {/* We are ensuring that we have items in the cart and that the menuItems has items
           to access otherwise we would be accessing something that is undefined */}
-      {cartItems.length > 0 && Object.keys(menuItemMap).length !== 0 && (
+      {cartItems.length > 0 && menuItems.length > 0 && (
         <>
-          {/* Table implementation */}
           <table className='cart-table'>
             {cartItems.map((cartItem) => {
-              const menuItem = menuItemMap[getCartItemID(cartItem)]
-              return <CartItem key={getCartItemID(cartItem)}
-                               cartItemID={getCartItemID(cartItem)}
-                               cartItemQuantity={getCartItemQuantity(cartItem)} 
-                               menuItemName={getMenuItemName(menuItem)} 
-                               menuItemPrice={getMenuItemPrice(menuItem)} />
+              const menuItem = menuItems.find((menuItem) => doesMenuItemMatchCartItem(menuItem, cartItem))
+              return <CartItem cartItem={cartItem} menuItem={menuItem} />
             })}
             <tr>
               <td className='cart-table-padding-right' colSpan={'7'}>
@@ -89,11 +58,12 @@ const CartPage = () => {
             </tr>
             <tr>
               <td style={{textAlign: 'left'}}>Total</td>
-              <td className='cart-table-padding-right' style={{textAlign: 'right'}} colSpan={'6'}>${handleFindTotalPrice(cartItems)}</td>
+              <td className='cart-table-padding-right' style={{textAlign: 'right'}} colSpan={'6'}>${handleFindTotalPriceOfCart(cartItems, menuItems)}</td>
             </tr>
             <tr>
               <td className='cart-table-padding-right' style={{textAlign: 'right'}} colSpan={'7'}>
-                <Button bgColor={'white'} color={'black'} onClick={handleDeleteAllCartItems}>Purchase</Button>
+                <button className='button' onClick={handleDeleteAllCartItems}>Purchase</button>
+                {/* <Button backgroundColor={'none'} border={'1px solid white'} color={'white'} onClick={handleDeleteAllCartItems}>Purchase</Button> */}
               </td>
             </tr>
           </table>
