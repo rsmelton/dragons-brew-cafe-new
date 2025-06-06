@@ -1,6 +1,7 @@
 import React from 'react'
 import { Box, Flex, Image, Text, Button } from '@chakra-ui/react'
 import { useCart } from '../context/AppContext.jsx'
+import '../assets/styles.css'
 
 const MenuItem = ({menuItem}) => {
 
@@ -18,7 +19,8 @@ const MenuItem = ({menuItem}) => {
           <Image src={`/images/${getMenuItemImageURLString(menuItem)}`} alt={getMenuItemName(menuItem)} borderRadius={'50%'} width={{base:'50%', md: '75%'}} margin={'auto'} />
           <Text className={'bold'} textAlign={'center'}>{`${getMenuItemName(menuItem)} - $${getMenuItemPrice(menuItem)}`}</Text>
           <Text textAlign={'center'}>{getMenuItemDescription(menuItem)}</Text>
-          <Button bgColor={'white'} color={'black'} onClick={() => handleAddToCart(getMenuItemID(menuItem))}>Add to Cart</Button>
+          <button className='button' onClick={() => handleAddToCart(getMenuItemID(menuItem))}>Add to cart</button>
+          {/* <Button bgColor={'white'} color={'black'} onClick={() => handleAddToCart(getMenuItemID(menuItem))}>Add to Cart</Button> */}
         </Flex>
     </Box>
   )
