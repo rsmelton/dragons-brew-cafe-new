@@ -1,4 +1,4 @@
-:root { --navbar-height: 3rem; 
+:root { --navbar-height: 1rem; 
         --navbar-margin-bottom: 1rem;
         --page-title-height: 3rem; 
         --dragon-body-padding: 1rem; }
@@ -18,27 +18,13 @@ body, html { margin: 0;
           padding: 0.75rem; 
           border-radius: 10px; }
 
-/* Next to do:
-1. Figure out how to get the background to resize correctly when
-the user resizes the window.
-2. Replace the image with a video we generate from runway.
-3. Clean up any remaining issues and do another sweep cleaning code */
-
-/* Dragon body */
-/* .dragon-body { background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('../images/welcomeScreen.jpg');
-               background-size: cover;
-               background-repeat: no-repeat;
-               height: 100vh; 
-               padding: var(--dragon-body-padding); } */
-
-/* .dragon-body { height: 100vh; 
-               padding: var(--dragon-body-padding); } */
-
+/* Overlay on top of the background video */
 .overlay { background-color: rgba(0, 0, 0, 0.65); 
            z-index: -1; 
            height: 100vh; 
            padding: var(--dragon-body-padding); }
 
+/* Background video for the site */
 .dragon-video { position: fixed;
                 top: 0;
                 left: 0;
@@ -58,28 +44,15 @@ the user resizes the window.
           height: var(--navbar-height); 
           margin-bottom: var(--navbar-margin-bottom); }
 
-/* .navbar a { color: white; } */
-
 .cart-icon { width: 24px; 
              height: auto; }
 
-
-/* .navbar { width: 100%;
-          height: var(--navbar-height); }
-
-.navbar a { float: right;
-            display: block;
-            text-align: center;
-            text-decoration: none;
-            font-size: 1rem;
-            padding: 0.5rem;
-            color: white; } */
-
 /* Page title */
-.page-title { height: var(--page-title-height); 
+/* Not in use currently */
+/* .page-title { height: var(--page-title-height); 
               font-family: "MedievalSharp", cursive;
               font-size: 1.5rem;
-              text-transform: uppercase; }
+              text-transform: uppercase; } */
 
 /* Scrollable page */
 .scrollable-page { overflow: auto; 
