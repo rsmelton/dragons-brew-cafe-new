@@ -34,18 +34,18 @@ createRoot(document.getElementById('root')).render(
               <Link to="/menu">Menu</Link>
               <Link to="/reviews">Reviews</Link>
               <Link to="/contact">Contact</Link>
-              <Flex flexDirection={'column'} alignItems={'center'}>
-                <CartTotalQuantity />
+              <Flex flexDirection={'row'} alignItems={'center'}>
                 <Link to="/cart">
                   <img className='cart-icon' src={'/images/cart-icon.png'} alt="Cart icon" />
                 </Link>
+                <CartTotalQuantity />
               </Flex>
             </nav>
-            <Flex flexDirection={'row'} justifyContent={'flex-start'}>
+            {/* <Flex flexDirection={'row'} justifyContent={'flex-start'}>
               <div className='page-title bold'>
                 Dragon's Brew Cafe
               </div>
-            </Flex>
+            </Flex> */}
             <div className="scrollable-page">
               <Routes>
                 <Route path='/' element={<HomePage />} />
