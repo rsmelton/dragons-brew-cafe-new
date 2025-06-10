@@ -60,10 +60,11 @@ body, html { margin: 0;
                    height: calc(100vh - var(--navbar-height) - var(--navbar-margin-bottom) - var(--page-title-height) - var(--dragon-body-padding)); }
 
 /* Home page logo */
-.home-page-logo-container { display: flex; 
+/* Not currently in use, will remove later when for sure done with it */
+/* .home-page-logo-container { display: flex; 
                             flex-direction: row; 
                             justify-content: center;
-                            align-items: center; }
+                            align-items: center; } */
 
 .home-page-logo { width: 100%; 
                   height: auto; 
