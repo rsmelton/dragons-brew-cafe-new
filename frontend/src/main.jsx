@@ -41,11 +41,6 @@ createRoot(document.getElementById('root')).render(
                 <CartTotalQuantity />
               </Flex>
             </nav>
-            {/* <Flex flexDirection={'row'} justifyContent={'flex-start'}>
-              <div className='page-title bold'>
-                Dragon's Brew Cafe
-              </div>
-            </Flex> */}
             <div className="scrollable-page">
               <Routes>
                 <Route path='/' element={<HomePage />} />

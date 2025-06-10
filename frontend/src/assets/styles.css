@@ -1,6 +1,5 @@
 :root { --navbar-height: 1rem; 
         --navbar-margin-bottom: 1rem;
-        --page-title-height: 3rem; 
         --dragon-body-padding: 1rem; }
 
 body, html { margin: 0;
@@ -47,17 +46,10 @@ body, html { margin: 0;
 .cart-icon { width: 24px; 
              height: auto; }
 
-/* Page title */
-/* Not in use currently */
-/* .page-title { height: var(--page-title-height); 
-              font-family: "MedievalSharp", cursive;
-              font-size: 1.5rem;
-              text-transform: uppercase; } */
-
 /* Scrollable page */
 .scrollable-page { overflow: auto; 
                    /* We calc the height, otherwise there will be white horizontal bars */
-                   height: calc(100vh - var(--navbar-height) - var(--navbar-margin-bottom) - var(--page-title-height) - var(--dragon-body-padding)); }
+                   height: calc(100vh - var(--navbar-height) - var(--navbar-margin-bottom) - var(--dragon-body-padding)); }
 
 /* Home page logo */
 /* Not currently in use, will remove later when for sure done with it */
