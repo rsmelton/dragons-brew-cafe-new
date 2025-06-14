@@ -70,6 +70,7 @@ export const AppProvider = ({ children }) => {
           })
     }
 
+    // Helper methods
     const doesMenuItemMatchCartItem = (menuItem, cartItem) => {
         return menuItem._id === cartItem._id
     }
@@ -124,7 +125,7 @@ export const AppProvider = ({ children }) => {
     }
 
     // We wrap our application with this context so we can use
-    // these states and functions anywhere we want
+    // these states and functions anywhere we want in the frontend
     return (
         <AppContext.Provider
             value={{
