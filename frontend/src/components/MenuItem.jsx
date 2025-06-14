@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Flex, Image, Text } from '@chakra-ui/react'
+import { Image } from '@chakra-ui/react'
 import { useCart } from '../context/AppContext.jsx'
 import '../assets/styles.css'
 
@@ -10,20 +10,12 @@ const MenuItem = ({menuItem}) => {
          handleAddToCart} = useCart()
 
   return (
-    <Flex justifyContent={'center'}
-          alignItems={'center'}
-          flexDir={'column'}
-          gap={'0.25rem'}
-          paddingLeft={'1rem'}
-          paddingTop={'1rem'}
-          paddingRight={'1rem'}
-          paddingBottom={'2rem'}
-    >
+    <div className='menu-item-container'>
       <Image src={`/images/${getMenuItemImageURLString(menuItem)}`} alt={getMenuItemName(menuItem)} borderRadius={'50%'} width={{base:'50%', md: '75%'}} margin={'auto'} />
-      <Text className={'bold'} textAlign={'center'}>{`${getMenuItemName(menuItem)} - $${getMenuItemPrice(menuItem)}`}</Text>
-      <Text textAlign={'center'}>{getMenuItemDescription(menuItem)}</Text>
+      <p className='bold text-align-center'>{`${getMenuItemName(menuItem)} - $${getMenuItemPrice(menuItem)}`}</p>
+      <p className='text-align-center'>{getMenuItemDescription(menuItem)}</p>
       <button className='button' onClick={() => handleAddToCart(menuItem)}>Add to cart</button>
-    </Flex>
+    </div>
   )
 }
 

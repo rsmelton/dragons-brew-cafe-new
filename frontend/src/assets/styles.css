@@ -17,6 +17,13 @@ body, html { margin: 0;
           padding: 0.75rem; 
           border-radius: 10px; }
 
+.text-align-left { text-align: left; }
+
+.text-align-right { text-align: right; }
+
+.text-align-center { text-align: center; }
+
+
 /* Overlay on top of the background video */
 .overlay { background-color: rgba(0, 0, 0, 0.65); 
            z-index: -1; 
@@ -43,8 +50,8 @@ body, html { margin: 0;
           height: var(--navbar-height); 
           margin-bottom: var(--navbar-margin-bottom); }
 
-.cart-icon { width: 24px; 
-             height: auto; }
+.navbar-cart-icon { width: 24px; 
+                    height: auto; }
 
 /* Scrollable page */
 .scrollable-page { overflow: auto; 
@@ -57,20 +64,38 @@ body, html { margin: 0;
                             flex-direction: row; 
                             justify-content: center;
                             align-items: center; } */
-
+/* Home page classes */
 .home-page-logo { width: 100%; 
                   height: auto; 
                   opacity: 0.5; }
 
+/* About page classes */
 .about-page-paragraph-bottom-padding { padding-bottom: 1rem; }
 
 
-/* Cart item clicker */
+/* Menu + Cart page classes */
+.loading-text-container { display: flex;
+                          flex-direction: row;
+                          justify-content: center;
+                          align-items: center; }
+
+.loading-text-font-size { font-size: 1.5rem; }
+
+/* Menu page classes */
+.menu-item-container { display: flex;
+                       flex-direction: column;
+                       justify-content: center;
+                       align-items: center; 
+                       gap: 0.25rem; 
+                       padding-top: 1rem;
+                       padding-right: 1rem;
+                       padding-bottom: 2rem; 
+                       padding-left: 1rem; }
+
+/* Cart page classes */
 .cart-item-clicker-container { display: flex;
                                flex-direction: row;
                                flex-wrap: nowrap; 
-                               /* justify-content: center;
-                               align-items: center; */
                                gap: 0.5rem; }
 
 .cart-minus-icon { cursor: pointer; 
@@ -85,9 +110,7 @@ body, html { margin: 0;
 
 /* Cart page table */
 .cart-table { border-collapse: separate;
-              border-spacing: 0rem 1rem;
-              /* width: 100%; */
-              /* background-color: rgba(0, 0, 0, 0.65);  */ }
+              border-spacing: 0rem 1rem; }
 
 .cart-table-padding-right { padding-right: 2rem; }
 
