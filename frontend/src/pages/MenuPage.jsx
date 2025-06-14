@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Flex, Text, Grid } from '@chakra-ui/react'
+import { Grid } from '@chakra-ui/react'
 import { useCart } from '../context/AppContext.jsx'
 import MenuItem from '../components/MenuItem.jsx'
 import '../assets/styles.css'
@@ -13,13 +13,9 @@ const MenuPage = () => {
   return (
     <>
       {menuItems.length === 0 ? (
-        <Flex
-          justifyContent={'center'}
-          alignItems={'center'}
-          flexDir={'row'}
-        >
-          <Text fontSize={'1.5rem'}>Loading menu...</Text>
-        </Flex>
+        <div className='loading-text-container'>
+          <p className='loading-text-font-size'>Loading menu...</p>
+        </div>
         ) : (
           <Grid 
             templateColumns={{base: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr'}}
