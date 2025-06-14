@@ -64,7 +64,10 @@ body, html { margin: 0;
                   opacity: 0.5; }
 
 /* About page classes */
-.about-page-paragraph-bottom-padding { padding-bottom: 1rem; }
+.about-paragraph-bottom-padding { padding-bottom: 1rem; }
+
+/* Reviews page classes */
+.review-paragraph-bottom-padding { padding-bottom: 1rem; }
 
 
 /* Menu + Cart page classes */
