@@ -15,6 +15,7 @@ const CartPage = () => {
 
   return (
     <div>
+      {/* This displays when the cart is empty */}
       {cartItems.length === 0 && (
         <div className='empty-cart-page-container'>
           <p className='text-align-center'>Your cart is currently empty</p>
