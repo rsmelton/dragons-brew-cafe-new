@@ -24,7 +24,7 @@ const CartItem = ({ cartItem, menuItem }) => {
           <img className='cart-plus-and-minus-icon' src={'/images/plus-icon.png'} onClick={() => handleModifyCartItemQuantity(cartItem, 1)} alt="Plus Icon" />
         </div>
       </td>
-      {/* Need to take out style prop for the x and = ... just not sure what to call the class for them */}
+      {/* Need to take out style prop for the x and = ... just not sure what to call the class for them yet */}
       <td className='cart-td-padding-right'>{getMenuItemName(menuItem)}</td>
       <td className='cart-td-padding-right text-align-right'>${getMenuItemPrice(menuItem).toFixed(2)}</td>
       <td className='text-align-right' style={{paddingRight: '0.5rem'}}>x</td>

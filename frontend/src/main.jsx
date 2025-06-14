@@ -1,7 +1,7 @@
 import { StrictMode, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-import { ChakraProvider, Flex } from '@chakra-ui/react'
+import { ChakraProvider } from '@chakra-ui/react'
 import { AppProvider, useCart } from './context/AppContext.jsx'
 import HomePage from './pages/HomePage.jsx'
 import AboutPage from './pages/AboutPage.jsx'
@@ -27,19 +27,19 @@ createRoot(document.getElementById('root')).render(
     <ChakraProvider theme={theme}>
       <AppProvider>
         <BrowserRouter>
-          <Flex flexDirection={'column'}>
+          <div className='app-container'>
             <nav className='navbar'>
               <Link to="/home">Home</Link>
               <Link to="/about">About</Link>
               <Link to="/menu">Menu</Link>
               <Link to="/reviews">Reviews</Link>
               {/* <Link to="/contact">Contact</Link> */}
-              <Flex flexDirection={'row'} alignItems={'center'}>
+              <div className='navbar-cart-icon-and-quantity-container'>
                 <Link to="/cart">
                   <img className='navbar-cart-icon' src={'/images/cart-icon.png'} alt="Cart icon" />
                 </Link>
                 <CartTotalQuantity />
-              </Flex>
+              </div>
             </nav>
             <div className="scrollable-page">
               <Routes>
@@ -52,7 +52,7 @@ createRoot(document.getElementById('root')).render(
                 <Route path='/cart' element={<CartPage />} />
               </Routes>
             </div>
-          </Flex>
+          </div>
         </BrowserRouter>
       </AppProvider>
     </ChakraProvider>
