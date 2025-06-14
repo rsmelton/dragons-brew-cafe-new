@@ -23,7 +23,6 @@ body, html { margin: 0;
 
 .text-align-center { text-align: center; }
 
-
 /* Overlay on top of the background video */
 .overlay { background-color: rgba(0, 0, 0, 0.65); 
            z-index: -1; 
@@ -58,12 +57,6 @@ body, html { margin: 0;
                    /* We calc the height, otherwise there will be white horizontal bars */
                    height: calc(100vh - var(--navbar-height) - var(--navbar-margin-bottom) - var(--dragon-body-padding)); }
 
-/* Home page logo */
-/* Not currently in use, will remove later when for sure done with it */
-/* .home-page-logo-container { display: flex; 
-                            flex-direction: row; 
-                            justify-content: center;
-                            align-items: center; } */
 /* Home page classes */
 .home-page-logo { width: 100%; 
                   height: auto; 
@@ -93,27 +86,23 @@ body, html { margin: 0;
                        padding-left: 1rem; }
 
 /* Cart page classes */
-.cart-item-clicker-container { display: flex;
-                               flex-direction: row;
-                               flex-wrap: nowrap; 
-                               gap: 0.5rem; }
-
-.cart-minus-icon { cursor: pointer; 
-                   width: 20px; 
-                   height: auto; }
-
-.cart-item-quantity { font-size: 1.5rem; }
-
-.cart-plus-icon { cursor: pointer; 
-                  width: 20px; 
-                  height: auto; }
 
 /* Cart page table */
 .cart-table { border-collapse: separate;
               border-spacing: 0rem 1rem; }
 
-.cart-table-padding-right { padding-right: 2rem; }
+.cart-td-padding-right { padding-right: 2rem; }
 
-.trashcan-icon { width: 20px;
-                 height: auto; 
-                 cursor: pointer; }
+/* Cart item classes */
+.cart-item-clicker-container { display: flex;
+                               flex-direction: row;
+                               flex-wrap: nowrap; 
+                               gap: 0.5rem; }
+
+.cart-plus-and-minus-icon { cursor: pointer; 
+                            width: 25px; 
+                            height: auto; }
+
+.cart-trashcan-icon { width: 25px;
+                      height: auto; 
+                      cursor: pointer; }
