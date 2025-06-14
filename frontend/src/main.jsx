@@ -36,7 +36,7 @@ createRoot(document.getElementById('root')).render(
               {/* <Link to="/contact">Contact</Link> */}
               <Flex flexDirection={'row'} alignItems={'center'}>
                 <Link to="/cart">
-                  <img className='cart-icon' src={'/images/cart-icon.png'} alt="Cart icon" />
+                  <img className='navbar-cart-icon' src={'/images/cart-icon.png'} alt="Cart icon" />
                 </Link>
                 <CartTotalQuantity />
               </Flex>
