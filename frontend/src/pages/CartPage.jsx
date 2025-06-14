@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useCart } from '../context/AppContext.jsx'
-import { Flex, Text, Button } from '@chakra-ui/react'
+import { Flex, Text } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import CartItem from '../components/CartItem.jsx'
 import '../assets/styles.css'
@@ -26,7 +26,6 @@ const CartPage = () => {
           <Text>Your cart is currently empty</Text>
           <Text textAlign={'center'}>Please click the button below to navigate to the menu to start adding items to your cart.</Text>
           <Link to={'/menu'}><button className='button'>Go to menu</button></Link>
-          {/* <Link to={'/menu'}><Button bgColor={'white'} color={'black'}>Go to menu</Button></Link> */}
         </Flex>
       )}
 
