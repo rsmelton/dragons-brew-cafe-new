@@ -5,7 +5,7 @@ import { ChakraProvider, Flex } from '@chakra-ui/react'
 import { AppProvider, useCart } from './context/AppContext.jsx'
 import HomePage from './pages/HomePage.jsx'
 import AboutPage from './pages/AboutPage.jsx'
-import ContactPage from './pages/ContactPage.jsx'
+// import ContactPage from './pages/ContactPage.jsx'
 import ReviewsPage from './pages/ReviewsPage.jsx'
 import MenuPage from './pages/MenuPage.jsx'
 import CartPage from './pages/CartPage.jsx'
@@ -33,7 +33,7 @@ createRoot(document.getElementById('root')).render(
               <Link to="/about">About</Link>
               <Link to="/menu">Menu</Link>
               <Link to="/reviews">Reviews</Link>
-              <Link to="/contact">Contact</Link>
+              {/* <Link to="/contact">Contact</Link> */}
               <Flex flexDirection={'row'} alignItems={'center'}>
                 <Link to="/cart">
                   <img className='cart-icon' src={'/images/cart-icon.png'} alt="Cart icon" />
@@ -46,7 +46,7 @@ createRoot(document.getElementById('root')).render(
                 <Route path='/' element={<HomePage />} />
                 <Route path='/home' element={<HomePage />} />
                 <Route path='/about' element={<AboutPage />} />
-                <Route path='/contact' element={<ContactPage />} />
+                {/* <Route path='/contact' element={<ContactPage />} /> */}
                 <Route path='/reviews' element={<ReviewsPage />} />
                 <Route path='/menu' element={<MenuPage />} />
                 <Route path='/cart' element={<CartPage />} />
