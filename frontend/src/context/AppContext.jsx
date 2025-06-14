@@ -26,8 +26,8 @@ export const AppProvider = ({ children }) => {
             })
     }
 
-    const handleAddToCart = async (menuItemID) => {
-        await fetch(`/api/cart/${menuItemID}`, {
+    const handleAddToCart = async (menuItem) => {
+        await fetch(`/api/cart/${menuItem._id}`, {
             method: "POST",
         }).then((res) => res.json())
           .then((data) => {

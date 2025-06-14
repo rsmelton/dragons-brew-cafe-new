@@ -63,7 +63,6 @@ const CartPage = () => {
             <tr>
               <td className='cart-table-padding-right' style={{textAlign: 'right'}} colSpan={'7'}>
                 <button className='button' onClick={handleDeleteAllCartItems}>Purchase</button>
-                {/* <Button backgroundColor={'none'} border={'1px solid white'} color={'white'} onClick={handleDeleteAllCartItems}>Purchase</Button> */}
               </td>
             </tr>
           </table>
