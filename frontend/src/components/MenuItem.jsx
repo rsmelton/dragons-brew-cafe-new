@@ -1,13 +1,13 @@
-import React from 'react'
-import { Image } from '@chakra-ui/react'
-import { useCart } from '../context/AppContext.jsx'
-import '../assets/styles.css'
+import React from 'react';
+import { Image } from '@chakra-ui/react';
+import { useCart } from '../context/AppContext.jsx';
+import '../assets/styles.css';
 
 const MenuItem = ({menuItem}) => {
 
   const {getMenuItemName, getMenuItemPrice, 
          getMenuItemDescription, getMenuItemImageURLString,
-         handleAddToCart} = useCart()
+         handleAddToCart} = useCart();
 
   return (
     <div className='menu-item-container'>
@@ -16,7 +16,7 @@ const MenuItem = ({menuItem}) => {
       <p className='text-align-center'>{getMenuItemDescription(menuItem)}</p>
       <button className='button' onClick={() => handleAddToCart(menuItem)}>Add to cart</button>
     </div>
-  )
-}
+  );
+};
 
-export default MenuItem
+export default MenuItem;

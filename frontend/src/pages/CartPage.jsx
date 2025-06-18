@@ -1,17 +1,17 @@
-import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { useCart } from '../context/AppContext.jsx'
-import CartItem from '../components/CartItem.jsx'
-import '../assets/styles.css'
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useCart } from '../context/AppContext.jsx';
+import CartItem from '../components/CartItem.jsx';
+import '../assets/styles.css';
 
 const CartPage = () => {
 
   const {cartItems, menuItems, fetchCartItems, fetchMenuItems, 
-         doesMenuItemMatchCartItem, handleDeleteAllCartItems, handleFindTotalPriceOfCart} = useCart()
+         doesMenuItemMatchCartItem, handleDeleteAllCartItems, handleFindTotalPriceOfCart} = useCart();
 
-  useEffect(() => { fetchCartItems() }, [])
+  useEffect(() => { fetchCartItems() }, []);
 
-  useEffect(() => { fetchMenuItems() }, [])
+  useEffect(() => { fetchMenuItems() }, []);
 
   return (
     <div>
@@ -40,8 +40,8 @@ const CartPage = () => {
         <>
           <table className='cart-table'>
             {cartItems.map((cartItem) => {
-              const menuItem = menuItems.find((menuItem) => doesMenuItemMatchCartItem(menuItem, cartItem))
-              return <CartItem cartItem={cartItem} menuItem={menuItem} />
+              const menuItem = menuItems.find((menuItem) => doesMenuItemMatchCartItem(menuItem, cartItem));
+              return ( <CartItem cartItem={cartItem} menuItem={menuItem} /> );
             })}
             <tr>
               <td className='cart-table-padding-right' colSpan={'7'}>
@@ -61,7 +61,7 @@ const CartPage = () => {
         </>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default CartPage
+export default CartPage;

@@ -1,5 +1,5 @@
-import React from 'react'
-import '../assets/styles.css'
+import React from 'react';
+import '../assets/styles.css';
 
 const ReviewsPage = () => {
   return (
@@ -14,7 +14,7 @@ const ReviewsPage = () => {
       <p>Review: ⭐️⭐️⭐️⭐️⭐️</p>
       <p className='review-paragraph-padding-bottom'>Dragon's Brew has quickly become my favorite coffee haunt in town. The quality of their coffee is unmatched, sourced from the best beans and expertly brewed to perfection. It's evident that they care about the craft, as each cup is consistently delicious. Beyond the coffee, the staff here truly makes the experience exceptional. They're not just baristas; they're passionate about coffee and always willing to share their knowledge. Whether you're a coffee aficionado or simply enjoy a good cup, Dragon's Brew is a must-visit!</p>
     </>
-  )
-}
+  );
+};
 
-export default ReviewsPage
+export default ReviewsPage;

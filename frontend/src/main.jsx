@@ -1,26 +1,24 @@
-import { StrictMode, useEffect } from 'react'
-import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-import { ChakraProvider } from '@chakra-ui/react'
-import { AppProvider, useCart } from './context/AppContext.jsx'
-import HomePage from './pages/HomePage.jsx'
-import AboutPage from './pages/AboutPage.jsx'
-// import ContactPage from './pages/ContactPage.jsx'
-import ReviewsPage from './pages/ReviewsPage.jsx'
-import MenuPage from './pages/MenuPage.jsx'
-import CartPage from './pages/CartPage.jsx'
-import theme from './theme/theme.js'
-import './assets/styles.css'
+import { StrictMode, useEffect } from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { ChakraProvider } from '@chakra-ui/react';
+import { AppProvider, useCart } from './context/AppContext.jsx';
+import HomePage from './pages/HomePage.jsx';
+import AboutPage from './pages/AboutPage.jsx';
+// import ContactPage from './pages/ContactPage.jsx';
+import ReviewsPage from './pages/ReviewsPage.jsx';
+import MenuPage from './pages/MenuPage.jsx';
+import CartPage from './pages/CartPage.jsx';
+import theme from './theme/theme.js';
+import './assets/styles.css';
 
 const CartTotalQuantity = () => {
-  const {cartTotalQuantity, fetchCartItems} = useCart()
+  const {cartTotalQuantity, fetchCartItems} = useCart();
 
-  useEffect(() => { fetchCartItems() }, [])
+  useEffect(() => { fetchCartItems() }, []);
 
-  return (
-    <div>{cartTotalQuantity}</div>
-  )
-}
+  return ( <div>{cartTotalQuantity}</div> );
+};
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -57,4 +55,4 @@ createRoot(document.getElementById('root')).render(
       </AppProvider>
     </ChakraProvider>
   </StrictMode>,
-)
+);

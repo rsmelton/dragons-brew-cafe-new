@@ -1,11 +1,11 @@
-import React from 'react'
-import { useCart } from '../context/AppContext.jsx'
-import '../assets/styles.css'
+import React from 'react';
+import { useCart } from '../context/AppContext.jsx';
+import '../assets/styles.css';
 
 const CartItem = ({ cartItem, menuItem }) => {
 
   const {handleDeleteCartItem, handleModifyCartItemQuantity, getCartItemQuantity, 
-         getMenuItemName, getMenuItemPrice} = useCart()
+         getMenuItemName, getMenuItemPrice} = useCart();
 
   return (
     <tr>
@@ -32,7 +32,7 @@ const CartItem = ({ cartItem, menuItem }) => {
       <td className='text-align-right' style={{paddingRight: '0.5rem'}}>=</td>
       <td className='text-align-right'>${(getMenuItemPrice(menuItem) * getCartItemQuantity(cartItem)).toFixed(2)}</td>
     </tr>
-  )
-}
+  );
+};
 
-export default CartItem
+export default CartItem;
