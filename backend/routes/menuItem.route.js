@@ -1,8 +1,8 @@
-import express from 'express'
-import { getMenuItems } from '../controllers/menuItem.controller.js'
+import express from 'express';
+import { getMenuItems } from '../controllers/menuItem.controller.js';
 
-const router = express.Router()
+const router = express.Router();
 
-router.get("/", getMenuItems)
+router.get("/", getMenuItems);
 
-export default router
+export default router;
