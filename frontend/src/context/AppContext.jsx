@@ -88,13 +88,18 @@ export const AppProvider = ({ children }) => {
         return totalPrice.toFixed(2);
     };
 
-    // When the cartItems state changes we run this hook to calculate
-    // the total quantity of all items in our cart to display a value for the user
-    useEffect(() => {
+    const calculateCartTotalQuantity = (cartItems) => {
         let calculatedCartTotalQuantity = 0;
         cartItems.map((cartItem) => {
             calculatedCartTotalQuantity += getCartItemQuantity(cartItem);
         });
+        return calculatedCartTotalQuantity;
+    };
+
+    // When the cartItems state changes we run this hook to calculate
+    // the total quantity of all items in our cart to display a value for the user
+    useEffect(() => {
+        let calculatedCartTotalQuantity = calculateCartTotalQuantity(cartItems);
         setCartTotalQuantity(calculatedCartTotalQuantity);
     }, [cartItems]);
 
