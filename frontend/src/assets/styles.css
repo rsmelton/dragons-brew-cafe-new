@@ -74,7 +74,17 @@ body, html { margin: 0;
 .about-paragraph-bottom-padding { padding-bottom: 1rem; }
 
 /* Reviews page classes */
-.review-paragraph-bottom-padding { padding-bottom: 1rem; }
+.empty-reviews-page { display: flex; 
+                      flex-direction: row;
+                      justify-content: center;
+                      align-items: center; }
+
+.reviews-container { display: flex; 
+                     flex-direction: column;
+                     gap: 1rem; }
+
+/* Currently not in use */
+/* .review-paragraph-bottom-padding { padding-bottom: 1rem; } */
 
 
 /* Menu + Cart page classes */
@@ -103,8 +113,11 @@ body, html { margin: 0;
                              align-items: center;
                              gap: 1rem; }
 
+.cart-table-container { overflow: auto; }
+
 .cart-table { border-collapse: separate;
-              border-spacing: 0rem 1rem; }
+              border-spacing: 0rem 1rem; 
+              min-width: 500px; }
 
 .cart-td-padding-right { padding-right: 2rem; }
 
