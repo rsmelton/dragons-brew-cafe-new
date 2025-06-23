@@ -37,7 +37,7 @@ const CartPage = () => {
       {/* We are ensuring that we have items in the cart and that the menuItems has items
           to access otherwise we would be accessing something that is undefined */}
       {cartItems.length > 0 && menuItems.length > 0 && (
-        <>
+        <div className='cart-table-container'>
           <table className='cart-table'>
             {cartItems.map((cartItem) => {
               const menuItem = menuItems.find((menuItem) => doesMenuItemMatchCartItem(menuItem, cartItem));
@@ -58,7 +58,7 @@ const CartPage = () => {
               </td>
             </tr>
           </table>
-        </>
+        </div>
       )}
     </div>
   );
