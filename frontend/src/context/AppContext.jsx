@@ -5,7 +5,7 @@ const AppContext = createContext();
 export const AppProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState([]);
     const [menuItems, setMenuItems] = useState([]);
-    const [reviews, setReviews] = useState([]);
+    const [blogs, setBlogs] = useState([]);
     const [cartTotalQuantity, setCartTotalQuantity] = useState(0);
 
     // Functions that make a request to the backend: fetchCartItems down to handleDeleteAllCartItems
@@ -27,13 +27,13 @@ export const AppProvider = ({ children }) => {
             });
     };
 
-    // Fetching from our WordPress Site using the public API to access our reviews
-    const fetchReviews = async () => {
-        await fetch("https://public-api.wordpress.com/wp/v2/sites/dragonsbrewcafereviews.wordpress.com/posts")
+    // Fetching from our WordPress Site to access our blogs
+    const fetchBlogs = async () => {
+        await fetch("https://www.dragons-brew-coffee-corner.com/wp-json/wp/v2/posts")
             .then((res) => res.json())
             .then((data) => {
-                const reviewsData = data;
-                setReviews(reviewsData);
+                const blogsData = data;
+                setBlogs(blogsData);
             });
     };
 
@@ -165,11 +165,11 @@ export const AppProvider = ({ children }) => {
             value={{
                 cartItems,
                 menuItems,
-                reviews,
+                blogs,
                 cartTotalQuantity,
                 fetchCartItems,
                 fetchMenuItems,
-                fetchReviews,
+                fetchBlogs,
                 handleAddToCart,
                 handleModifyCartItemQuantity,
                 handleDeleteCartItem,

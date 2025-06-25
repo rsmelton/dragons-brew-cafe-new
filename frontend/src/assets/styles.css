@@ -73,15 +73,15 @@ body, html { margin: 0;
 /* About page classes */
 .about-paragraph-bottom-padding { padding-bottom: 1rem; }
 
-/* Reviews page classes */
-.empty-reviews-page { display: flex; 
-                      flex-direction: row;
-                      justify-content: center;
-                      align-items: center; }
+/* blogs page classes */
+.empty-blogs-page { display: flex; 
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center; }
 
-.reviews-container { display: flex; 
-                     flex-direction: column;
-                     gap: 1rem; }
+.blogs-container { display: flex; 
+                   flex-direction: column;
+                   gap: 1rem; }
 
 /* Currently not in use */
 /* .review-paragraph-bottom-padding { padding-bottom: 1rem; } */

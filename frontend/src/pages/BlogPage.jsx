@@ -3,37 +3,57 @@ import { useCart } from '../context/AppContext';
 import '../assets/styles.css';
 
 // When I remove Chakra from the project completely I need to come back and remove the style
-// prop on the h2 tag below where I am mapping over the reviews. 
+// prop on the h2 tag below where I am mapping over the blogs. 
 // Apparently Chakra is overriding some things when I do a global reset in the theme.js file
 // One of these things is cancelling out the font size of the h2 tag amongst the other headers as well
 // so here we have to manually restyle it ourselves.......
 
-// This new code now reflects fetching reviews from my WordPress reviews blog site. 
+// This new code now reflects fetching blogs from my WordPress blog site. 
 // We can see the endpoint I fetch from in teh AppContext.jsx file which also has the url
 // of the site itself in the endpoint
 
-const ReviewsPage = () => {
+const BlogPage = () => {
 
-  const {reviews, fetchReviews, stripHTML} = useCart();
+  const {blogs, fetchBlogs, stripHTML} = useCart();
 
-  useEffect(() => { fetchReviews() }, []);
+  useEffect(() => { fetchBlogs() }, []);
+
+  if (blogs.length === 0) {
+    return (
+      <div className='empty-blogs-page'>
+        <h2 style={{fontSize: '1.5rem'}}>No blogs as of this moment</h2>
+      </div>
+    );
+  }
+
+  // We are just grabbing the most recent blog as long as the blogs
+  // array has been populated
+  const mostRecentBlog = blogs.at(0);
 
   return (
     <>
-      {reviews.length === 0 && (
-        <div className='empty-reviews-page'>
-          <h2 style={{fontSize: '1.5rem'}}>No reviews as of this moment</h2>
+      {/* {blogs.length === 0 && (
+        <div className='empty-blogs-page'>
+          <h2 style={{fontSize: '1.5rem'}}>No blogs as of this moment</h2>
         </div>
-      )}
+      )} */}
 
-      {reviews.length > 0 && (
-        <div className='reviews-container'>
-          {reviews.map((review) => (
+      {blogs.length > 0 && (
+        <div className='blogs-container'>
+          {/* <span>Check out our entire blog site <a href="https://www.dragons-brew-coffee-corner.com/">here</a></span> */}
+          <div>
+            <h1 style={{fontSize: '2rem'}}>Check out our most recent blog!</h1>
+            <h2 style={{fontSize: '1.5rem'}}>{stripHTML(mostRecentBlog.title.rendered)}</h2>
+            <div>{stripHTML(mostRecentBlog.content.rendered)}</div>
+          </div>
+          <span>Check out our entire blog site <a href="https://www.dragons-brew-coffee-corner.com/" target='_blank' style={{textDecoration: 'underline'}}>here</a></span>
+          {/* <a href="">Check out our entire blog site here</a> */}
+          {/* {blogs.map((blog) => (
             <div>
-              <h2 style={{fontSize: '1.5rem'}}>{stripHTML(review.title.rendered)}</h2>
-              <div>{stripHTML(review.content.rendered)}</div>
+              <h2 style={{fontSize: '1.5rem'}}>{stripHTML(blog.title.rendered)}</h2>
+              <div>{stripHTML(blog.content.rendered)}</div>
             </div>
-          ))}
+          ))} */}
         </div>
       )}
     </>
@@ -51,4 +71,4 @@ const ReviewsPage = () => {
   );
 };
 
-export default ReviewsPage;
+export default BlogPage;
