@@ -42,11 +42,16 @@ const BlogPage = () => {
         <div className='blogs-container'>
           {/* <span>Check out our entire blog site <a href="https://www.dragons-brew-coffee-corner.com/">here</a></span> */}
           <div>
-            <h1 style={{fontSize: '2rem'}}>Check out our most recent blog!</h1>
+            <div>The Dragon’s Brew maintains the <a href="https://www.dragons-brew-coffee-corner.com/" target='_blank' style={{textDecoration: 'underline'}}>Dragon’s Brew Coffee Corner</a>, a blog dedicated to coffee lovers everywhere, but especially to our Dragon’s Brew customers!</div>
+            <div>Here’s the latest Dragon’s Brew Coffee Corner blog post, to give you a taste (pardon the pun)!</div>
+          </div>
+          <div>
+            {/* <h1 style={{fontSize: '2rem'}}>The Dragon’s Brew maintains the <a href="https://www.dragons-brew-coffee-corner.com/" target='_blank' style={{textDecoration: 'underline'}}>Dragon’s Brew Coffee Corner</a>, a blog dedicated to coffee lovers everywhere, but especially to our Dragon’s Brew customers!</h1>
+            <h1 style={{fontSize: '2rem'}}>Here’s the latest Dragon’s Brew Coffee Corner blog post, to give you a taste (pardon the pun)!</h1> */}
             <h2 style={{fontSize: '1.5rem'}}>{stripHTML(mostRecentBlog.title.rendered)}</h2>
             <div>{stripHTML(mostRecentBlog.content.rendered)}</div>
           </div>
-          <span>Check out our entire blog site <a href="https://www.dragons-brew-coffee-corner.com/" target='_blank' style={{textDecoration: 'underline'}}>here</a></span>
+          {/* <span>Check out our entire blog site <a href="https://www.dragons-brew-coffee-corner.com/" target='_blank' style={{textDecoration: 'underline'}}>here</a></span> */}
           {/* <a href="">Check out our entire blog site here</a> */}
           {/* {blogs.map((blog) => (
             <div>
