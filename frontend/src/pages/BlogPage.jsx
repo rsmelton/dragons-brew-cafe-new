@@ -44,7 +44,9 @@ const BlogPage = () => {
           <div>
             <div>The Dragon’s Brew maintains the <a href="https://www.dragons-brew-coffee-corner.com/" target='_blank' style={{textDecoration: 'underline'}}>Dragon’s Brew Coffee Corner</a>, a blog dedicated to coffee lovers everywhere, but especially to our Dragon’s Brew customers!</div>
             <div>Here’s the latest Dragon’s Brew Coffee Corner blog post, to give you a taste (pardon the pun)!</div>
+            {/* <hr style={{color: 'white', height: '1rem'}} /> */}
           </div>
+          <hr style={{color: 'white'}} />
           <div>
             {/* <h1 style={{fontSize: '2rem'}}>The Dragon’s Brew maintains the <a href="https://www.dragons-brew-coffee-corner.com/" target='_blank' style={{textDecoration: 'underline'}}>Dragon’s Brew Coffee Corner</a>, a blog dedicated to coffee lovers everywhere, but especially to our Dragon’s Brew customers!</h1>
             <h1 style={{fontSize: '2rem'}}>Here’s the latest Dragon’s Brew Coffee Corner blog post, to give you a taste (pardon the pun)!</h1> */}
