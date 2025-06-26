@@ -3,13 +3,13 @@ import { useCart } from '../context/AppContext';
 import '../assets/styles.css';
 
 // When I remove Chakra from the project completely I need to come back and remove the style
-// prop on the h2 tag below where I am mapping over the blogs. 
+// prop on the h2 tags below. 
 // Apparently Chakra is overriding some things when I do a global reset in the theme.js file
 // One of these things is cancelling out the font size of the h2 tag amongst the other headers as well
 // so here we have to manually restyle it ourselves.......
 
 // This new code now reflects fetching blogs from my WordPress blog site. 
-// We can see the endpoint I fetch from in teh AppContext.jsx file which also has the url
+// We can see the endpoint I fetch from in the AppContext.jsx file which also has the url
 // of the site itself in the endpoint
 
 const BlogPage = () => {
@@ -41,8 +41,9 @@ const BlogPage = () => {
       {blogs.length > 0 && (
         <div className='blogs-container'>
           {/* <span>Check out our entire blog site <a href="https://www.dragons-brew-coffee-corner.com/">here</a></span> */}
+          <h1 style={{fontSize: '2rem'}}>Blog</h1>
           <div>
-            <div>The Dragon’s Brew maintains the <a href="https://www.dragons-brew-coffee-corner.com/" target='_blank' style={{textDecoration: 'underline'}}>Dragon’s Brew Coffee Corner</a>, a blog dedicated to coffee lovers everywhere, but especially to our Dragon’s Brew customers!</div>
+            <div>Dragon’s Brew Cafe maintains the <a href="https://www.dragons-brew-coffee-corner.com/" target='_blank' style={{textDecoration: 'underline'}}>Dragon’s Brew Coffee Corner</a>, a blog dedicated to coffee lovers everywhere, but especially to our Dragon’s Brew customers!</div>
             <div>Here’s the latest Dragon’s Brew Coffee Corner blog post, to give you a taste (pardon the pun)!</div>
             {/* <hr style={{color: 'white', height: '1rem'}} /> */}
           </div>

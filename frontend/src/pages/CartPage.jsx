@@ -38,6 +38,7 @@ const CartPage = () => {
           to access otherwise we would be accessing something that is undefined */}
       {cartItems.length > 0 && menuItems.length > 0 && (
         <div className='cart-table-container'>
+          <h1 style={{fontSize: '2rem'}}>Cart</h1>
           <table className='cart-table'>
             {cartItems.map((cartItem) => {
               const menuItem = menuItems.find((menuItem) => doesMenuItemMatchCartItem(menuItem, cartItem));
