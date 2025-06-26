@@ -21,7 +21,7 @@ const BlogPage = () => {
   if (blogs.length === 0) {
     return (
       <div className='empty-blogs-page'>
-        <h2 style={{fontSize: '1.5rem'}}>No blogs as of this moment</h2>
+        <h2 style={{fontSize: '1.5rem'}}>Loading latest blogs...</h2>
       </div>
     );
   }
