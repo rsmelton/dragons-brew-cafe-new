@@ -22,14 +22,17 @@ const MenuPage = () => {
           //      <MenuItem menuItem={menuItem} />
           //   ))}
           // </div>
-          <Grid 
-            templateColumns={{base: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr'}}
-            templateRows={'1fr'}
-          >
-            {menuItems.map((menuItem) => (
-              <MenuItem menuItem={menuItem} />
-            ))}
-          </Grid>
+          <>
+            <h1 style={{fontSize: '2rem'}}>Menu</h1>
+            <Grid 
+              templateColumns={{base: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr'}}
+              templateRows={'1fr'}
+            >
+              {menuItems.map((menuItem) => (
+                <MenuItem menuItem={menuItem} />
+              ))}
+            </Grid>
+          </>
         )
       }
     </>
