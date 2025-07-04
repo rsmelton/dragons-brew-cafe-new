@@ -29,22 +29,30 @@ const BlogPage = () => {
   // We are just grabbing the most recent blog as long as the blogs
   // array has been populated
   const mostRecentBlog = blogs.at(0);
+  
+  // Formatting the date that was fetched
+  const mostRecentBlogDate = new Date(mostRecentBlog.date).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
 
   return (
     <>
       {blogs.length > 0 && (
-        <div className='blogs-container'>
+        <div className='blog-page-container'>
           <h1 style={{fontSize: '2rem'}}>Dragon's Brew Coffee Corner</h1>
           <div>
             <div>Dragon’s Brew Cafe maintains the <a href="https://www.dragons-brew-coffee-corner.com/" target='_blank' style={{textDecoration: 'underline'}}>Dragon’s Brew Coffee Corner</a>, a blog dedicated to coffee lovers everywhere, but especially to our Dragon’s Brew customers!</div>
             <div>Here’s the latest Dragon’s Brew Coffee Corner blog post, to give you a taste (pardon the pun)!</div>
-            {/* <hr style={{color: 'white', height: '1rem'}} /> */}
           </div>
           <hr style={{color: 'white'}} />
-          <div>
-            {/* <h1 style={{fontSize: '2rem'}}>The Dragon’s Brew maintains the <a href="https://www.dragons-brew-coffee-corner.com/" target='_blank' style={{textDecoration: 'underline'}}>Dragon’s Brew Coffee Corner</a>, a blog dedicated to coffee lovers everywhere, but especially to our Dragon’s Brew customers!</h1>
-            <h1 style={{fontSize: '2rem'}}>Here’s the latest Dragon’s Brew Coffee Corner blog post, to give you a taste (pardon the pun)!</h1> */}
+          <div className='blog-container'>
             <h2 style={{fontSize: '1.5rem'}}>{mostRecentBlog.title.rendered}</h2>
+            <div className='blog-author-and-date-container'>
+              <div>{mostRecentBlog.author_name}</div>
+              <div>{mostRecentBlogDate}</div>
+            </div>
             <div>{stripHTML(mostRecentBlog.content.rendered)}</div>
             <img className='blog_image' src={mostRecentBlog.blog_image.url} alt="Blog Image" />
           </div>
