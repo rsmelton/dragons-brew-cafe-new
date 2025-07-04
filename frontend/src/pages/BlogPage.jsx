@@ -14,7 +14,7 @@ import '../assets/styles.css';
 
 const BlogPage = () => {
 
-  const {blogs, fetchBlogs, stripHTML} = useCart();
+  const {blogs, fetchBlogs, stripHTMLPreserveFormatting} = useCart();
 
   useEffect(() => { fetchBlogs() }, []);
 
@@ -53,7 +53,7 @@ const BlogPage = () => {
               <div>{mostRecentBlog.author_name}</div>
               <div>{mostRecentBlogDate}</div>
             </div>
-            <div>{stripHTML(mostRecentBlog.content.rendered)}</div>
+            <div style={{ whiteSpace: 'pre-line' }}>{stripHTMLPreserveFormatting(mostRecentBlog.content.rendered)}</div>
             <img className='blog_image' src={mostRecentBlog.blog_image.url} alt="Blog Image" />
           </div>
         </div>

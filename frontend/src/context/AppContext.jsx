@@ -112,13 +112,28 @@ export const AppProvider = ({ children }) => {
     // that we received to be purely text. So if the user passed in any 
     // unwanted scripts then instead of the scripts executing
     // they would be rendered as safe text.
-    // The only downside to doing this is it removes any formatting.
-    // A better way might be to use something called DOMPurify that is 
-    // a sanitizer library that would also keep formatting.
-    const stripHTML = (html) => {
+    // Edit: This method now also preserves the formatting
+    const stripHTMLPreserveFormatting = (html) => {
+
+        // Using a regular expression to replace all </p>
+        // tags with a newline to keep formatting
+        // we can then get rid of the remaining tags
+        // as we only really care about the formatting
+        let formattedHtml = html.replace(/<\/p>/gi, '\n');
+
+        // Here we are finding everywhere in the html where there are
+        // 3 or more \n in a row -- when we find them we replace them
+        // with \n\n 
+        formattedHtml = formattedHtml.replace(/\n{3,}/g, '\n\n');
+
+        console.log(JSON.stringify(formattedHtml));
+
         const div = document.createElement("div");
-        div.innerHTML = html;
-        return div.textContent || div.innerText || "";
+        div.innerHTML = formattedHtml;
+        const content = div.textContent || div.innerText || "";
+
+        // Trimming remaining whitespace off ends
+        return content.trim();
     };
 
     // When the cartItems state changes we run this hook to calculate
@@ -176,7 +191,7 @@ export const AppProvider = ({ children }) => {
                 handleDeleteAllCartItems,
                 doesMenuItemMatchCartItem,
                 handleFindTotalPriceOfCart,
-                stripHTML,
+                stripHTMLPreserveFormatting,
                 getCartItemQuantity,
                 getMenuItemName,
                 getMenuItemPrice,
