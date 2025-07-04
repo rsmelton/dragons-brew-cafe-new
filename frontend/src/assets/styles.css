@@ -89,6 +89,12 @@ body, html { margin: 0;
                    flex-direction: column;
                    gap: 1rem; }
 
+.blog_image { margin-top: 1rem; 
+              margin-bottom: 1rem;
+              width: 350px;
+              height: auto;
+              border-radius: 12px; }
+
 /* Currently not in use */
 /* .review-paragraph-bottom-padding { padding-bottom: 1rem; } */
 
