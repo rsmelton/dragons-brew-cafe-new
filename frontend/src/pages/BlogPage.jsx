@@ -16,7 +16,7 @@ const BlogPage = () => {
 
   const {blogs, fetchBlogs, stripHTMLPreserveFormatting} = useCart();
 
-  useEffect(() => { fetchBlogs() }, []);
+  useEffect(() => { fetchBlogs(); }, []);
 
   if (blogs.length === 0) {
     return (
@@ -24,7 +24,7 @@ const BlogPage = () => {
         <h2 style={{fontSize: '1.5rem'}}>Loading latest blogs...</h2>
       </div>
     );
-  }
+  } 
 
   // We are just grabbing the most recent blog as long as the blogs
   // array has been populated
@@ -53,7 +53,8 @@ const BlogPage = () => {
               <div>{mostRecentBlog.author_name}</div>
               <div>{mostRecentBlogDate}</div>
             </div>
-            <div style={{ whiteSpace: 'pre-line' }}>{stripHTMLPreserveFormatting(mostRecentBlog.content.rendered)}</div>
+            <div dangerouslySetInnerHTML={{ __html: mostRecentBlog.content.rendered }} />
+            {/* <div style={{ whiteSpace: 'pre-line' }}>{stripHTMLPreserveFormatting(mostRecentBlog.content.rendered)}</div> */}
             <img className='blog_image' src={mostRecentBlog.blog_image.url} alt="Blog Image" />
           </div>
         </div>
