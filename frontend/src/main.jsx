@@ -29,7 +29,7 @@ createRoot(document.getElementById('root')).render(
               <Link to="/home">Home</Link>
               <Link to="/about">About</Link>
               <Link to="/menu">Menu</Link>
-              <Link to="/blog">Blog</Link>
+              {/* <Link to="/blog">Blog</Link> */}
               <div className='navbar-cart-icon-and-quantity-container'>
                 <Link to="/cart">
                   <img className='navbar-cart-icon' src={'/images/cart-icon.png'} alt="Cart icon" />
@@ -42,7 +42,7 @@ createRoot(document.getElementById('root')).render(
                 <Route path='/' element={<HomePage />} />
                 <Route path='/home' element={<HomePage />} />
                 <Route path='/about' element={<AboutPage />} />
-                <Route path='/blog' element={<BlogPage />} />
+                {/* <Route path='/blog' element={<BlogPage />} /> */}
                 <Route path='/menu' element={<MenuPage />} />
                 <Route path='/cart' element={<CartPage />} />
               </Routes>
